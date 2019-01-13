@@ -11,7 +11,7 @@ use yii2lab\test\Test\Unit;
 
 class PackageTest extends Unit {
 	
-	const PACKAGE = 'yii2bundle/yii2-extension';
+	const PACKAGE = 'yii2rails/yii2-extension';
 	
 	protected function _before() {
 		parent::_before();
@@ -39,7 +39,7 @@ class PackageTest extends Unit {
 	}
 	
 	public function testOneById() {
-		$entity = \App::$domain->package->package->oneById('yii2bundle/yii2-extension');
+		$entity = \App::$domain->package->package->oneById('yii2rails/yii2-extension');
 		$this->tester->assertIsEntity($entity, PackageEntity::class);
 	}
 	
@@ -48,7 +48,7 @@ class PackageTest extends Unit {
 		$query->with('group');
 		$query->with('config');
 		/** @var PackageEntity $entity */
-		$entity = \App::$domain->package->package->oneById('yii2bundle/yii2-extension', $query);
+		$entity = \App::$domain->package->package->oneById('yii2rails/yii2-extension', $query);
 		$this->tester->assertIsEntity($entity, PackageEntity::class);
 		$this->tester->assertIsEntity($entity->group, GroupEntity::class);
 		$this->tester->assertIsEntity($entity->config, ConfigEntity::class);

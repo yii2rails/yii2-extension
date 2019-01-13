@@ -9,19 +9,19 @@ class FileHelperTest extends Unit
 	
 	public function testFileExt()
 	{
-		$fileName = VENDOR_DIR . DS . 'yii2bundle/yii2-extension/tests/store/exists.file';
+		$fileName = VENDOR_DIR . DS . 'yii2rails/yii2-extension/tests/store/exists.file';
 		$ext = FileHelper::fileExt($fileName);
 		$this->tester->assertEquals($ext, 'file');
 		
-		$fileName = VENDOR_DIR . DS . 'yii2bundle/yii2-extension/tests/store/exists';
+		$fileName = VENDOR_DIR . DS . 'yii2rails/yii2-extension/tests/store/exists';
 		$ext = FileHelper::fileExt($fileName);
 		$this->tester->assertEquals($ext, null);
 	}
 	
 	public function testFileRemoveExt()
 	{
-		$fileNameWithExt = VENDOR_DIR . DS . 'yii2bundle/yii2-extension/tests/store/exists.file';
-		$fileNameWithOutExt = VENDOR_DIR . DS . 'yii2bundle/yii2-extension/tests/store/exists';
+		$fileNameWithExt = VENDOR_DIR . DS . 'yii2rails/yii2-extension/tests/store/exists.file';
+		$fileNameWithOutExt = VENDOR_DIR . DS . 'yii2rails/yii2-extension/tests/store/exists';
 		$ext = FileHelper::fileRemoveExt($fileNameWithExt);
 		$this->tester->assertEquals($ext, $fileNameWithOutExt);
 		
@@ -34,7 +34,7 @@ class FileHelperTest extends Unit
 	
 	public function testLoadData()
 	{
-		$fileName = VENDOR_DIR . DS . 'yii2bundle/yii2-extension/tests/store/data/main.php';
+		$fileName = VENDOR_DIR . DS . 'yii2rails/yii2-extension/tests/store/data/main.php';
 		$result = FileHelper::loadData($fileName, 'aliases.@npm');
 		$this->tester->assertEquals($result, '@vendor/npm-asset');
 		
@@ -131,7 +131,7 @@ class FileHelperTest extends Unit
 	
 	public function testFindInFileByExp()
 	{
-		$fileName = VENDOR_DIR . DS . 'yii2bundle/yii2-extension/tests/store/data/main.php';
+		$fileName = VENDOR_DIR . DS . 'yii2rails/yii2-extension/tests/store/data/main.php';
 		$expected = [
 			'bower-asset',
 			'npm-asset',
@@ -143,7 +143,7 @@ class FileHelperTest extends Unit
 	
 	public function testRemove()
 	{
-		$dirName = VENDOR_DIR . DS . 'yii2bundle/yii2-extension/tests/_data/new';
+		$dirName = VENDOR_DIR . DS . 'yii2rails/yii2-extension/tests/_data/new';
 		$fileName = $dirName . '.txt';
 		if(!is_dir($dirName)) {
 			mkdir($dirName);
@@ -169,7 +169,7 @@ class FileHelperTest extends Unit
 	
 	public function testIsAbsolute()
 	{
-		$fileName = 'yii2bundle/yii2-extension/tests/store/exists.file';
+		$fileName = 'yii2rails/yii2-extension/tests/store/exists.file';
 		
 		$result = FileHelper::isAbsolute($fileName);
 		$this->tester->assertFalse($result);
@@ -186,7 +186,7 @@ class FileHelperTest extends Unit
 	
 	public function testTrimRootPath()
 	{
-		$fileName = 'vendor/yii2bundle/yii2-extension/tests/store/exists.file';
+		$fileName = 'vendor/yii2rails/yii2-extension/tests/store/exists.file';
 		
 		$result = FileHelper::trimRootPath(ROOT_DIR . DS . $fileName);
 		$this->tester->assertEquals($result, $fileName);
@@ -214,8 +214,8 @@ class FileHelperTest extends Unit
 	
 	public function testIsEqualContent()
 	{
-		$fileName = ROOT_DIR . DS . 'vendor/yii2bundle/yii2-extension/tests/store/exists.file';
-		$fileName2 = ROOT_DIR . DS . 'vendor/yii2bundle/yii2-extension/tests/store/exists2.file';
+		$fileName = ROOT_DIR . DS . 'vendor/yii2rails/yii2-extension/tests/store/exists.file';
+		$fileName2 = ROOT_DIR . DS . 'vendor/yii2rails/yii2-extension/tests/store/exists2.file';
 		
 		$result = FileHelper::isEqualContent($fileName, $fileName);
 		$this->tester->assertTrue($result);
@@ -226,8 +226,8 @@ class FileHelperTest extends Unit
 	
 	public function testCopy()
 	{
-		$fileName = ROOT_DIR . DS . 'vendor/yii2bundle/yii2-extension/tests/store/exists.file';
-		$fileName2 = ROOT_DIR . DS . 'vendor/yii2bundle/yii2-extension/tests/store/exists_copy.file';
+		$fileName = ROOT_DIR . DS . 'vendor/yii2rails/yii2-extension/tests/store/exists.file';
+		$fileName2 = ROOT_DIR . DS . 'vendor/yii2rails/yii2-extension/tests/store/exists_copy.file';
 		
 		FileHelper::remove($fileName2);
 		FileHelper::copy($fileName, $fileName2);
@@ -237,7 +237,7 @@ class FileHelperTest extends Unit
 	
 	public function testSave()
 	{
-		$fileName2 = ROOT_DIR . DS . 'vendor/yii2bundle/yii2-extension/tests/store/exists_saved.file';
+		$fileName2 = ROOT_DIR . DS . 'vendor/yii2rails/yii2-extension/tests/store/exists_saved.file';
 		
 		FileHelper::remove($fileName2);
 		FileHelper::save($fileName2, 'hgfd');
@@ -247,7 +247,7 @@ class FileHelperTest extends Unit
 	
 	public function testLoad()
 	{
-		$fileName = ROOT_DIR . DS . 'vendor/yii2bundle/yii2-extension/tests/store/exists.file';
+		$fileName = ROOT_DIR . DS . 'vendor/yii2rails/yii2-extension/tests/store/exists.file';
 		
 		$result = FileHelper::load($fileName);
 		$expected = file_get_contents($fileName);
@@ -256,7 +256,7 @@ class FileHelperTest extends Unit
 	
 	public function testHas()
 	{
-		$fileName = ROOT_DIR . DS . 'vendor/yii2bundle/yii2-extension/tests/store/exists.file';
+		$fileName = ROOT_DIR . DS . 'vendor/yii2rails/yii2-extension/tests/store/exists.file';
 		
 		$result = FileHelper::has($fileName);
 		$this->tester->assertTrue($result);
@@ -279,7 +279,7 @@ class FileHelperTest extends Unit
 	
 	public function testScanDir()
 	{
-		$result = FileHelper::scanDir(ROOT_DIR . DS . 'vendor/yii2bundle/yii2-extension/tests/_application/common/config');
+		$result = FileHelper::scanDir(ROOT_DIR . DS . 'vendor/yii2rails/yii2-extension/tests/_application/common/config');
 		$this->tester->assertEquals($result, [
 			'bootstrap.php',
 			'domains.php',
@@ -334,7 +334,7 @@ class FileHelperTest extends Unit
 	
 	public function testFindFilesWithPath()
 	{
-		$result = FileHelper::findFilesWithPath(ROOT_DIR . DS . 'vendor/yii2bundle/yii2-extension/tests/_application');
+		$result = FileHelper::findFilesWithPath(ROOT_DIR . DS . 'vendor/yii2rails/yii2-extension/tests/_application');
 		$this->tester->assertArraySubset($result, [
 			'common' . DS . 'config' . DS . 'bootstrap.php',
 			'common' . DS . 'config' . DS . 'domains.php',

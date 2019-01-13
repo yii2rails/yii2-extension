@@ -31,7 +31,7 @@ class PackageController extends Controller {
 		//$query->with('group');
 		//$query->with('config');
 		//$query->with('git');
-		//$query->andWhere(['id'=>'yii2bundle/yii2-extension']);
+		//$query->andWhere(['id'=>'yii2rails/yii2-extension']);
 		//$query->where([ 'name' => ['yii2-service']]);
 		//$collection = \App::$domain->package->package->oneById('yii2woop/yii2-service', $query);
 		//$collection = \App::$domain->package->package->one($query);

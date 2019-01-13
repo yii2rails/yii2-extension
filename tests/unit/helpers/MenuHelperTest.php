@@ -9,7 +9,7 @@ use yii2module\account\domain\v2\helpers\TestAuthHelper;
 class MenuHelperTest extends Unit
 {
 	
-	const PACKAGE = 'yii2bundle/yii2-extension';
+	const PACKAGE = 'yii2rails/yii2-extension';
 	const ADMIN_ID = 381949;
 	const USER_ID = 381070;
 	

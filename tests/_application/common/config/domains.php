@@ -8,10 +8,10 @@ $config = [
         'class' => 'yii2lab\rbac\domain\Domain',
         'repositories' => [
             'rule' => [
-                'ruleFile' => '@vendor/yii2bundle/yii2-test/src/base/_application/common/data/rbac/rules.php',
+                'ruleFile' => '@vendor/yii2tool/yii2-test/src/base/_application/common/data/rbac/rules.php',
             ],
             'item' => [
-                'itemFile' => '@vendor/yii2bundle/yii2-test/src/base/_application/common/data/rbac/items.php',
+                'itemFile' => '@vendor/yii2tool/yii2-test/src/base/_application/common/data/rbac/items.php',
             ],
         ],
     ],

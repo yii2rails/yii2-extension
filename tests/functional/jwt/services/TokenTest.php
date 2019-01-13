@@ -15,7 +15,7 @@ use yii2lab\test\Test\Unit;
 class TokenTest extends Unit
 {
 
-    const PACKAGE = 'yii2bundle/yii2-extension';
+    const PACKAGE = 'yii2rails/yii2-extension';
 
     public function testNotFoundProfile()
     {

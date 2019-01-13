@@ -5,7 +5,7 @@ use yii2lab\extension\store\ActiveStore;
 
 class Login extends ActiveStore
 {
-	public static $dir = '@vendor/yii2bundle/yii2-extension/tests/store/data';
+	public static $dir = '@vendor/yii2rails/yii2-extension/tests/store/data';
 	public static $name = 'login';
 	
 }

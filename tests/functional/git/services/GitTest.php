@@ -10,7 +10,7 @@ use yii2lab\test\Test\Unit;
 
 class GitTest extends Unit {
 	
-	const PACKAGE = 'yii2bundle/yii2-extension';
+	const PACKAGE = 'yii2rails/yii2-extension';
 	
 	protected function _before() {
 		parent::_before();
