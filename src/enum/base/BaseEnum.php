@@ -3,6 +3,7 @@
 namespace yii2lab\extension\enum\base;
 
 use yii\base\InvalidArgumentException;
+use yii\helpers\ArrayHelper;
 use yii2lab\extension\common\helpers\ReflectionHelper;
 
 class BaseEnum {
@@ -61,4 +62,10 @@ class BaseEnum {
 			return $values[0];
 		}
 	}
+
+	public static function keyByValue($value, $prefix = null) {
+	    $all = self::all($prefix);
+	    $allFliped = array_flip($all);
+	    return ArrayHelper::getValue($allFliped, $value);
+    }
 }
