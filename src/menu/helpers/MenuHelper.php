@@ -182,7 +182,7 @@ class MenuHelper
         }
 		$label = ArrayHelper::getValue($menu, 'label');
 		if(is_array($label)) {
-			$label = call_user_func_array('t', $label);
+			$label = call_user_func_array('Yii::t', $label);
 		}
         $menu['label'] = $label;
 		return $menu;

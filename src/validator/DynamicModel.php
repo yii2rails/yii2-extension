@@ -59,7 +59,7 @@ class DynamicModel extends Model
 		}
 		foreach($labels as $name => $text) {
 			if(is_array($text)) {
-				$text = call_user_func_array('t', $text);
+				$text = call_user_func_array('Yii::t', $text);
 			}
 			$this->labels[$name] = $text;
 		}
