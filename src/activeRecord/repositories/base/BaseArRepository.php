@@ -256,6 +256,12 @@ abstract class BaseArRepository extends BaseRepository {
 		if($offset) {
 			$this->query->offset($offset);
 		}
+
+        $join = $query->getParam('join');
+        if($join) {
+            $this->query->join($join['type'], $join['table'], $join['on'], $join['params']);
+        }
+
 		$order = $query->getParam('order');
 		if($order) {
 			$orderEncoded = $this->alias->encode($order);
