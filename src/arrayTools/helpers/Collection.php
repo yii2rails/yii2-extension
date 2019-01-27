@@ -50,10 +50,6 @@ class Collection extends BaseCollection {
 		return $item;
 	}
 	
-	public function toArray() {
-		return ArrayHelper::toArray($this->all());
-	}
-	
 	public function load($items) {
 		$this->loadItems($items);
 	}

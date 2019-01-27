@@ -6,9 +6,11 @@ use ArrayAccess;
 use Countable;
 use Iterator;
 use Serializable;
+use yii\base\Arrayable;
 use yii\base\InvalidArgumentException;
+use yii\helpers\ArrayHelper;
 
-abstract class BaseCollection implements ArrayAccess, Countable, Iterator, Serializable {
+abstract class BaseCollection implements ArrayAccess, Countable, Iterator, Serializable, Arrayable {
 	
 	private $items = [];
 	private $position = 0;
@@ -81,7 +83,19 @@ abstract class BaseCollection implements ArrayAccess, Countable, Iterator, Seria
 	public function all() {
 		return $this->items;
 	}
-	
+
+    public function fields() {
+
+    }
+
+    public function extraFields() {
+
+    }
+
+    public function toArray(array $fields = [], array $expand = [], $recursive = true) {
+        return ArrayHelper::toArray($this->items, $fields, $recursive);
+    }
+
 	protected function loadItems($items) {
 		if(empty($items)) {
 			return;
