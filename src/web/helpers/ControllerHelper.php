@@ -13,7 +13,13 @@ use yii2lab\domain\services\base\BaseService;
 use yii2lab\extension\web\enums\HttpHeaderEnum;
 
 class ControllerHelper {
-	
+
+    public static function getUrl() {
+        $baseUrl = SL . Yii::$app->controller->module->id . SL . Yii::$app->controller->id;
+        $baseUrl = rtrim($baseUrl, SL) . SL;
+        return $baseUrl;
+    }
+
 	public static function runActionTrigger(Component $component, $eventName, $data) : DataEvent {
 		$event = new DataEvent();
 		$event->result = $data;
