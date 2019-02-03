@@ -2,6 +2,7 @@
 
 namespace yii2lab\extension\package\domain\repositories\filedb;
 
+use yii2lab\extension\arrayTools\repositories\base\BaseActiveDiscRepository;
 use yii2lab\extension\filedb\repositories\base\BaseActiveFiledbRepository;
 use yii2lab\extension\package\domain\interfaces\repositories\GroupInterface;
 
@@ -12,8 +13,9 @@ use yii2lab\extension\package\domain\interfaces\repositories\GroupInterface;
  * 
  * @property-read \yii2lab\extension\package\domain\Domain $domain
  */
-class GroupRepository extends BaseActiveFiledbRepository implements GroupInterface {
+class GroupRepository extends BaseActiveDiscRepository implements GroupInterface {
 
 	protected $schemaClass = false;
-
+	public $path = '@common/data';
+	public $table = 'package_group';
 }

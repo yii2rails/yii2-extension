@@ -18,9 +18,9 @@ class Domain extends \yii2lab\domain\Domain {
 	
 	public function init() {
 		parent::init();
-		DomainHelper::forgeDomains([
+		/*DomainHelper::forgeDomains([
 			'git' => 'yii2lab\extension\git\domain\Domain',
-		]);
+		]);*/
 	}
 	
 	public function config() {
