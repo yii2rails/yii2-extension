@@ -15,7 +15,7 @@ use yii2lab\extension\package\domain\interfaces\repositories\GroupInterface;
  */
 class GroupRepository extends BaseActiveDiscRepository implements GroupInterface {
 
-	protected $schemaClass = false;
+	protected $schemaClass = true;
 	public $path = '@common/data';
 	public $table = 'package_group';
 }

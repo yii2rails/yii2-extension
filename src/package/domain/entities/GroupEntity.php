@@ -11,27 +11,22 @@ use yii2lab\domain\BaseEntity;
  * @package yii2lab\extension\package\domain\entities
  *
  * @property $name
- * @property $provider
+ * @property $provider_name
  * @property $url
  * @property $authors
+ * @property ProviderEntity $provider
  */
 class GroupEntity extends BaseEntity {
 	
 	protected $name;
-	protected $provider;
+	protected $provider_name;
 	protected $url;
 	protected $authors;
+    protected $provider;
 
-	
-	
-	/*public function getUrl() {
-		if(!empty($this->url)) {
-			return $this->url;
-		}
-		$arr = [
-			'github' => 'https://github.com',
-		];
-		return ArrayHelper::getValue($arr, $this->provider);
-	}*/
-	
+    public function fieldType() {
+        return [
+            'provider' => ProviderEntity::class,
+        ];
+    }
 }

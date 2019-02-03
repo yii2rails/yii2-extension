@@ -3,7 +3,8 @@
 return [
     [
         'name' => 'yii2bundle',
-        'provider' => 'github',
+        'provider_name' => 'github',
+        'url' => 'https://github.com',
         'authors' => [
             [
                 'name' => 'Yamshikov Vitaliy',
@@ -13,7 +14,7 @@ return [
     ],
 	[
 		'name' => 'yii2rails',
-		'provider' => 'github',
+		'provider_name' => 'github',
 		'authors' => [
 			[
 				'name' => 'Yamshikov Vitaliy',
@@ -23,7 +24,7 @@ return [
 	],
 	[
 		'name' => 'yii2team',
-		'provider' => 'github',
+		'provider_name' => 'github',
 		'authors' => [
 			[
 				'name' => 'Yamshikov Vitaliy',
@@ -33,7 +34,7 @@ return [
 	],
 	[
 		'name' => 'yii2tool',
-		'provider' => 'github',
+		'provider_name' => 'github',
 		'authors' => [
 			[
 				'name' => 'Yamshikov Vitaliy',
@@ -43,7 +44,7 @@ return [
 	],
 	[
 		'name' => 'yii2game',
-		'provider' => 'github',
+		'provider_name' => 'github',
 		'authors' => [
 			[
 				'name' => 'Yamshikov Vitaliy',

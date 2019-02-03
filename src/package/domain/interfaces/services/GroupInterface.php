@@ -4,6 +4,7 @@ namespace yii2lab\extension\package\domain\interfaces\services;
 
 use yii2lab\domain\interfaces\services\CrudInterface;
 use yii2lab\domain\data\Query;
+use yii2lab\extension\package\domain\entities\GroupEntity;
 
 /**
  * Interface GroupInterface
@@ -15,6 +16,12 @@ use yii2lab\domain\data\Query;
  */
 interface GroupInterface extends CrudInterface {
 
+    /**
+     * @param $name
+     * @param Query|null $query
+     * @return GroupEntity
+     */
+    public function oneByName($name, Query $query = null);
     public function allNames(Query $query = null);
 
 }

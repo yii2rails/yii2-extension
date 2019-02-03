@@ -28,6 +28,7 @@ class Domain extends \yii2lab\domain\Domain {
 			'repositories' => [
 				'package' => Driver::FILE,
 				'group' => Driver::FILEDB,
+                'provider' => Driver::FILE,
 				'config' => Driver::FILE,
 			],
 			'services' => [
