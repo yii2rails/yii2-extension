@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\console\helpers;
+namespace yii2rails\extension\console\helpers;
 
 use yii\helpers\Inflector;
 
@@ -14,8 +14,8 @@ class BinConsoleHelper
     }
 
     public function init() {
-        $args = \yii2lab\extension\console\helpers\ArgHelper::all();
-        $command = \yii2lab\extension\yii\helpers\ArrayHelper::firstKey($args);
+        $args = \yii2rails\extension\console\helpers\ArgHelper::all();
+        $command = \yii2rails\extension\yii\helpers\ArrayHelper::firstKey($args);
         list($controllerName, $actionName) = explode('/', $command);
         self::runAction($controllerName, $actionName);
     }
@@ -24,7 +24,7 @@ class BinConsoleHelper
         $controllerName = \yii\helpers\Inflector::camelize($controllerName);
         $actionName = \yii\helpers\Inflector::camelize($actionName);
         $controllerClass = $this->controllerNamespace . '\\' . $controllerName . 'Controller';
-        $controllerClass = \yii2lab\extension\common\helpers\ClassHelper::normalizeClassName($controllerClass);
+        $controllerClass = \yii2rails\extension\common\helpers\ClassHelper::normalizeClassName($controllerClass);
         $controllerInstance = new $controllerClass;
         $action = 'action' . $actionName;
         $controllerInstance->$action();

@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\arrayTools\repositories\base;
+namespace yii2rails\extension\arrayTools\repositories\base;
 
-use yii2lab\domain\interfaces\repositories\CrudInterface;
-use yii2lab\domain\repositories\BaseRepository;
-use yii2lab\extension\arrayTools\traits\ArrayModifyTrait;
-use yii2lab\extension\arrayTools\traits\ArrayReadTrait;
+use yii2rails\domain\interfaces\repositories\CrudInterface;
+use yii2rails\domain\repositories\BaseRepository;
+use yii2rails\extension\arrayTools\traits\ArrayModifyTrait;
+use yii2rails\extension\arrayTools\traits\ArrayReadTrait;
 
 abstract class BaseActiveArrayRepository extends BaseRepository implements CrudInterface {
 	

@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\code\enums;
+namespace yii2rails\extension\code\enums;
 
-use yii2lab\extension\enum\base\BaseEnum;
+use yii2rails\extension\enum\base\BaseEnum;
 
 class AccessEnum extends BaseEnum {
 	

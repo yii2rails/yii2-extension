@@ -1,6 +1,6 @@
 <?php
 
-use yii2lab\app\domain\helpers\Env;
+use yii2rails\app\domain\helpers\Env;
 
 $name = 'console';
 $path = '../../../../../..';

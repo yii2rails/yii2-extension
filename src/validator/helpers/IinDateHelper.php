@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\validator\helpers;
+namespace yii2rails\extension\validator\helpers;
 
 use Exception;
-use yii2lab\extension\enum\enums\TimeEnum;
+use yii2rails\extension\enum\enums\TimeEnum;
 
 class IinDateHelper {
 	

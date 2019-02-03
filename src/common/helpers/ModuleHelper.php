@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\common\helpers;
+namespace yii2rails\extension\common\helpers;
 
 use Yii;
-use yii2lab\extension\yii\helpers\ArrayHelper;
+use yii2rails\extension\yii\helpers\ArrayHelper;
 
 class ModuleHelper
 {

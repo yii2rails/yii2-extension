@@ -1,16 +1,16 @@
 <?php
 
-namespace yii2lab\extension\git\domain\interfaces\services;
+namespace yii2rails\extension\git\domain\interfaces\services;
 
-use yii2lab\domain\interfaces\services\CrudInterface;
+use yii2rails\domain\interfaces\services\CrudInterface;
 
 /**
  * Interface GitInterface
  * 
- * @package yii2lab\extension\git\domain\interfaces\services
+ * @package yii2rails\extension\git\domain\interfaces\services
  * 
- * @property-read \yii2lab\extension\git\domain\Domain $domain
- * @property-read \yii2lab\extension\git\domain\interfaces\repositories\GitInterface $repository
+ * @property-read \yii2rails\extension\git\domain\Domain $domain
+ * @property-read \yii2rails\extension\git\domain\interfaces\repositories\GitInterface $repository
  */
 interface GitInterface extends CrudInterface {
 

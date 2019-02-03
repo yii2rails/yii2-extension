@@ -1,21 +1,21 @@
 <?php
 
-namespace yii2lab\extension\code\helpers;
+namespace yii2rails\extension\code\helpers;
 
-use yii2lab\domain\BaseEntity;
-use yii2lab\domain\helpers\Helper;
-use yii2lab\extension\code\entities\ClassEntity;
-use yii2lab\extension\code\entities\ClassUseEntity;
-use yii2lab\extension\code\entities\CodeEntity;
-use yii2lab\extension\code\entities\InterfaceEntity;
-use yii2lab\extension\code\render\ClassRender;
-use yii2lab\extension\code\render\InterfaceRender;
-use yii2lab\extension\yii\helpers\ArrayHelper;
+use yii2rails\domain\BaseEntity;
+use yii2rails\domain\helpers\Helper;
+use yii2rails\extension\code\entities\ClassEntity;
+use yii2rails\extension\code\entities\ClassUseEntity;
+use yii2rails\extension\code\entities\CodeEntity;
+use yii2rails\extension\code\entities\InterfaceEntity;
+use yii2rails\extension\code\render\ClassRender;
+use yii2rails\extension\code\render\InterfaceRender;
+use yii2rails\extension\yii\helpers\ArrayHelper;
 
 /**
  * Class ClassHelper
  *
- * @package yii2lab\extension\code\helpers
+ * @package yii2rails\extension\code\helpers
  */
 class ClassHelper
 {

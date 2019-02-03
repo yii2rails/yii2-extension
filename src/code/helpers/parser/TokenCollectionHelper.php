@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2lab\extension\code\helpers\parser;
+namespace yii2rails\extension\code\helpers\parser;
 
-use yii2lab\extension\code\entities\TokenEntity;
-use yii2lab\extension\scenario\collections\ScenarioCollection;
-use yii2lab\extension\scenario\helpers\ScenarioHelper;
-use yii2lab\extension\code\filters\parser\DocCommentOnly;
-use yii2lab\extension\code\filters\parser\RemoveComment;
-use yii2lab\extension\code\filters\parser\RemoveDoubleEmptyLines;
-use yii2lab\extension\code\filters\parser\ToLine;
+use yii2rails\extension\code\entities\TokenEntity;
+use yii2rails\extension\scenario\collections\ScenarioCollection;
+use yii2rails\extension\scenario\helpers\ScenarioHelper;
+use yii2rails\extension\code\filters\parser\DocCommentOnly;
+use yii2rails\extension\code\filters\parser\RemoveComment;
+use yii2rails\extension\code\filters\parser\RemoveDoubleEmptyLines;
+use yii2rails\extension\code\filters\parser\ToLine;
 
 class TokenCollectionHelper {
 	

@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\scenario\base;
+namespace yii2rails\extension\scenario\base;
 
 use yii\base\InvalidArgumentException;
 use yii\helpers\ArrayHelper;
@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
 /**
  * Class BaseStrategyContext
  *
- * @package yii2lab\extension\scenario\base
+ * @package yii2rails\extension\scenario\base
  *
  * @property-read Object  $strategyInstance
  * @property-read array   $strategyDefinitions

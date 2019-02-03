@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\web\helpers;
+namespace yii2rails\extension\web\helpers;
 
 use InvalidArgumentException;
 use Yii;
-use yii2lab\domain\data\GetParams;
+use yii2rails\domain\data\GetParams;
 use xj\ua\UserAgent;
 use yii\web\View;
-use yii2lab\domain\data\Query;
+use yii2rails\domain\data\Query;
 
 class ClientHelper
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\core\domain\services\base;
+namespace yii2rails\extension\core\domain\services\base;
 
-use yii2lab\extension\core\domain\repositories\base\BaseCoreRepository;
-use yii2lab\domain\services\base\BaseService;
-use yii2lab\extension\common\helpers\ClassHelper;
+use yii2rails\extension\core\domain\repositories\base\BaseCoreRepository;
+use yii2rails\domain\services\base\BaseService;
+use yii2rails\extension\common\helpers\ClassHelper;
 
 /**
  * Class CoreBaseService
  *
- * @package yii2lab\domain\services
+ * @package yii2rails\domain\services
  *
  * @property BaseCoreRepository $repository
  */

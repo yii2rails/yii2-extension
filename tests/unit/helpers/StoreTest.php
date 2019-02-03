@@ -2,7 +2,7 @@
 namespace tests\unit\helpers;
 
 use yii2lab\test\Test\Unit;
-use yii2lab\extension\store\Store;
+use yii2rails\extension\store\Store;
 
 class StoreTest extends Unit
 {

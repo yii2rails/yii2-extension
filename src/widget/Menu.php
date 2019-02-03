@@ -1,5 +1,5 @@
 <?php
-namespace yii2lab\extension\widget;
+namespace yii2rails\extension\widget;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;

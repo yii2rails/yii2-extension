@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\session\repositories\base;
+namespace yii2rails\extension\session\repositories\base;
 
 use Yii;
 use yii\helpers\Inflector;
-use yii2lab\domain\interfaces\repositories\RepositoryInterface;
-use yii2lab\domain\repositories\BaseRepository;
+use yii2rails\domain\interfaces\repositories\RepositoryInterface;
+use yii2rails\domain\repositories\BaseRepository;
 
 abstract class BaseSessionRepository extends BaseRepository implements RepositoryInterface {
 	

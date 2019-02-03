@@ -1,17 +1,17 @@
 <?php
 
-namespace yii2lab\extension\jwt\interfaces\repositories;
+namespace yii2rails\extension\jwt\interfaces\repositories;
 
-use yii2lab\domain\interfaces\repositories\RepositoryInterface;
-use yii2lab\extension\jwt\entities\ProfileEntity;
-use yii2lab\extension\jwt\entities\TokenEntity;
+use yii2rails\domain\interfaces\repositories\RepositoryInterface;
+use yii2rails\extension\jwt\entities\ProfileEntity;
+use yii2rails\extension\jwt\entities\TokenEntity;
 
 /**
  * Interface TokenInterface
  * 
- * @package yii2lab\extension\jwt\interfaces\repositories
+ * @package yii2rails\extension\jwt\interfaces\repositories
  * 
- * @property-read \yii2lab\extension\jwt\Domain $domain
+ * @property-read \yii2rails\extension\jwt\Domain $domain
  */
 interface TokenInterface extends RepositoryInterface {
 

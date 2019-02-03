@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\enum\base;
+namespace yii2rails\extension\enum\base;
 
 use yii\base\InvalidArgumentException;
 use yii\helpers\ArrayHelper;
-use yii2lab\extension\common\helpers\ReflectionHelper;
+use yii2rails\extension\common\helpers\ReflectionHelper;
 
 class BaseEnum {
 	

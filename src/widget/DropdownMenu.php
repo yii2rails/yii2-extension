@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\widget;
+namespace yii2rails\extension\widget;
 
 class DropdownMenu extends Menu
 {

@@ -2,10 +2,10 @@
 
 namespace tests\functional\git\services;
 
-use yii2lab\domain\helpers\DomainHelper;
-use yii2lab\extension\git\domain\entities\BranchEntity;
-use yii2lab\extension\git\domain\entities\GitEntity;
-use yii2lab\extension\git\domain\entities\RemoteEntity;
+use yii2rails\domain\helpers\DomainHelper;
+use yii2rails\extension\git\domain\entities\BranchEntity;
+use yii2rails\extension\git\domain\entities\GitEntity;
+use yii2rails\extension\git\domain\entities\RemoteEntity;
 use yii2lab\test\Test\Unit;
 
 class GitTest extends Unit {
@@ -15,8 +15,8 @@ class GitTest extends Unit {
 	protected function _before() {
 		parent::_before();
 		DomainHelper::forgeDomains([
-			'git' => 'yii2lab\extension\git\domain\Domain',
-			'package' => 'yii2lab\extension\package\domain\Domain',
+			'git' => 'yii2rails\extension\git\domain\Domain',
+			'package' => 'yii2rails\extension\package\domain\Domain',
 		]);
 	}
 	

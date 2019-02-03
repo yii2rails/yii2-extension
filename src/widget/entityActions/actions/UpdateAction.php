@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\widget\entityActions\actions;
+namespace yii2rails\extension\widget\entityActions\actions;
 
 class UpdateAction extends BaseAction {
 	

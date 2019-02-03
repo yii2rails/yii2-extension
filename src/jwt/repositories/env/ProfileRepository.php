@@ -1,19 +1,19 @@
 <?php
 
-namespace yii2lab\extension\jwt\repositories\env;
+namespace yii2rails\extension\jwt\repositories\env;
 
-use yii2lab\app\domain\helpers\EnvService;
-use yii2lab\domain\data\Query;
-use yii2lab\extension\arrayTools\traits\ArrayReadTrait;
-use yii2lab\extension\jwt\interfaces\repositories\ProfileInterface;
-use yii2lab\domain\repositories\BaseRepository;
+use yii2rails\app\domain\helpers\EnvService;
+use yii2rails\domain\data\Query;
+use yii2rails\extension\arrayTools\traits\ArrayReadTrait;
+use yii2rails\extension\jwt\interfaces\repositories\ProfileInterface;
+use yii2rails\domain\repositories\BaseRepository;
 
 /**
  * Class ProfileRepository
  * 
- * @package yii2lab\extension\jwt\repositories\memory
+ * @package yii2rails\extension\jwt\repositories\memory
  * 
- * @property-read \yii2lab\extension\jwt\Domain $domain
+ * @property-read \yii2rails\extension\jwt\Domain $domain
  */
 class ProfileRepository extends BaseRepository implements ProfileInterface {
 

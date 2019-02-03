@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2lab\extension\code\entities;
+namespace yii2rails\extension\code\entities;
 
-use yii2lab\domain\BaseEntity;
-use yii2lab\extension\code\enums\AccessEnum;
+use yii2rails\domain\BaseEntity;
+use yii2rails\extension\code\enums\AccessEnum;
 
 /**
  * Class ClassVariableEntity
  *
- * @package yii2lab\extension\code\entities
+ * @package yii2rails\extension\code\entities
  *
  * @property string $name
  * @property string $access

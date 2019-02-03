@@ -1,17 +1,17 @@
 <?php
 
-namespace yii2lab\extension\package\domain\repositories\filedb;
+namespace yii2rails\extension\package\domain\repositories\filedb;
 
-use yii2lab\extension\arrayTools\repositories\base\BaseActiveDiscRepository;
-use yii2lab\extension\filedb\repositories\base\BaseActiveFiledbRepository;
-use yii2lab\extension\package\domain\interfaces\repositories\GroupInterface;
+use yii2rails\extension\arrayTools\repositories\base\BaseActiveDiscRepository;
+use yii2rails\extension\filedb\repositories\base\BaseActiveFiledbRepository;
+use yii2rails\extension\package\domain\interfaces\repositories\GroupInterface;
 
 /**
  * Class GroupRepository
  * 
- * @package yii2lab\extension\package\domain\repositories\filedb
+ * @package yii2rails\extension\package\domain\repositories\filedb
  * 
- * @property-read \yii2lab\extension\package\domain\Domain $domain
+ * @property-read \yii2rails\extension\package\domain\Domain $domain
  */
 class GroupRepository extends BaseActiveDiscRepository implements GroupInterface {
 

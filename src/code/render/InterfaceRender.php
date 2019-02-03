@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\code\render;
+namespace yii2rails\extension\code\render;
 
-use yii2lab\extension\code\entities\ClassEntity;
-use yii2lab\extension\code\entities\InterfaceEntity;
+use yii2rails\extension\code\entities\ClassEntity;
+use yii2rails\extension\code\entities\InterfaceEntity;
 
 class InterfaceRender extends BaseRender
 {

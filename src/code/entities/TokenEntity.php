@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\code\entities;
+namespace yii2rails\extension\code\entities;
 
-use yii2lab\domain\BaseEntity;
+use yii2rails\domain\BaseEntity;
 
 /**
  * Class TokenEntity
  *
- * @package yii2lab\extension\code\entities
+ * @package yii2rails\extension\code\entities
  *
  * @property integer $type
  * @property mixed $value

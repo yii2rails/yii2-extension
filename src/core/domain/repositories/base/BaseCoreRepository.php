@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\core\domain\repositories\base;
+namespace yii2rails\extension\core\domain\repositories\base;
 
 use yii\helpers\ArrayHelper;
 use yii\web\ServerErrorHttpException;
 use yii\web\UnauthorizedHttpException;
-use yii2lab\extension\core\domain\helpers\CoreHelper;
-use yii2lab\domain\exceptions\UnprocessableEntityHttpException;
-use yii2lab\extension\web\helpers\ClientHelper;
+use yii2rails\extension\core\domain\helpers\CoreHelper;
+use yii2rails\domain\exceptions\UnprocessableEntityHttpException;
+use yii2rails\extension\web\helpers\ClientHelper;
 use yii2lab\rest\domain\entities\RequestEntity;
 use yii2lab\rest\domain\entities\ResponseEntity;
 use yii2lab\rest\domain\repositories\base\BaseRestRepository;

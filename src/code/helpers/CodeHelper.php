@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\code\helpers;
+namespace yii2rails\extension\code\helpers;
 
-use yii2lab\extension\code\entities\CodeEntity;
-use yii2lab\extension\code\render\CodeRender;
-use yii2lab\extension\yii\helpers\FileHelper;
-use yii2lab\extension\store\Store;
+use yii2rails\extension\code\entities\CodeEntity;
+use yii2rails\extension\code\render\CodeRender;
+use yii2rails\extension\yii\helpers\FileHelper;
+use yii2rails\extension\store\Store;
 
 class CodeHelper
 {

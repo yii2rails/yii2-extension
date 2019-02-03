@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\common\exceptions;
+namespace yii2rails\extension\common\exceptions;
 
 use Throwable;
 use yii\base\Exception;

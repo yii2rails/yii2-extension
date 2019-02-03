@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\git\domain\entities;
+namespace yii2rails\extension\git\domain\entities;
 
-use yii2lab\domain\BaseEntity;
+use yii2rails\domain\BaseEntity;
 
 /**
  * Class BranchEntity
  * 
- * @package yii2lab\extension\git\domain\entities
+ * @package yii2rails\extension\git\domain\entities
  * 
  * @property $name
  * @property $remote

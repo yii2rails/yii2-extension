@@ -1,16 +1,16 @@
 <?php
 
-namespace yii2lab\extension\code\entities;
+namespace yii2rails\extension\code\entities;
 
 use yii\helpers\Inflector;
-use yii2lab\domain\BaseEntity;
-use yii2lab\domain\helpers\Helper;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\domain\BaseEntity;
+use yii2rails\domain\helpers\Helper;
+use yii2rails\extension\yii\helpers\FileHelper;
 
 /**
  * Class ClassEntity
  *
- * @package yii2lab\extension\code\entities
+ * @package yii2rails\extension\code\entities
  *
  * @property string $name
  * @property boolean $is_abstract

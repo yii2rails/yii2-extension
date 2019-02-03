@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\package\console\controllers;
+namespace yii2rails\extension\package\console\controllers;
 
-use yii2lab\domain\data\Query;
-use yii2lab\extension\console\helpers\Alert;
-use yii2lab\extension\console\helpers\input\Enter;
-use yii2lab\extension\console\helpers\Output;
-use yii2lab\extension\console\base\Controller;
-use yii2lab\extension\package\domain\entities\ConfigEntity;
-use yii2lab\extension\package\helpers\ConfigHelper;
-use yii2lab\extension\package\helpers\PackageHelper;
+use yii2rails\domain\data\Query;
+use yii2rails\extension\console\helpers\Alert;
+use yii2rails\extension\console\helpers\input\Enter;
+use yii2rails\extension\console\helpers\Output;
+use yii2rails\extension\console\base\Controller;
+use yii2rails\extension\package\domain\entities\ConfigEntity;
+use yii2rails\extension\package\helpers\ConfigHelper;
+use yii2rails\extension\package\helpers\PackageHelper;
 
 class PackageController extends Controller {
 	

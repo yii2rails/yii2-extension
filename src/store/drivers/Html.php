@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2lab\extension\store\drivers;
+namespace yii2rails\extension\store\drivers;
 
-use yii2lab\extension\code\helpers\generator\FileGeneratorHelper;
-use yii2lab\extension\common\helpers\StringHelper;
-use yii2lab\extension\store\interfaces\DriverInterface;
+use yii2rails\extension\code\helpers\generator\FileGeneratorHelper;
+use yii2rails\extension\common\helpers\StringHelper;
+use yii2rails\extension\store\interfaces\DriverInterface;
 use yii\helpers\VarDumper;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\extension\yii\helpers\FileHelper;
 use yii2mod\helpers\ArrayHelper;
 
 class Html implements DriverInterface

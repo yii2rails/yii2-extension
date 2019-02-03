@@ -1,19 +1,19 @@
 <?php
 
-namespace yii2lab\extension\activeRecord\repositories\base;
+namespace yii2rails\extension\activeRecord\repositories\base;
 
 use yii\db\Exception;
-use yii2lab\domain\BaseEntity;
-use yii2lab\domain\data\Query;
-use yii2lab\domain\exceptions\BadQueryHttpException;
-use yii2lab\domain\interfaces\repositories\CrudInterface;
+use yii2rails\domain\BaseEntity;
+use yii2rails\domain\data\Query;
+use yii2rails\domain\exceptions\BadQueryHttpException;
+use yii2rails\domain\interfaces\repositories\CrudInterface;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\web\NotFoundHttpException;
 use yii\helpers\ArrayHelper;
-use yii2lab\domain\interfaces\repositories\SearchInterface;
-use yii2lab\extension\activeRecord\helpers\SearchHelper;
-use yii2lab\extension\activeRecord\traits\ActiveRepositoryTrait;
+use yii2rails\domain\interfaces\repositories\SearchInterface;
+use yii2rails\extension\activeRecord\helpers\SearchHelper;
+use yii2rails\extension\activeRecord\traits\ActiveRepositoryTrait;
 
 abstract class BaseActiveArRepository extends BaseArRepository implements CrudInterface, SearchInterface {
 	
@@ -92,7 +92,7 @@ abstract class BaseActiveArRepository extends BaseArRepository implements CrudIn
 		} else {
 			$condition = $entity->toArray();
 			$uniqueFields = ArrayHelper::getValue($this->uniqueFields(), '0', []);
-			$condition = \yii2lab\extension\yii\helpers\ArrayHelper::extractByKeys($condition, $uniqueFields);
+			$condition = \yii2rails\extension\yii\helpers\ArrayHelper::extractByKeys($condition, $uniqueFields);
 		}
 		$model = $this->findOne($condition);
 		$this->massAssignment($model, $entity, self::SCENARIO_UPDATE);

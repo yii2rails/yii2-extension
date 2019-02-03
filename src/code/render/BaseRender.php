@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\code\render;
+namespace yii2rails\extension\code\render;
 
-use yii2lab\extension\scenario\base\BaseScenario;
-use yii2lab\domain\BaseEntity;
+use yii2rails\extension\scenario\base\BaseScenario;
+use yii2rails\domain\BaseEntity;
 
 abstract class BaseRender extends BaseScenario
 {

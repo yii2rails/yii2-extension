@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2lab\extension\scenario\collections;
+namespace yii2rails\extension\scenario\collections;
 
 use yii\base\BaseObject;
-use yii2lab\extension\scenario\base\BaseScenario;
-use yii2lab\extension\arrayTools\helpers\Collection;
-use yii2lab\domain\values\BaseValue;
-use yii2lab\extension\common\helpers\ClassHelper;
-use yii2lab\extension\common\helpers\Helper;
-use yii2lab\extension\scenario\exceptions\StopException;
+use yii2rails\extension\scenario\base\BaseScenario;
+use yii2rails\extension\arrayTools\helpers\Collection;
+use yii2rails\domain\values\BaseValue;
+use yii2rails\extension\common\helpers\ClassHelper;
+use yii2rails\extension\common\helpers\Helper;
+use yii2rails\extension\scenario\exceptions\StopException;
 
 class ScenarioCollection extends Collection {
 	

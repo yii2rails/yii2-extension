@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2lab\extension\package\domain\entities;
+namespace yii2rails\extension\package\domain\entities;
 
 use yii\helpers\ArrayHelper;
-use yii2lab\domain\BaseEntity;
+use yii2rails\domain\BaseEntity;
 
 /**
  * Class GroupEntity
  * 
- * @package yii2lab\extension\package\domain\entities
+ * @package yii2rails\extension\package\domain\entities
  *
  * @property $name
  * @property $provider_name

@@ -1,25 +1,25 @@
 <?php
 
-namespace yii2lab\extension\package\domain;
+namespace yii2rails\extension\package\domain;
 
-use yii2lab\domain\enums\Driver;
-use yii2lab\domain\helpers\DomainHelper;
+use yii2rails\domain\enums\Driver;
+use yii2rails\domain\helpers\DomainHelper;
 
 /**
  * Class Domain
  * 
- * @package yii2lab\extension\package\domain
- * @property-read \yii2lab\extension\package\domain\interfaces\services\PackageInterface $package
- * @property-read \yii2lab\extension\package\domain\interfaces\repositories\RepositoriesInterface $repositories
- * @property-read \yii2lab\extension\package\domain\interfaces\services\GroupInterface $group
- * @property-read \yii2lab\extension\package\domain\interfaces\services\ConfigInterface $config
+ * @package yii2rails\extension\package\domain
+ * @property-read \yii2rails\extension\package\domain\interfaces\services\PackageInterface $package
+ * @property-read \yii2rails\extension\package\domain\interfaces\repositories\RepositoriesInterface $repositories
+ * @property-read \yii2rails\extension\package\domain\interfaces\services\GroupInterface $group
+ * @property-read \yii2rails\extension\package\domain\interfaces\services\ConfigInterface $config
  */
-class Domain extends \yii2lab\domain\Domain {
+class Domain extends \yii2rails\domain\Domain {
 	
 	public function init() {
 		parent::init();
 		/*DomainHelper::forgeDomains([
-			'git' => 'yii2lab\extension\git\domain\Domain',
+			'git' => 'yii2rails\extension\git\domain\Domain',
 		]);*/
 	}
 	

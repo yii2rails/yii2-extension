@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\shell\base;
+namespace yii2rails\extension\shell\base;
 
-use yii2lab\extension\shell\exceptions\ShellException;
+use yii2rails\extension\shell\exceptions\ShellException;
 
 abstract class BaseShell {
 

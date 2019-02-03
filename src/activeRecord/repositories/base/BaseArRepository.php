@@ -1,21 +1,21 @@
 <?php
 
-namespace yii2lab\extension\activeRecord\repositories\base;
+namespace yii2rails\extension\activeRecord\repositories\base;
 
 use yii\base\InvalidArgumentException;
 use yii\base\Model;
 use yii\db\ActiveRecord;
 use yii\db\BaseActiveRecord;
 use yii\helpers\Inflector;
-use yii2lab\domain\BaseEntity;
-use yii2lab\domain\data\Query;
-use yii2lab\domain\exceptions\BadQueryHttpException;
+use yii2rails\domain\BaseEntity;
+use yii2rails\domain\data\Query;
+use yii2rails\domain\exceptions\BadQueryHttpException;
 use Yii;
 use yii\base\UnknownMethodException;
 use yii\web\NotFoundHttpException;
-use yii2lab\domain\repositories\BaseRepository;
-use yii2lab\extension\filedb\repositories\base\BaseActiveFiledbRepository;
-use yii2lab\extension\filedb\repositories\base\BaseFiledbRepository;
+use yii2rails\domain\repositories\BaseRepository;
+use yii2rails\extension\filedb\repositories\base\BaseActiveFiledbRepository;
+use yii2rails\extension\filedb\repositories\base\BaseFiledbRepository;
 use yii2mod\helpers\ArrayHelper;
 
 abstract class BaseArRepository extends BaseRepository {
@@ -86,7 +86,7 @@ abstract class BaseArRepository extends BaseRepository {
 	
 	private function getParentModelClassName() {
 		if($this instanceof BaseFiledbRepository || $this instanceof BaseActiveFiledbRepository) {
-			return 'yii2lab\extension\filedb\base\FiledbActiveRecord';
+			return 'yii2rails\extension\filedb\base\FiledbActiveRecord';
 		} else {
 			return 'yii\db\ActiveRecord';
 		}

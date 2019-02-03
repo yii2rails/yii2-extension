@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\markdown\widgets\helpers;
+namespace yii2rails\extension\markdown\widgets\helpers;
 
-use yii2lab\extension\common\helpers\StringHelper;
-use yii2lab\extension\yii\helpers\Html;
+use yii2rails\extension\common\helpers\StringHelper;
+use yii2rails\extension\yii\helpers\Html;
 
 class ArticleMenuHelper {
 	

@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2lab\extension\pagination\helpers;
+namespace yii2rails\extension\pagination\helpers;
 
 use Yii;
 use yii\data\BaseDataProvider;
-use yii2lab\domain\data\Query;
-use yii2lab\extension\pagination\data\VirtualArrayDataProvider;
-use yii2lab\extension\yii\helpers\ArrayHelper;
+use yii2rails\domain\data\Query;
+use yii2rails\extension\pagination\data\VirtualArrayDataProvider;
+use yii2rails\extension\yii\helpers\ArrayHelper;
 
 class DataProviderFactory {
 	

@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\jwt\entities;
+namespace yii2rails\extension\jwt\entities;
 
-use yii2lab\domain\BaseEntity;
+use yii2rails\domain\BaseEntity;
 
 /**
  * Class TokenEntity
  * 
- * @package yii2lab\extension\jwt\entities
+ * @package yii2rails\extension\jwt\entities
  *
  * property $id integer
  * @property $token string

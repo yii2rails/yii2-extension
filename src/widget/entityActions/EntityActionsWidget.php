@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2lab\extension\widget\entityActions;
+namespace yii2rails\extension\widget\entityActions;
 
 use Yii;
 use yii\base\Widget;
-use yii2lab\extension\web\enums\HtmlEnum;
-use yii2lab\extension\widget\entityActions\actions\BaseAction;
-use yii2lab\extension\widget\entityActions\actions\DeleteAction;
-use yii2lab\extension\widget\entityActions\actions\UpdateAction;
-use yii2lab\extension\yii\helpers\ArrayHelper;
+use yii2rails\extension\web\enums\HtmlEnum;
+use yii2rails\extension\widget\entityActions\actions\BaseAction;
+use yii2rails\extension\widget\entityActions\actions\DeleteAction;
+use yii2rails\extension\widget\entityActions\actions\UpdateAction;
+use yii2rails\extension\yii\helpers\ArrayHelper;
 
 class EntityActionsWidget extends Widget {
 	

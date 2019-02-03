@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\yii\widgets;
+namespace yii2rails\extension\yii\widgets;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use yii2lab\extension\yii\widgets\detailViewFormats\BooleanFormat;
-use yii2lab\extension\yii\widgets\detailViewFormats\LinkFormat;
-use yii2lab\extension\yii\widgets\detailViewFormats\ListFormat;
-use yii2lab\extension\common\helpers\ClassHelper;
+use yii2rails\extension\yii\widgets\detailViewFormats\BooleanFormat;
+use yii2rails\extension\yii\widgets\detailViewFormats\LinkFormat;
+use yii2rails\extension\yii\widgets\detailViewFormats\ListFormat;
+use yii2rails\extension\common\helpers\ClassHelper;
 use yii2module\lang\domain\helpers\LangHelper;
 
 class DetailView extends \yii\widgets\DetailView {

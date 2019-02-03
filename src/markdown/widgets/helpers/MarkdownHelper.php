@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\markdown\widgets\helpers;
+namespace yii2rails\extension\markdown\widgets\helpers;
 
 use Yii;
 use Michelf\MarkdownExtra;

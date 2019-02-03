@@ -1,19 +1,19 @@
 <?php
 
-namespace yii2lab\extension\core\services;
+namespace yii2rails\extension\core\services;
 
 use Yii;
 use yii\web\BadRequestHttpException;
 use yii\web\UnauthorizedHttpException;
-use yii2lab\domain\services\base\BaseService;
+use yii2rails\domain\services\base\BaseService;
 use yii2lab\rest\domain\entities\RequestEntity;
-use yii2lab\extension\web\enums\HttpMethodEnum;
+use yii2rails\extension\web\enums\HttpMethodEnum;
 use yii2lab\rest\domain\helpers\MiscHelper;
 use yii2module\account\domain\v2\helpers\AuthHelper;
 
 /**
  * Class ClientService
- * @package yii2lab\extension\core\services
+ * @package yii2rails\extension\core\services
  *
  * @deprecated
  */

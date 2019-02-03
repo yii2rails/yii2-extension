@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2lab\extension\code\render;
+namespace yii2rails\extension\code\render;
 
-use yii2lab\extension\code\entities\ClassEntity;
-use yii2lab\extension\code\entities\ClassUseEntity;
+use yii2rails\extension\code\entities\ClassEntity;
+use yii2rails\extension\code\entities\ClassUseEntity;
 
 /**
  * Class UseRender
  *
- * @package yii2lab\extension\code\render
+ * @package yii2rails\extension\code\render
  *
  * @property ClassEntity $entity
  */

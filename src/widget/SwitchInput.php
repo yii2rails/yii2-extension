@@ -6,7 +6,7 @@
  * @version 3.4.0
  */
 
-namespace yii2lab\extension\widget;
+namespace yii2rails\extension\widget;
 
 use Yii;
 use yii\helpers\ArrayHelper;

@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\yii\helpers;
+namespace yii2rails\extension\yii\helpers;
 
 use Yii;
 use yii\helpers\BaseFileHelper;
-use yii2lab\extension\store\Store;
+use yii2rails\extension\store\Store;
 
 class FileHelper extends BaseFileHelper
 {

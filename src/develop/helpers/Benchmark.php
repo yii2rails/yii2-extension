@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\develop\helpers;
+namespace yii2rails\extension\develop\helpers;
 
 use yii\web\ServerErrorHttpException;
-use yii2lab\app\domain\helpers\EnvService;
-use yii2lab\extension\store\StoreFile;
-use yii2lab\extension\common\helpers\StringHelper;
+use yii2rails\app\domain\helpers\EnvService;
+use yii2rails\extension\store\StoreFile;
+use yii2rails\extension\common\helpers\StringHelper;
 
 class Benchmark {
 	

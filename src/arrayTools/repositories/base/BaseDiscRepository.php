@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\arrayTools\repositories\base;
+namespace yii2rails\extension\arrayTools\repositories\base;
 
 use Yii;
-use yii2lab\domain\repositories\BaseRepository;
-use yii2lab\extension\store\Store;
+use yii2rails\domain\repositories\BaseRepository;
+use yii2rails\extension\store\Store;
 
 abstract class BaseDiscRepository extends BaseRepository {
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\yii\widgets\detailViewFormats;
+namespace yii2rails\extension\yii\widgets\detailViewFormats;
 
-use yii2lab\extension\arrayTools\base\BaseCollection;
-use yii2lab\extension\widget\helpers\WidgetHelper;
-use yii2lab\extension\yii\helpers\ArrayHelper;
-use yii2lab\extension\yii\helpers\Html;
+use yii2rails\extension\arrayTools\base\BaseCollection;
+use yii2rails\extension\widget\helpers\WidgetHelper;
+use yii2rails\extension\yii\helpers\ArrayHelper;
+use yii2rails\extension\yii\helpers\Html;
 
 class LinkFormat {
 	

@@ -1,19 +1,19 @@
 <?php
 
-namespace yii2lab\extension\git\domain;
+namespace yii2rails\extension\git\domain;
 
-use yii2lab\domain\enums\Driver;
+use yii2rails\domain\enums\Driver;
 
 /**
  * Class Domain
  * 
- * @package yii2lab\extension\git\domain
- * @property-read \yii2lab\extension\git\domain\interfaces\services\GitInterface $git
- * @property-read \yii2lab\extension\git\domain\interfaces\repositories\RepositoriesInterface $repositories
- * @property-read \yii2lab\extension\git\domain\interfaces\services\RemoteInterface $remote
- * @property-read \yii2lab\extension\git\domain\interfaces\services\BranchInterface $branch
+ * @package yii2rails\extension\git\domain
+ * @property-read \yii2rails\extension\git\domain\interfaces\services\GitInterface $git
+ * @property-read \yii2rails\extension\git\domain\interfaces\repositories\RepositoriesInterface $repositories
+ * @property-read \yii2rails\extension\git\domain\interfaces\services\RemoteInterface $remote
+ * @property-read \yii2rails\extension\git\domain\interfaces\services\BranchInterface $branch
  */
-class Domain extends \yii2lab\domain\Domain {
+class Domain extends \yii2rails\domain\Domain {
 	
 	public function config() {
 		return [

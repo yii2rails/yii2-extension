@@ -2,7 +2,7 @@
 namespace tests\unit\helpers;
 
 use yii2lab\test\Test\Unit;
-use yii2lab\extension\menu\helpers\MenuHelper;
+use yii2rails\extension\menu\helpers\MenuHelper;
 use yii2lab\test\helpers\DataHelper;
 use yii2module\account\domain\v2\helpers\TestAuthHelper;
 

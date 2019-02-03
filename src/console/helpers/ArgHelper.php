@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\console\helpers;
+namespace yii2rails\extension\console\helpers;
 
 use yii\helpers\ArrayHelper;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\package\helpers;
+namespace yii2rails\extension\package\helpers;
 
-use yii2lab\extension\store\StoreFile;
+use yii2rails\extension\store\StoreFile;
 
 class ConfigFileHelper {
 	

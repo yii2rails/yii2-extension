@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\console\base;
+namespace yii2rails\extension\console\base;
 
 class Controller extends \yii\console\Controller
 {

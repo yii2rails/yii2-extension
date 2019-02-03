@@ -1,16 +1,16 @@
 <?php
 
-namespace yii2lab\extension\arrayTools\traits;
+namespace yii2rails\extension\arrayTools\traits;
 
-use yii2lab\domain\traits\repository\ReadOneTrait;
-use yii2lab\extension\arrayTools\helpers\ArrayIterator;
-use yii2lab\domain\data\Query;
-use yii2lab\domain\Domain;
+use yii2rails\domain\traits\repository\ReadOneTrait;
+use yii2rails\extension\arrayTools\helpers\ArrayIterator;
+use yii2rails\domain\data\Query;
+use yii2rails\domain\Domain;
 
 /**
  * Trait ArrayReadTrait
  *
- * @package yii2lab\extension\arrayTools\traits
+ * @package yii2rails\extension\arrayTools\traits
  *
  * @property string $id
  * @property string $primaryKey

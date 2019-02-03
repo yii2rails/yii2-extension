@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\common\helpers;
+namespace yii2rails\extension\common\helpers;
 
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\extension\yii\helpers\FileHelper;
 
 class DataHelper {
 	

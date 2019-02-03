@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\scenario\base;
+namespace yii2rails\extension\scenario\base;
 
-use yii2lab\extension\scenario\collections\ScenarioCollection;
+use yii2rails\extension\scenario\collections\ScenarioCollection;
 
 abstract class BaseGroupScenario extends BaseScenario {
 

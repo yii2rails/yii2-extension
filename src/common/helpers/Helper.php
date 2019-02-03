@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\common\helpers;
+namespace yii2rails\extension\common\helpers;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use yii2lab\app\domain\helpers\EnvService;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\app\domain\helpers\EnvService;
+use yii2rails\extension\yii\helpers\FileHelper;
 
 class Helper {
 	

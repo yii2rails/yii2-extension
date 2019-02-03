@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\arrayTools\base;
+namespace yii2rails\extension\arrayTools\base;
 
 use ArrayAccess;
 use Countable;

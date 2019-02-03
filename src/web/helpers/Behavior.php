@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\web\helpers;
+namespace yii2rails\extension\web\helpers;
 
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;

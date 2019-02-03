@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\code\helpers\generator;
+namespace yii2rails\extension\code\helpers\generator;
 
 use Yii;
-use yii2lab\extension\yii\helpers\ArrayHelper;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\extension\yii\helpers\ArrayHelper;
+use yii2rails\extension\yii\helpers\FileHelper;
 
 class FileGeneratorHelper {
 	

@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\scenario\base;
+namespace yii2rails\extension\scenario\base;
 
 use yii\base\BaseObject;
-use yii2lab\extension\common\helpers\ClassHelper;
-use yii2lab\extension\common\helpers\InstanceHelper;
+use yii2rails\extension\common\helpers\ClassHelper;
+use yii2rails\extension\common\helpers\InstanceHelper;
 
 /**
  * Class BaseStrategyContext
  *
- * @package yii2lab\extension\scenario\base
+ * @package yii2rails\extension\scenario\base
  *
  * @property-read Object $strategyInstance
  */

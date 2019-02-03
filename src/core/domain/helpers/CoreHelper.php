@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\core\domain\helpers;
+namespace yii2rails\extension\core\domain\helpers;
 
 use Yii;
 use yii\base\InvalidConfigException;
-use yii2lab\app\domain\helpers\EnvService;
-use yii2lab\extension\web\enums\HttpHeaderEnum;
+use yii2rails\app\domain\helpers\EnvService;
+use yii2rails\extension\web\enums\HttpHeaderEnum;
 use yii2module\account\domain\v2\helpers\AuthHelper;
 
 class CoreHelper {

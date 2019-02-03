@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\code\filters\parser;
+namespace yii2rails\extension\code\filters\parser;
 
-use yii2lab\extension\code\entities\TokenEntity;
+use yii2rails\extension\code\entities\TokenEntity;
 
 abstract class BaseRemove extends Base {
 	

@@ -1,7 +1,7 @@
 <?php
 
 use yii\web\View;
-use yii2lab\extension\widget\ajaxSelector\assets\SelectorAsset;
+use yii2rails\extension\widget\ajaxSelector\assets\SelectorAsset;
 
 SelectorAsset::register($this);
 

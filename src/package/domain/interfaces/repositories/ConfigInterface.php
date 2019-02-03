@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\package\domain\interfaces\repositories;
+namespace yii2rails\extension\package\domain\interfaces\repositories;
 
-use yii2lab\domain\interfaces\repositories\CrudInterface;
+use yii2rails\domain\interfaces\repositories\CrudInterface;
 
 /**
  * Interface ConfigInterface
  * 
- * @package yii2lab\extension\package\domain\interfaces\repositories
+ * @package yii2rails\extension\package\domain\interfaces\repositories
  * 
- * @property-read \yii2lab\extension\package\domain\Domain $domain
+ * @property-read \yii2rails\extension\package\domain\Domain $domain
  */
 interface ConfigInterface extends CrudInterface {
 

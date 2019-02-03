@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\common\helpers;
+namespace yii2rails\extension\common\helpers;
 
 use DateTime;
 use Yii;
 use yii\helpers\ArrayHelper;
-use yii2lab\domain\BaseEntity;
-use yii2lab\domain\helpers\types\BaseType;
-use yii2lab\domain\interfaces\ValueObjectInterface;
-use yii2lab\domain\values\TimeValue;
-use yii2lab\extension\web\enums\HttpHeaderEnum;
+use yii2rails\domain\BaseEntity;
+use yii2rails\domain\helpers\types\BaseType;
+use yii2rails\domain\interfaces\ValueObjectInterface;
+use yii2rails\domain\values\TimeValue;
+use yii2rails\extension\web\enums\HttpHeaderEnum;
 
 class TypeHelper {
 	
@@ -127,7 +127,7 @@ class TypeHelper {
 	}
 	
 	public static function getInstanceType($class) {
-		$class = 'yii2lab\domain\helpers\types\\' . ucfirst($class) . 'Type';
+		$class = 'yii2rails\domain\helpers\types\\' . ucfirst($class) . 'Type';
 		if(!class_exists($class)) {
 			return null;
 		}

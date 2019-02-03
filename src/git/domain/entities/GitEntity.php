@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2lab\extension\git\domain\entities;
+namespace yii2rails\extension\git\domain\entities;
 
-use yii2lab\domain\BaseEntity;
-use yii2lab\extension\yii\helpers\ArrayHelper;
+use yii2rails\domain\BaseEntity;
+use yii2rails\extension\yii\helpers\ArrayHelper;
 
 /**
  * Class GitEntity
  * 
- * @package yii2lab\extension\git\domain\entities
+ * @package yii2rails\extension\git\domain\entities
  * 
  * property $id
  * @property $dir

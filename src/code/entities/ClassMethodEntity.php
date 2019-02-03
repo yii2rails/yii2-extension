@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\code\entities;
+namespace yii2rails\extension\code\entities;
 
-use yii2lab\domain\BaseEntity;
-use yii2lab\domain\helpers\Helper;
-use yii2lab\extension\code\enums\AccessEnum;
+use yii2rails\domain\BaseEntity;
+use yii2rails\domain\helpers\Helper;
+use yii2rails\extension\code\enums\AccessEnum;
 
 /**
  * Class ClassMethodEntity
  *
- * @package yii2lab\extension\code\entities
+ * @package yii2rails\extension\code\entities
  *
  * @property string $name
  * @property string $access

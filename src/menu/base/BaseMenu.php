@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\menu\base;
+namespace yii2rails\extension\menu\base;
 
 use Yii;
 

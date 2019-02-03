@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2lab\extension\package\helpers;
+namespace yii2rails\extension\package\helpers;
 
 use Yii;
-use yii2lab\app\domain\filters\env\LoadConfig;
-use yii2lab\extension\store\StoreFile;
-use yii2lab\extension\yii\helpers\ArrayHelper;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\app\domain\filters\env\LoadConfig;
+use yii2rails\extension\store\StoreFile;
+use yii2rails\extension\yii\helpers\ArrayHelper;
+use yii2rails\extension\yii\helpers\FileHelper;
 use yii2module\vendor\domain\helpers\GitShell;
 
 class ConfigHelper {

@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2lab\extension\arrayTools\helpers;
+namespace yii2rails\extension\arrayTools\helpers;
 
 use yii\web\NotFoundHttpException;
-use yii2lab\extension\scenario\collections\ScenarioCollection;
-use yii2lab\extension\scenario\helpers\ScenarioHelper;
-use yii2lab\domain\data\Query;
-use yii2lab\extension\common\helpers\ReflectionHelper;
+use yii2rails\extension\scenario\collections\ScenarioCollection;
+use yii2rails\extension\scenario\helpers\ScenarioHelper;
+use yii2rails\domain\data\Query;
+use yii2rails\extension\common\helpers\ReflectionHelper;
 
 class ArrayIterator  {
 	
@@ -59,7 +59,7 @@ class ArrayIterator  {
 		foreach($allFilters as $filterName) {
 			if(in_array($filterName, $filters)) {
 				$filterConfig = [
-					'class' => 'yii2lab\extension\arrayTools\filters\iterator\\' . ucfirst($filterName),
+					'class' => 'yii2rails\extension\arrayTools\filters\iterator\\' . ucfirst($filterName),
 					'query' => $query,
 				];
 				$filterCollection = new ScenarioCollection([$filterConfig]);

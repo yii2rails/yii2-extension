@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\common\helpers;
+namespace yii2rails\extension\common\helpers;
 
 use function GuzzleHttp\Psr7\parse_query;
 use yii\helpers\ArrayHelper;

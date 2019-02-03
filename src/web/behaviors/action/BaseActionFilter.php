@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\web\behaviors\action;
+namespace yii2rails\extension\web\behaviors\action;
 
 use yii\base\Behavior;
-use yii2lab\domain\events\DataEvent;
-use yii2lab\extension\web\enums\ActionEventEnum;
+use yii2rails\domain\events\DataEvent;
+use yii2rails\extension\web\enums\ActionEventEnum;
 
 abstract class BaseActionFilter extends Behavior
 {

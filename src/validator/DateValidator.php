@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\validator;
+namespace yii2rails\extension\validator;
 
 use Yii;
 use yii\validators\Validator;
-use yii2lab\extension\common\helpers\Helper;
+use yii2rails\extension\common\helpers\Helper;
 
 class DateValidator extends Validator
 {

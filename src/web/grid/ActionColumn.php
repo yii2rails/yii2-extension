@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\web\grid;
+namespace yii2rails\extension\web\grid;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use yii2lab\extension\yii\helpers\Html;
+use yii2rails\extension\yii\helpers\Html;
 use yii\helpers\Url;
 
 class ActionColumn extends \yii\grid\ActionColumn

@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\code\render;
+namespace yii2rails\extension\code\render;
 
-use yii2lab\extension\code\entities\CodeEntity;
+use yii2rails\extension\code\entities\CodeEntity;
 
 /**
  * Class CodeRender
  *
- * @package yii2lab\extension\code\render
+ * @package yii2rails\extension\code\render
  *
  * @property CodeEntity $entity
  */

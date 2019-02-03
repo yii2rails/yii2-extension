@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\scenario\base;
+namespace yii2rails\extension\scenario\base;
 
 use yii\base\BaseObject;
-use yii2lab\extension\scenario\interfaces\RunInterface;
+use yii2rails\extension\scenario\interfaces\RunInterface;
 
 abstract class BaseScenario extends BaseObject implements RunInterface {
 	

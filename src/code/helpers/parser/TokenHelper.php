@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\code\helpers\parser;
+namespace yii2rails\extension\code\helpers\parser;
 
-use yii2lab\extension\code\entities\TokenEntity;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\extension\code\entities\TokenEntity;
+use yii2rails\extension\yii\helpers\FileHelper;
 
 class TokenHelper
 {

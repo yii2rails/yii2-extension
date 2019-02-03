@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2lab\extension\console\helpers\input;
+namespace yii2rails\extension\console\helpers\input;
 
 use Yii;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
-use yii2lab\extension\console\helpers\Output;
+use yii2rails\extension\console\helpers\Output;
 
 class Enter {
 	

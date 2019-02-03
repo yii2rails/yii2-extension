@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\queue\drivers\file;
+namespace yii2rails\extension\queue\drivers\file;
 
 class Queue extends \yii\queue\file\Queue {
 	

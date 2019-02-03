@@ -1,17 +1,17 @@
 <?php
 
-namespace yii2lab\extension\core\domain\repositories\rest;
+namespace yii2rails\extension\core\domain\repositories\rest;
 
 use Yii;
-use yii2lab\app\domain\helpers\EnvService;
-use yii2lab\domain\exceptions\UnprocessableEntityHttpException;
+use yii2rails\app\domain\helpers\EnvService;
+use yii2rails\domain\exceptions\UnprocessableEntityHttpException;
 use yii\web\ServerErrorHttpException;
 use yii2lab\rest\domain\repositories\base\BaseRestRepository;
 
 /**
  * Class ClientRepository
  *
- * @package yii2lab\extension\core\domain\repositories\rest
+ * @package yii2rails\extension\core\domain\repositories\rest
  *
  * @deprecated
  */

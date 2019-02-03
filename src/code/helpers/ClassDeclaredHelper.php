@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\code\helpers;
+namespace yii2rails\extension\code\helpers;
 
 use yii\base\InvalidArgumentException;
 use yii\helpers\ArrayHelper;

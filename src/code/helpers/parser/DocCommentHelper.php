@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\code\helpers\parser;
+namespace yii2rails\extension\code\helpers\parser;
 
 class DocCommentHelper
 {

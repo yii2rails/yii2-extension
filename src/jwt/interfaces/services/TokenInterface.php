@@ -1,18 +1,18 @@
 <?php
 
-namespace yii2lab\extension\jwt\interfaces\services;
+namespace yii2rails\extension\jwt\interfaces\services;
 
-use yii2lab\extension\jwt\entities\AuthenticationEntity;
-use yii2lab\extension\jwt\entities\TokenEntity;
+use yii2rails\extension\jwt\entities\AuthenticationEntity;
+use yii2rails\extension\jwt\entities\TokenEntity;
 use yii2module\account\domain\v2\entities\LoginEntity;
 
 /**
  * Interface TokenInterface
  * 
- * @package yii2lab\extension\jwt\interfaces\services
+ * @package yii2rails\extension\jwt\interfaces\services
  * 
- * @property-read \yii2lab\extension\jwt\Domain $domain
- * @property-read \yii2lab\extension\jwt\interfaces\repositories\TokenInterface $repository
+ * @property-read \yii2rails\extension\jwt\Domain $domain
+ * @property-read \yii2rails\extension\jwt\interfaces\repositories\TokenInterface $repository
  */
 interface TokenInterface {
 

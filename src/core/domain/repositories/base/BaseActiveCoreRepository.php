@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\core\domain\repositories\base;
+namespace yii2rails\extension\core\domain\repositories\base;
 
 use Yii;
 use yii\web\NotFoundHttpException;
-use yii2lab\domain\BaseEntity;
-use yii2lab\domain\data\Query;
-use yii2lab\domain\data\query\Rest;
-use yii2lab\domain\interfaces\repositories\CrudInterface;
+use yii2rails\domain\BaseEntity;
+use yii2rails\domain\data\Query;
+use yii2rails\domain\data\query\Rest;
+use yii2rails\domain\interfaces\repositories\CrudInterface;
 
 class BaseActiveCoreRepository extends BaseCoreRepository implements CrudInterface {
 	

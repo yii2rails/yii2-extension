@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2lab\extension\common\helpers;
+namespace yii2rails\extension\common\helpers;
 
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\base\InvalidConfigException;
 use yii\web\ServerErrorHttpException;
-use yii2lab\extension\common\exceptions\ClassInstanceException;
+use yii2rails\extension\common\exceptions\ClassInstanceException;
 
 class InstanceHelper {
 	

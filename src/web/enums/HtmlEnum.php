@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\web\enums;
+namespace yii2rails\extension\web\enums;
 
-use yii2lab\extension\enum\base\BaseEnum;
+use yii2rails\extension\enum\base\BaseEnum;
 
 class HtmlEnum extends BaseEnum {
 	

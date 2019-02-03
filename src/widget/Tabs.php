@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\widget;
+namespace yii2rails\extension\widget;
 
 use yii\base\Widget;
 use yii\bootstrap\Nav;
-use yii2lab\extension\menu\helpers\MenuHelper;
+use yii2rails\extension\menu\helpers\MenuHelper;
 
 /**
  * Class Tabs
  *
- * @package yii2lab\extension\widget
+ * @package yii2rails\extension\widget
  *
  * @deprecated
  */

@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\enum\enums;
+namespace yii2rails\extension\enum\enums;
 
-use yii2lab\extension\enum\base\BaseEnum;
+use yii2rails\extension\enum\base\BaseEnum;
 
 class TimeEnum extends BaseEnum {
 	

@@ -19,7 +19,7 @@ oExamlpe
 return [
 	'modules' => [
 		// ...
-		'extension' => 'yii2lab\extension\frontend\Module',
+		'extension' => 'yii2rails\extension\frontend\Module',
 		// ...
 	],
 ];
@@ -31,7 +31,7 @@ return [
 return [
 	'modules' => [
 		// ...
-		'extension' => 'yii2lab\extension\backend\Module',
+		'extension' => 'yii2rails\extension\backend\Module',
 		// ...
 	],
 ];
@@ -43,7 +43,7 @@ return [
 return [
 	'modules' => [
 		// ...
-		'extension' => 'yii2lab\extension\api\Module',
+		'extension' => 'yii2rails\extension\api\Module',
 		// ...
 		'components' => [
             'urlManager' => [
@@ -64,7 +64,7 @@ return [
 return [
 	'modules' => [
 		// ...
-		'extension' => 'yii2lab\extension\console\Module',
+		'extension' => 'yii2rails\extension\console\Module',
 		// ...
 	],
 ];
@@ -76,7 +76,7 @@ return [
 return [
 	'components' => [
 		// ...
-		'extension' => 'yii2lab\extension\domain\Domain',
+		'extension' => 'yii2rails\extension\domain\Domain',
 		// ...
 	],
 ];

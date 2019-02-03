@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\markdown\widgets\filters;
+namespace yii2rails\extension\markdown\widgets\filters;
 
-use yii2lab\extension\scenario\base\BaseScenario;
-use yii2lab\extension\markdown\widgets\helpers\HighlightHelper;
+use yii2rails\extension\scenario\base\BaseScenario;
+use yii2rails\extension\markdown\widgets\helpers\HighlightHelper;
 
 class CodeFilter extends BaseScenario {
 

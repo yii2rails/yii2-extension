@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\yuml\widgets;
+namespace yii2rails\extension\yuml\widgets;
 
 use yii\base\Widget;
 use yii\helpers\Html;
-use yii2lab\extension\yuml\helpers\UmlHelper;
+use yii2rails\extension\yuml\helpers\UmlHelper;
 
 /**
  * Class UmlDiagram
  *
- * @package yii2lab\extension\yuml\widgets
+ * @package yii2rails\extension\yuml\widgets
  *
  * @example https://yuml.me/diagram/scruffy/usecase/samples
  */

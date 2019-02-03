@@ -1,7 +1,7 @@
 <?php
 namespace tests\unit;
 
-use yii2lab\extension\validator\DynamicModel;
+use yii2rails\extension\validator\DynamicModel;
 use yii2lab\test\Test\Unit;
 
 class ValidatorTest extends Unit

@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\web\traits;
+namespace yii2rails\extension\web\traits;
 
-use yii2lab\extension\web\helpers\ControllerHelper;
+use yii2rails\extension\web\helpers\ControllerHelper;
 
 trait ActionEventTrait
 {

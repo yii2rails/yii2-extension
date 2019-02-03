@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\scenario\exceptions;
+namespace yii2rails\extension\scenario\exceptions;
 
 use Exception;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\yii\widgets\detailViewFormats;
+namespace yii2rails\extension\yii\widgets\detailViewFormats;
 
 abstract class BaseFormat {
 	

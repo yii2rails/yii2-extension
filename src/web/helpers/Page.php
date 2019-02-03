@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\web\helpers;
+namespace yii2rails\extension\web\helpers;
 
 use Yii;
 use yii\helpers\Url;
-use yii2lab\extension\yii\helpers\FileHelper;
-use yii2lab\extension\yii\helpers\Html;
+use yii2rails\extension\yii\helpers\FileHelper;
+use yii2rails\extension\yii\helpers\Html;
 
 class Page {
 	

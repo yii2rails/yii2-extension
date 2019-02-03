@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\validator;
+namespace yii2rails\extension\validator;
 
 use Exception;
 use Yii;
 use yii\validators\Validator;
-use yii2lab\extension\validator\helpers\IinParser;
+use yii2rails\extension\validator\helpers\IinParser;
 
 class IinValidator extends Validator {
 	

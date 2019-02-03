@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\encrypt\enums;
+namespace yii2rails\extension\encrypt\enums;
 
-use yii2lab\extension\enum\base\BaseEnum;
+use yii2rails\extension\enum\base\BaseEnum;
 
 /**
  * Class HashAlgoEnum
  * 
- * @package yii2lab\extension\encrypt\enums
+ * @package yii2rails\extension\encrypt\enums
  */
 class HashAlgoEnum extends BaseEnum {
 

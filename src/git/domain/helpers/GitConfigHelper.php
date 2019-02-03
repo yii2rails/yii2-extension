@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\git\domain\helpers;
+namespace yii2rails\extension\git\domain\helpers;
 
-use yii2lab\extension\common\helpers\StringHelper;
-use yii2lab\extension\git\domain\entities\RefEntity;
-use yii2lab\extension\package\domain\helpers\ConfigRepositoryHelper;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\extension\common\helpers\StringHelper;
+use yii2rails\extension\git\domain\entities\RefEntity;
+use yii2rails\extension\package\domain\helpers\ConfigRepositoryHelper;
+use yii2rails\extension\yii\helpers\FileHelper;
 use yii2mod\helpers\ArrayHelper;
 
 class GitConfigHelper {

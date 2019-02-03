@@ -9,7 +9,7 @@ $config = [
             'default' => [
                 'key' => 'qwerty123456',
                 'issuer_url' => 'http://api.extended.tpl/v1/auth',
-                'life_time' => \yii2lab\extension\enum\enums\TimeEnum::SECOND_PER_MINUTE * 20,
+                'life_time' => \yii2rails\extension\enum\enums\TimeEnum::SECOND_PER_MINUTE * 20,
                 'allowed_algs' => ['HS256', 'SHA512', 'HS384'],
                 'default_alg' => 'HS256',
                 'audience' => ["http://api.core.yii"],
@@ -45,7 +45,7 @@ EOD
 			        ,
 		        ],
 		        'issuer_url' => 'http://api.extended.tpl/v1/auth',
-		        'life_time' => \yii2lab\extension\enum\enums\TimeEnum::SECOND_PER_MINUTE * 20,
+		        'life_time' => \yii2rails\extension\enum\enums\TimeEnum::SECOND_PER_MINUTE * 20,
 		        'allowed_algs' => ['HS256', 'SHA512', 'HS384', 'RS256'], // add RS256 alg
 		        'default_alg' => 'RS256', // set default alg
 		        'audience' => ["http://api.core.yii"],

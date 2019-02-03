@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\widget\helpers;
+namespace yii2rails\extension\widget\helpers;
 
-use yii2lab\extension\package\domain\entities\ProviderEntity;
+use yii2rails\extension\package\domain\entities\ProviderEntity;
 use yii2module\vendor\domain\entities\RepoEntity;
 
 class WidgetHelper {

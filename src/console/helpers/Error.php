@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\console\helpers;
+namespace yii2rails\extension\console\helpers;
 
 use yii\console\ExitCode;
 use yii\helpers\Console;
@@ -91,7 +91,7 @@ class Error {
 			return $message;
 		}
 
-		return sprintf("\x1b[%sm", implode(';', array_map('yii2lab\extension\console\helpers\Error::getStyleCode', $styles))) . $message . "\x1b[0m";
+		return sprintf("\x1b[%sm", implode(';', array_map('yii2rails\extension\console\helpers\Error::getStyleCode', $styles))) . $message . "\x1b[0m";
 	}
 
 }

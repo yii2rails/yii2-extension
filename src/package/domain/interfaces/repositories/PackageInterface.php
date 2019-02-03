@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\package\domain\interfaces\repositories;
+namespace yii2rails\extension\package\domain\interfaces\repositories;
 
-use yii2lab\domain\interfaces\repositories\ReadInterface;
+use yii2rails\domain\interfaces\repositories\ReadInterface;
 
 /**
  * Interface PackageInterface
  * 
- * @package yii2lab\extension\package\domain\interfaces\repositories
+ * @package yii2rails\extension\package\domain\interfaces\repositories
  * 
- * @property-read \yii2lab\extension\package\domain\Domain $domain
+ * @property-read \yii2rails\extension\package\domain\Domain $domain
  */
 interface PackageInterface extends ReadInterface {
 

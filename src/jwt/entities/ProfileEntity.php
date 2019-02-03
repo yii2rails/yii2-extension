@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2lab\extension\jwt\entities;
+namespace yii2rails\extension\jwt\entities;
 
-use yii2lab\domain\BaseEntity;
-use yii2lab\extension\enum\enums\TimeEnum;
+use yii2rails\domain\BaseEntity;
+use yii2rails\extension\enum\enums\TimeEnum;
 
 /**
  * Class JwtProfileEntity
  *
- * @package yii2lab\extension\jwt\entities
+ * @package yii2rails\extension\jwt\entities
  *
  * @property $name string
  * @property $key string

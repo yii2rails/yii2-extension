@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\jwt\repositories\schema;
+namespace yii2rails\extension\jwt\repositories\schema;
 
-use yii2lab\domain\repositories\relations\BaseSchema;
+use yii2rails\domain\repositories\relations\BaseSchema;
 
 /**
  * Class ProfileSchema
  * 
- * @package yii2lab\extension\jwt\repositories\schema
+ * @package yii2rails\extension\jwt\repositories\schema
  * 
  */
 class ProfileSchema extends BaseSchema {

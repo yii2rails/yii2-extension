@@ -1,5 +1,5 @@
 <?php
-namespace yii2lab\extension\widget;
+namespace yii2rails\extension\widget;
 
 class Pills extends \yii\bootstrap\Tabs
 {

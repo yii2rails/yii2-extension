@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\jwt\helpers;
+namespace yii2rails\extension\jwt\helpers;
 
 use Firebase\JWT\JWT;
 use UnexpectedValueException;
-use yii2lab\extension\jwt\entities\JwtTokenEntity;
-use yii2lab\extension\jwt\entities\ProfileEntity;
+use yii2rails\extension\jwt\entities\JwtTokenEntity;
+use yii2rails\extension\jwt\entities\ProfileEntity;
 
 class JwtHelper
 {

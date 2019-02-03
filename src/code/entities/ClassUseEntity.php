@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\code\entities;
+namespace yii2rails\extension\code\entities;
 
-use yii2lab\domain\BaseEntity;
+use yii2rails\domain\BaseEntity;
 
 /**
  * Class ClassUseEntity
  *
- * @package yii2lab\extension\code\entities
+ * @package yii2rails\extension\code\entities
  *
  * @property string $name
  * @property string $as

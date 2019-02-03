@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\registry\base;
+namespace yii2rails\extension\registry\base;
 
-use yii2lab\extension\registry\interfaces\RegistryInterface;
+use yii2rails\extension\registry\interfaces\RegistryInterface;
 use yii2mod\helpers\ArrayHelper;
 
 abstract class BaseRegistry implements RegistryInterface {

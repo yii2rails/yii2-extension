@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2lab\extension\time\components;
+namespace yii2rails\extension\time\components;
 
 use Yii;
 use yii\base\Component;
 use DateTimeZone;
 use yii\web\BadRequestHttpException;
-use yii2lab\extension\web\enums\HttpHeaderEnum;
+use yii2rails\extension\web\enums\HttpHeaderEnum;
 
 class TimeComponent extends Component {
 	

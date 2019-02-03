@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\package\domain\entities;
+namespace yii2rails\extension\package\domain\entities;
 
 use yii\helpers\ArrayHelper;
-use yii2lab\domain\BaseEntity;
-use yii2lab\domain\data\Query;
+use yii2rails\domain\BaseEntity;
+use yii2rails\domain\data\Query;
 
 /**
  * Class ConfigEntity
  *
- * @package yii2lab\extension\package\domain\entities
+ * @package yii2rails\extension\package\domain\entities
  *
  * property $id
  * @property $dir

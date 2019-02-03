@@ -2,7 +2,7 @@
 namespace tests\unit\helpers;
 
 use yii2lab\test\Test\Unit;
-use yii2lab\extension\registry\helpers\Registry;
+use yii2rails\extension\registry\helpers\Registry;
 
 class RegistryTest extends Unit
 {

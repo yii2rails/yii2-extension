@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\code\filters\parser;
+namespace yii2rails\extension\code\filters\parser;
 
 class RemoveComment extends BaseRemove {
 	

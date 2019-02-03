@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\widget;
+namespace yii2rails\extension\widget;
 
 use yii\base\Widget;
-use yii2lab\extension\develop\helpers\Debug;
-use yii2lab\extension\enum\enums\TimeEnum;
-use yii2lab\extension\yii\helpers\Html;
+use yii2rails\extension\develop\helpers\Debug;
+use yii2rails\extension\enum\enums\TimeEnum;
+use yii2rails\extension\yii\helpers\Html;
 
 class RequestRunTime extends Widget {
 	

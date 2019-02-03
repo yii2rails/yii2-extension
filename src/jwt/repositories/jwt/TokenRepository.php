@@ -1,21 +1,21 @@
 <?php
 
-namespace yii2lab\extension\jwt\repositories\jwt;
+namespace yii2rails\extension\jwt\repositories\jwt;
 
-use yii2lab\extension\jwt\interfaces\repositories\TokenInterface;
-use yii2lab\domain\repositories\BaseRepository;
+use yii2rails\extension\jwt\interfaces\repositories\TokenInterface;
+use yii2rails\domain\repositories\BaseRepository;
 use yii\helpers\ArrayHelper;
-use yii2lab\extension\jwt\entities\TokenEntity;
-use yii2lab\extension\jwt\entities\ProfileEntity;
-use yii2lab\extension\jwt\helpers\JwtHelper;
+use yii2rails\extension\jwt\entities\TokenEntity;
+use yii2rails\extension\jwt\entities\ProfileEntity;
+use yii2rails\extension\jwt\helpers\JwtHelper;
 use Firebase\JWT\JWT;
 
 /**
  * Class TokenRepository
  * 
- * @package yii2lab\extension\jwt\repositories\jwt
+ * @package yii2rails\extension\jwt\repositories\jwt
  * 
- * @property-read \yii2lab\extension\jwt\Domain $domain
+ * @property-read \yii2rails\extension\jwt\Domain $domain
  */
 class TokenRepository extends BaseRepository implements TokenInterface {
 

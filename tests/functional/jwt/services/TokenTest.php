@@ -6,9 +6,9 @@ use Firebase\JWT\BeforeValidException;
 use Firebase\JWT\ExpiredException;
 use yii\base\InvalidArgumentException;
 use yii\helpers\ArrayHelper;
-use yii2lab\app\domain\helpers\EnvService;
-use yii2lab\extension\jwt\entities\TokenEntity;
-use yii2lab\extension\enum\enums\TimeEnum;
+use yii2rails\app\domain\helpers\EnvService;
+use yii2rails\extension\jwt\entities\TokenEntity;
+use yii2rails\extension\enum\enums\TimeEnum;
 use yii2lab\test\helpers\DataHelper;
 use yii2lab\test\Test\Unit;
 

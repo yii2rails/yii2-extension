@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\pagination\data;
+namespace yii2rails\extension\pagination\data;
 
 use yii\data\ArrayDataProvider;
 

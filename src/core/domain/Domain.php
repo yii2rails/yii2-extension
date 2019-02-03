@@ -1,17 +1,17 @@
 <?php
 
-namespace yii2lab\extension\core\domain;
+namespace yii2rails\extension\core\domain;
 
-use yii2lab\domain\enums\Driver;
+use yii2rails\domain\enums\Driver;
 
 /**
  * Class Domain
  *
- * @package yii2lab\extension\core\domain
+ * @package yii2rails\extension\core\domain
  *
  * @deprecated
  */
-class Domain extends \yii2lab\domain\Domain {
+class Domain extends \yii2rails\domain\Domain {
 	
 	public function config() {
 		return [

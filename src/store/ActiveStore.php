@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\store;
+namespace yii2rails\extension\store;
 
 use yii2mod\helpers\ArrayHelper;
 use yii\base\Component;

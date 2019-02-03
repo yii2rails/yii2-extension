@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\store\interfaces;
+namespace yii2rails\extension\store\interfaces;
 
 interface DriverInterface
 {

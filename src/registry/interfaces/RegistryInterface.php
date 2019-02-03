@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\registry\interfaces;
+namespace yii2rails\extension\registry\interfaces;
 
 interface RegistryInterface {
 	

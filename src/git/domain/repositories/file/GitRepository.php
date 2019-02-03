@@ -1,19 +1,19 @@
 <?php
 
-namespace yii2lab\extension\git\domain\repositories\file;
+namespace yii2rails\extension\git\domain\repositories\file;
 
-use yii2lab\extension\arrayTools\repositories\base\BaseActiveArrayRepository;
-use yii2lab\extension\git\domain\helpers\GitConfigHelper;
-use yii2lab\extension\git\domain\interfaces\repositories\GitInterface;
-use yii2lab\extension\git\domain\entities\GitEntity;
-use yii2lab\extension\package\domain\entities\PackageEntity;
+use yii2rails\extension\arrayTools\repositories\base\BaseActiveArrayRepository;
+use yii2rails\extension\git\domain\helpers\GitConfigHelper;
+use yii2rails\extension\git\domain\interfaces\repositories\GitInterface;
+use yii2rails\extension\git\domain\entities\GitEntity;
+use yii2rails\extension\package\domain\entities\PackageEntity;
 
 /**
  * Class GitRepository
  * 
- * @package yii2lab\extension\git\domain\repositories\file
+ * @package yii2rails\extension\git\domain\repositories\file
  * 
- * @property-read \yii2lab\extension\git\domain\Domain $domain
+ * @property-read \yii2rails\extension\git\domain\Domain $domain
  */
 class GitRepository extends BaseActiveArrayRepository implements GitInterface {
 

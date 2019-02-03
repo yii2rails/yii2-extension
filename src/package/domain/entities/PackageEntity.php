@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\package\domain\entities;
+namespace yii2rails\extension\package\domain\entities;
 
-use yii2lab\domain\BaseEntity;
-use yii2lab\extension\git\domain\entities\GitEntity;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\domain\BaseEntity;
+use yii2rails\extension\git\domain\entities\GitEntity;
+use yii2rails\extension\yii\helpers\FileHelper;
 
 /**
  * Class PackageEntity
  * 
- * @package yii2lab\extension\package\domain\entities
+ * @package yii2rails\extension\package\domain\entities
  * 
  * @property $id
  * @property $name

@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\validator\helpers;
+namespace yii2rails\extension\validator\helpers;
 
 use Exception;
 use Yii;

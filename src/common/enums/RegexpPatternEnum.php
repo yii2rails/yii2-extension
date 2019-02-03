@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\common\enums;
+namespace yii2rails\extension\common\enums;
 
-use yii2lab\extension\enum\base\BaseEnum;
+use yii2rails\extension\enum\base\BaseEnum;
 
 class RegexpPatternEnum extends BaseEnum {
 	

@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\yii\widgets\detailViewFormats;
+namespace yii2rails\extension\yii\widgets\detailViewFormats;
 
-use yii2lab\extension\yii\helpers\Html;
+use yii2rails\extension\yii\helpers\Html;
 
 class ListFormat {
 	

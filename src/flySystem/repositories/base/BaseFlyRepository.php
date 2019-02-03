@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\flySystem\repositories\base;
+namespace yii2rails\extension\flySystem\repositories\base;
 
 use creocoder\flysystem\Filesystem;
 use Yii;
-use yii2lab\app\domain\helpers\EnvService;
-use yii2lab\domain\repositories\BaseRepository;
+use yii2rails\app\domain\helpers\EnvService;
+use yii2rails\domain\repositories\BaseRepository;
 
 abstract class BaseFlyRepository extends BaseRepository {
 	

@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\markdown\widgets\filters;
+namespace yii2rails\extension\markdown\widgets\filters;
 
 use yii\helpers\Url;
-use yii2lab\extension\scenario\base\BaseScenario;
+use yii2rails\extension\scenario\base\BaseScenario;
 use yii2module\guide\module\helpers\NavigationHelper;
 
 class LinkFilter extends BaseScenario {

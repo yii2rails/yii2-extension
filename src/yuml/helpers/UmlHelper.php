@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\yuml\helpers;
+namespace yii2rails\extension\yuml\helpers;
 
-use yii2lab\extension\common\helpers\StringHelper;
+use yii2rails\extension\common\helpers\StringHelper;
 
 class UmlHelper
 {

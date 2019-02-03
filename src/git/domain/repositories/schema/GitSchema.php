@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\extension\git\domain\repositories\schema;
+namespace yii2rails\extension\git\domain\repositories\schema;
 
-use yii2lab\domain\repositories\relations\BaseSchema;
+use yii2rails\domain\repositories\relations\BaseSchema;
 
 /**
  * Class GitSchema
  * 
- * @package yii2lab\extension\git\domain\repositories\schema
+ * @package yii2rails\extension\git\domain\repositories\schema
  * 
  */
 class GitSchema extends BaseSchema {

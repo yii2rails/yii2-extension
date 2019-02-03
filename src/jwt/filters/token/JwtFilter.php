@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\jwt\filters\token;
+namespace yii2rails\extension\jwt\filters\token;
 
 use yii\web\NotFoundHttpException;
-use yii2lab\extension\yii\helpers\ArrayHelper;
+use yii2rails\extension\yii\helpers\ArrayHelper;
 use yii2module\account\domain\v2\entities\LoginEntity;
 use yii2module\account\domain\v2\filters\token\BaseTokenFilter;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\console\helpers;
+namespace yii2rails\extension\console\helpers;
 
 use yii\helpers\Console;
-use yii2lab\extension\common\helpers\StringHelper;
-use yii2lab\extension\yii\helpers\ArrayHelper;
+use yii2rails\extension\common\helpers\StringHelper;
+use yii2rails\extension\yii\helpers\ArrayHelper;
 
 class Output {
 	

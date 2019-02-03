@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\widget\ajaxSelector;
+namespace yii2rails\extension\widget\ajaxSelector;
 
 use yii\base\Widget;
 

@@ -1,26 +1,26 @@
 <?php
 
-namespace yii2lab\extension\jwt\services;
+namespace yii2rails\extension\jwt\services;
 
 use yii\base\InvalidArgumentException;
 use yii\web\NotFoundHttpException;
-use yii2lab\extension\jwt\entities\AuthenticationEntity;
-use yii2lab\extension\jwt\entities\ProfileEntity;
-use yii2lab\extension\jwt\entities\TokenEntity;
-use yii2lab\extension\jwt\interfaces\services\TokenInterface;
-use yii2lab\domain\services\base\BaseService;
-use yii2lab\extension\web\enums\HttpMethodEnum;
-use yii2lab\extension\common\helpers\StringHelper;
+use yii2rails\extension\jwt\entities\AuthenticationEntity;
+use yii2rails\extension\jwt\entities\ProfileEntity;
+use yii2rails\extension\jwt\entities\TokenEntity;
+use yii2rails\extension\jwt\interfaces\services\TokenInterface;
+use yii2rails\domain\services\base\BaseService;
+use yii2rails\extension\web\enums\HttpMethodEnum;
+use yii2rails\extension\common\helpers\StringHelper;
 use yii2lab\rest\domain\entities\RequestEntity;
 use yii2lab\rest\domain\helpers\RestHelper;
 
 /**
  * Class TokenService
  * 
- * @package yii2lab\extension\jwt\services
+ * @package yii2rails\extension\jwt\services
  * 
- * @property-read \yii2lab\extension\jwt\Domain $domain
- * @property-read \yii2lab\extension\jwt\interfaces\repositories\TokenInterface $repository
+ * @property-read \yii2rails\extension\jwt\Domain $domain
+ * @property-read \yii2rails\extension\jwt\interfaces\repositories\TokenInterface $repository
  */
 class TokenService extends BaseService implements TokenInterface {
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\validator\helpers;
+namespace yii2rails\extension\validator\helpers;
 
-use yii2lab\extension\common\helpers\StringHelper;
+use yii2rails\extension\common\helpers\StringHelper;
 use yii2woop\operation\domain\v2\entities\IinEntity;
 
 class PersonHelper {

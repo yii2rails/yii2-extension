@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\package\domain\repositories\file;
+namespace yii2rails\extension\package\domain\repositories\file;
 
-use yii2lab\extension\arrayTools\repositories\base\BaseActiveDiscRepository;
+use yii2rails\extension\arrayTools\repositories\base\BaseActiveDiscRepository;
 
 /**
  * Class ProviderRepository
  * 
- * @package yii2lab\extension\package\domain\repositories\file
+ * @package yii2rails\extension\package\domain\repositories\file
  * 
- * @property-read \yii2lab\extension\package\domain\Domain $domain
+ * @property-read \yii2rails\extension\package\domain\Domain $domain
  */
 class ProviderRepository extends BaseActiveDiscRepository /*implements GroupInterface*/ {
 

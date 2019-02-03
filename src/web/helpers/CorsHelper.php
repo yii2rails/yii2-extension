@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\web\helpers;
+namespace yii2rails\extension\web\helpers;
 
 use yii\filters\Cors;
-use yii2lab\app\domain\helpers\EnvService;
-use yii2lab\extension\web\enums\HttpHeaderEnum;
-use yii2lab\extension\web\enums\HttpMethodEnum;
+use yii2rails\app\domain\helpers\EnvService;
+use yii2rails\extension\web\enums\HttpHeaderEnum;
+use yii2rails\extension\web\enums\HttpMethodEnum;
 
 class CorsHelper {
 	

@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\develop\helpers;
+namespace yii2rails\extension\develop\helpers;
 
 use Yii;
-use yii2lab\extension\enum\enums\TimeEnum;
-use yii2lab\extension\web\helpers\Page;
-use yii2lab\extension\yii\helpers\ArrayHelper;
+use yii2rails\extension\enum\enums\TimeEnum;
+use yii2rails\extension\web\helpers\Page;
+use yii2rails\extension\yii\helpers\ArrayHelper;
 use yii\bootstrap\BootstrapAsset;
-use yii2lab\extension\yii\helpers\FileHelper;
-use yii2lab\extension\yii\helpers\Html;
-use yii2lab\extension\store\Store;
+use yii2rails\extension\yii\helpers\FileHelper;
+use yii2rails\extension\yii\helpers\Html;
+use yii2rails\extension\store\Store;
 
 class Debug {
 	

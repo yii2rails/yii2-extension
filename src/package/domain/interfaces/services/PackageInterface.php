@@ -1,16 +1,16 @@
 <?php
 
-namespace yii2lab\extension\package\domain\interfaces\services;
+namespace yii2rails\extension\package\domain\interfaces\services;
 
-use yii2lab\domain\interfaces\services\ReadInterface;
+use yii2rails\domain\interfaces\services\ReadInterface;
 
 /**
  * Interface PackageInterface
  * 
- * @package yii2lab\extension\package\domain\interfaces\services
+ * @package yii2rails\extension\package\domain\interfaces\services
  * 
- * @property-read \yii2lab\extension\package\domain\Domain $domain
- * @property-read \yii2lab\extension\package\domain\interfaces\repositories\PackageInterface $repository
+ * @property-read \yii2rails\extension\package\domain\Domain $domain
+ * @property-read \yii2rails\extension\package\domain\interfaces\repositories\PackageInterface $repository
  */
 interface PackageInterface extends ReadInterface {
 

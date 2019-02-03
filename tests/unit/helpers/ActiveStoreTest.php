@@ -2,7 +2,7 @@
 namespace tests\unit\helpers;
 
 use yii2lab\test\Test\Unit;
-use yii2lab\extension\tests\models\Login;
+use yii2rails\extension\tests\models\Login;
 
 class ActiveStoreTest extends Unit
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\console\helpers\input;
+namespace yii2rails\extension\console\helpers\input;
 
-use yii2lab\extension\console\helpers\Output;
+use yii2rails\extension\console\helpers\Output;
 
 class Select {
 

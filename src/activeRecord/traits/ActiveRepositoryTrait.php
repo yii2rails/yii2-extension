@@ -1,15 +1,15 @@
 <?php
 
-namespace yii2lab\extension\activeRecord\traits;
+namespace yii2rails\extension\activeRecord\traits;
 
-use yii2lab\domain\Alias;
-use yii2lab\domain\BaseEntity;
-use yii2lab\domain\data\Query;
-use yii2lab\domain\helpers\ErrorCollection;
-use yii2lab\domain\exceptions\UnprocessableEntityHttpException;
+use yii2rails\domain\Alias;
+use yii2rails\domain\BaseEntity;
+use yii2rails\domain\data\Query;
+use yii2rails\domain\helpers\ErrorCollection;
+use yii2rails\domain\exceptions\UnprocessableEntityHttpException;
 use yii\web\NotFoundHttpException;
-use yii2lab\domain\helpers\repository\QueryFilter;
-use yii2lab\domain\traits\repository\ReadOneTrait;
+use yii2rails\domain\helpers\repository\QueryFilter;
+use yii2rails\domain\traits\repository\ReadOneTrait;
 
 trait ActiveRepositoryTrait {
 	

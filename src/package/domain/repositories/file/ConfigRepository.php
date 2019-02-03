@@ -1,22 +1,22 @@
 <?php
 
-namespace yii2lab\extension\package\domain\repositories\file;
+namespace yii2rails\extension\package\domain\repositories\file;
 
-use yii2lab\domain\BaseEntity;
-use yii2lab\extension\arrayTools\repositories\base\BaseActiveArrayRepository;
-use yii2lab\extension\package\domain\entities\ConfigEntity;
-use yii2lab\extension\package\domain\entities\PackageEntity;
-use yii2lab\extension\package\domain\helpers\ConfigRepositoryHelper;
-use yii2lab\extension\package\domain\interfaces\repositories\ConfigInterface;
-use yii2lab\extension\store\StoreFile;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\domain\BaseEntity;
+use yii2rails\extension\arrayTools\repositories\base\BaseActiveArrayRepository;
+use yii2rails\extension\package\domain\entities\ConfigEntity;
+use yii2rails\extension\package\domain\entities\PackageEntity;
+use yii2rails\extension\package\domain\helpers\ConfigRepositoryHelper;
+use yii2rails\extension\package\domain\interfaces\repositories\ConfigInterface;
+use yii2rails\extension\store\StoreFile;
+use yii2rails\extension\yii\helpers\FileHelper;
 
 /**
  * Class ConfigRepository
  *
- * @package yii2lab\extension\package\domain\repositories\file
+ * @package yii2rails\extension\package\domain\repositories\file
  *
- * @property-read \yii2lab\extension\package\domain\Domain $domain
+ * @property-read \yii2rails\extension\package\domain\Domain $domain
  */
 class ConfigRepository extends BaseActiveArrayRepository implements ConfigInterface {
 	

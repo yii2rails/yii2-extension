@@ -15,7 +15,7 @@ $config = [
             ],
         ],
     ],
-    'jwt' => 'yii2lab\extension\jwt\Domain',
+    'jwt' => 'yii2rails\extension\jwt\Domain',
 ];
 
 $baseConfig = TestHelper::loadConfig('common/config/domains.php');

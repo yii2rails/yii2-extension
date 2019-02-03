@@ -2,11 +2,11 @@
 
 namespace tests\functional\package\services;
 
-use yii2lab\domain\data\Query;
-use yii2lab\domain\helpers\DomainHelper;
-use yii2lab\extension\package\domain\entities\ConfigEntity;
-use yii2lab\extension\package\domain\entities\GroupEntity;
-use yii2lab\extension\package\domain\entities\PackageEntity;
+use yii2rails\domain\data\Query;
+use yii2rails\domain\helpers\DomainHelper;
+use yii2rails\extension\package\domain\entities\ConfigEntity;
+use yii2rails\extension\package\domain\entities\GroupEntity;
+use yii2rails\extension\package\domain\entities\PackageEntity;
 use yii2lab\test\Test\Unit;
 
 class PackageTest extends Unit {
@@ -16,8 +16,8 @@ class PackageTest extends Unit {
 	protected function _before() {
 		parent::_before();
 		DomainHelper::forgeDomains([
-			'git' => 'yii2lab\extension\git\domain\Domain',
-			'package' => 'yii2lab\extension\package\domain\Domain',
+			'git' => 'yii2rails\extension\git\domain\Domain',
+			'package' => 'yii2rails\extension\package\domain\Domain',
 		]);
 	}
 	

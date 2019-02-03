@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\core\domain\services\base;
+namespace yii2rails\extension\core\domain\services\base;
 
-use yii2lab\extension\core\domain\repositories\base\BaseActiveCoreRepository;
-use yii2lab\domain\services\base\BaseActiveService;
-use yii2lab\extension\common\helpers\ClassHelper;
+use yii2rails\extension\core\domain\repositories\base\BaseActiveCoreRepository;
+use yii2rails\domain\services\base\BaseActiveService;
+use yii2rails\extension\common\helpers\ClassHelper;
 
 class BaseActiveCoreService extends BaseActiveService {
 	

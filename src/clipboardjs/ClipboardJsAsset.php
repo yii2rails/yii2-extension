@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\clipboardJs;
+namespace yii2rails\extension\clipboardJs;
 
 use yii\web\AssetBundle;
 

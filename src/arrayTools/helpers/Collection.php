@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\arrayTools\helpers;
+namespace yii2rails\extension\arrayTools\helpers;
 
 use Yii;
-use yii2lab\extension\arrayTools\base\BaseCollection;
-use yii2lab\extension\yii\helpers\ArrayHelper;
+use yii2rails\extension\arrayTools\base\BaseCollection;
+use yii2rails\extension\yii\helpers\ArrayHelper;
 
 class Collection extends BaseCollection {
 	

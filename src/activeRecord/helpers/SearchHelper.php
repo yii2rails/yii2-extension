@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2lab\extension\activeRecord\helpers;
+namespace yii2rails\extension\activeRecord\helpers;
 
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\db\Expression;
 use yii\web\BadRequestHttpException;
-use yii2lab\domain\data\Query;
+use yii2rails\domain\data\Query;
 
 class SearchHelper {
 	

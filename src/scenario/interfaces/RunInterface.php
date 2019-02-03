@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\scenario\interfaces;
+namespace yii2rails\extension\scenario\interfaces;
 
 interface RunInterface {
 	

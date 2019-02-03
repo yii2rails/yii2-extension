@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\validator;
+namespace yii2rails\extension\validator;
 
 use yii\validators\Validator;
 use yii2module\lang\domain\helpers\LangHelper;

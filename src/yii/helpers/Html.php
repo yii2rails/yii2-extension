@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\yii\helpers;
+namespace yii2rails\extension\yii\helpers;
 
 use Yii;
 use yii\helpers\Html as YiiHtml;

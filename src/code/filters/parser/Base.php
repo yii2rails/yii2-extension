@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\code\filters\parser;
+namespace yii2rails\extension\code\filters\parser;
 
-use yii2lab\extension\scenario\base\BaseScenario;
+use yii2rails\extension\scenario\base\BaseScenario;
 
 abstract class Base extends BaseScenario {
 	

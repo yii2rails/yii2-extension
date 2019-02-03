@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\code\helpers;
+namespace yii2rails\extension\code\helpers;
 
-use yii2lab\extension\develop\helpers\Benchmark;
-use yii2lab\extension\store\StoreFile;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\extension\develop\helpers\Benchmark;
+use yii2rails\extension\store\StoreFile;
+use yii2rails\extension\yii\helpers\FileHelper;
 
 class CodeCacheHelper
 {

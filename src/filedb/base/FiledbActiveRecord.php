@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\extension\filedb\base;
+namespace yii2rails\extension\filedb\base;
 
 use Yii;
-use yii2lab\app\domain\helpers\EnvService;
+use yii2rails\app\domain\helpers\EnvService;
 use yii2mod\helpers\ArrayHelper;
 
 class FiledbActiveRecord extends \yii2tech\filedb\ActiveRecord {

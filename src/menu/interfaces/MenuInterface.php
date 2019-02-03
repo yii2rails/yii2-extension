@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\menu\interfaces;
+namespace yii2rails\extension\menu\interfaces;
 
 interface MenuInterface {
 	

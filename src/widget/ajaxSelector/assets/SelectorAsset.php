@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\widget\ajaxSelector\assets;
+namespace yii2rails\extension\widget\ajaxSelector\assets;
 
 use yii\web\AssetBundle;
 

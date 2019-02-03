@@ -1,18 +1,18 @@
 <?php
 
-namespace yii2lab\extension\jwt;
+namespace yii2rails\extension\jwt;
 
-use yii2lab\domain\enums\Driver;
+use yii2rails\domain\enums\Driver;
 
 /**
  * Class Domain
  * 
- * @package yii2lab\extension\jwt
- * @property-read \yii2lab\extension\jwt\interfaces\repositories\RepositoriesInterface $repositories
- * @property-read \yii2lab\extension\jwt\interfaces\services\ProfileInterface $profile
- * @property-read \yii2lab\extension\jwt\interfaces\services\TokenInterface $token
+ * @package yii2rails\extension\jwt
+ * @property-read \yii2rails\extension\jwt\interfaces\repositories\RepositoriesInterface $repositories
+ * @property-read \yii2rails\extension\jwt\interfaces\services\ProfileInterface $profile
+ * @property-read \yii2rails\extension\jwt\interfaces\services\TokenInterface $token
  */
-class Domain extends \yii2lab\domain\Domain {
+class Domain extends \yii2rails\domain\Domain {
 	
 	public function config() {
 		return [

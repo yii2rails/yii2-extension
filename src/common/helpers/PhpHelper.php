@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\common\helpers;
+namespace yii2rails\extension\common\helpers;
 
 class PhpHelper {
 	

@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\store;
+namespace yii2rails\extension\store;
 
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\extension\yii\helpers\FileHelper;
 use yii2mod\helpers\ArrayHelper;
 use yii\base\Component;
 
@@ -16,9 +16,9 @@ class Store extends Component
 		$driver = strtolower($driver);
 		$driver = ucfirst($driver);
         $this->driver = $driver;
-        $driverClass = 'yii2lab\extension\store\drivers\\' . $driver;
+        $driverClass = 'yii2rails\extension\store\drivers\\' . $driver;
         $implements = class_implements($driverClass);
-        if(!array_key_exists('yii2lab\extension\store\interfaces\DriverInterface', $implements)) {
+        if(!array_key_exists('yii2rails\extension\store\interfaces\DriverInterface', $implements)) {
             throw new \Exception('No implements interface of driver class');
         }
         $this->driverInstance = new $driverClass;

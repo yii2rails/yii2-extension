@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2lab\extension\markdown\widgets\filters;
+namespace yii2rails\extension\markdown\widgets\filters;
 
 use Yii;
-use yii2lab\extension\scenario\base\BaseScenario;
-use yii2lab\extension\yii\helpers\FileHelper;
-use yii2lab\extension\yii\helpers\Html;
+use yii2rails\extension\scenario\base\BaseScenario;
+use yii2rails\extension\yii\helpers\FileHelper;
+use yii2rails\extension\yii\helpers\Html;
 
 class ImgFilter extends BaseScenario {
 	

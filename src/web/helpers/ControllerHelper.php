@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\extension\web\helpers;
+namespace yii2rails\extension\web\helpers;
 
 use DateTimeZone;
 use Yii;
@@ -8,9 +8,9 @@ use yii\base\Component;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
-use yii2lab\domain\events\DataEvent;
-use yii2lab\domain\services\base\BaseService;
-use yii2lab\extension\web\enums\HttpHeaderEnum;
+use yii2rails\domain\events\DataEvent;
+use yii2rails\domain\services\base\BaseService;
+use yii2rails\extension\web\enums\HttpHeaderEnum;
 
 class ControllerHelper {
 

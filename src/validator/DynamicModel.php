@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\validator;
+namespace yii2rails\extension\validator;
 
 use Yii;
 use yii\web\NotFoundHttpException;
-use yii2lab\domain\base\Model;
+use yii2rails\domain\base\Model;
 use yii\helpers\ArrayHelper;
 
 class DynamicModel extends Model

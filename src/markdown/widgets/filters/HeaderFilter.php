@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\extension\markdown\widgets\filters;
+namespace yii2rails\extension\markdown\widgets\filters;
 
-use yii2lab\extension\scenario\base\BaseScenario;
-use yii2lab\extension\markdown\widgets\helpers\ArticleMenuHelper;
-use yii2lab\extension\markdown\widgets\helpers\MarkdownHelper;
+use yii2rails\extension\scenario\base\BaseScenario;
+use yii2rails\extension\markdown\widgets\helpers\ArticleMenuHelper;
+use yii2rails\extension\markdown\widgets\helpers\MarkdownHelper;
 
 class HeaderFilter extends BaseScenario {
 	

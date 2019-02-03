@@ -1,8 +1,8 @@
 <?php
 
-namespace yii2lab\extension\store;
+namespace yii2rails\extension\store;
 
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\extension\yii\helpers\FileHelper;
 use yii\base\Component;
 
 class StoreFile extends Component
