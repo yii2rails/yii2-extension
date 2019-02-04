@@ -22,7 +22,6 @@
 		}
 	},
 	"require": {
-		"yiisoft/yii2": "*",
 		"yii2tech/filedb": "*",
 		"creocoder/yii2-flysystem": "^0.9.0",
 		"firebase/php-jwt": "^5.0",
