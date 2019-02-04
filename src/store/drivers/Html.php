@@ -7,7 +7,6 @@ use yii2rails\extension\common\helpers\StringHelper;
 use yii2rails\extension\store\interfaces\DriverInterface;
 use yii\helpers\VarDumper;
 use yii2rails\extension\yii\helpers\FileHelper;
-use yii2mod\helpers\ArrayHelper;
 
 class Html implements DriverInterface
 {

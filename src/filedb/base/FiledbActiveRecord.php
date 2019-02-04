@@ -4,7 +4,7 @@ namespace yii2rails\extension\filedb\base;
 
 use Yii;
 use yii2rails\app\domain\helpers\EnvService;
-use yii2mod\helpers\ArrayHelper;
+use yii\helpers\ArrayHelper;
 
 class FiledbActiveRecord extends \yii2tech\filedb\ActiveRecord {
 	

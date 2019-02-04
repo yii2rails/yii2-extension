@@ -6,7 +6,7 @@ use yii2rails\extension\common\helpers\StringHelper;
 use yii2rails\extension\git\domain\entities\RefEntity;
 use yii2rails\extension\package\domain\helpers\ConfigRepositoryHelper;
 use yii2rails\extension\yii\helpers\FileHelper;
-use yii2mod\helpers\ArrayHelper;
+use yii\helpers\ArrayHelper;
 
 class GitConfigHelper {
 	

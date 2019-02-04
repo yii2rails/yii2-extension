@@ -3,7 +3,6 @@
 namespace yii2rails\extension\store\drivers;
 
 use yii2rails\extension\store\interfaces\DriverInterface;
-use yii2mod\helpers\ArrayHelper;
 
 class Serialize implements DriverInterface
 {

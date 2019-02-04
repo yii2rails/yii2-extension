@@ -16,7 +16,7 @@ use yii\web\NotFoundHttpException;
 use yii2rails\domain\repositories\BaseRepository;
 use yii2rails\extension\filedb\repositories\base\BaseActiveFiledbRepository;
 use yii2rails\extension\filedb\repositories\base\BaseFiledbRepository;
-use yii2mod\helpers\ArrayHelper;
+use yii\helpers\ArrayHelper;
 
 abstract class BaseArRepository extends BaseRepository {
 	

@@ -3,7 +3,7 @@
 namespace yii2rails\extension\store\drivers;
 
 use yii2rails\extension\store\interfaces\DriverInterface;
-use yii2mod\helpers\ArrayHelper;
+use yii\helpers\ArrayHelper;
 
 class Json implements DriverInterface
 {

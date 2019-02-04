@@ -5,7 +5,6 @@ namespace yii2rails\extension\web\helpers;
 use InvalidArgumentException;
 use Yii;
 use yii2rails\domain\data\GetParams;
-use xj\ua\UserAgent;
 use yii\web\View;
 use yii2rails\domain\data\Query;
 
@@ -24,21 +23,16 @@ class ClientHelper
         Yii::$app->view->registerJs($code, $pos);
     }
 
-	public static function getAgentInfo($isLowerCase = false) {
+	public static function getAgentInfo() {
 		try {
-			$userAgent = UserAgent::model();
+            $userAgent = parse_user_agent();
 		} catch(InvalidArgumentException $e) {
 			return [];
 		}
-		
-		/* @var \xj\ua\UserAgent $userAgent */
-		$uaAttributes =  $userAgent->getAttributes();
-		if($isLowerCase) {
-			foreach($uaAttributes as &$attribute) {
-				$attribute = strtolower($attribute);
-			}
-		}
-		return $uaAttributes;
+        foreach($userAgent as &$attribute) {
+            $attribute = strtolower($attribute);
+        }
+		return $userAgent;
 	}
 	
 	public static function getCurrentPage($offset, $limit) {
