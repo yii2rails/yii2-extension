@@ -23,7 +23,7 @@ class GitTest extends Unit {
 	public function testOneByDir() {
 		return;
 		
-		$dir = 'C:\OpenServer\domains\yii\all\vendor\yii2lab\yii2-extension';
+		$dir = 'C:\OpenServer\domains\yii\all\vendor\yii2rails\yii2-extension';
 		/** @var GitEntity $gitEntity */
 		$gitEntity = \App::$domain->git->git->oneByDir($dir);
 		$this->tester->assertEquals($dir, $gitEntity->dir);
