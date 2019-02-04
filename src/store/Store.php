@@ -2,6 +2,7 @@
 
 namespace yii2rails\extension\store;
 
+use yii2rails\extension\store\interfaces\DriverInterface;
 use yii2rails\extension\yii\helpers\FileHelper;
 use yii2mod\helpers\ArrayHelper;
 use yii\base\Component;
@@ -10,6 +11,10 @@ class Store extends Component
 {
 
     protected $driver;
+
+    /**
+     * @var DriverInterface
+     */
     protected $driverInstance;
 
     public function setDriver($driver) {
