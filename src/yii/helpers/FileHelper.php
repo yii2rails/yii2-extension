@@ -4,7 +4,7 @@ namespace yii2rails\extension\yii\helpers;
 
 use Yii;
 use yii\helpers\BaseFileHelper;
-use yii2rails\extension\store\Store;
+use yii2rails\extension\store\StoreFile;
 
 class FileHelper extends BaseFileHelper
 {
@@ -31,9 +31,8 @@ class FileHelper extends BaseFileHelper
     }
 
     public static function loadData($name, $key = null, $default = null) {
-        $ext = self::fileExt($name);
-        $store = new Store($ext);
-        $data = $store->load($name, $key);
+        $store = new StoreFile($name);
+        $data = $store->load($key);
         $data = !empty($data) ? $data : $default;
         return $data;
     }
