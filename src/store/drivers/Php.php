@@ -39,7 +39,7 @@ class Php implements DriverInterface
 			return null;
 		}
 		$data = include($fileName);
-		if(func_num_args() > 1) {
+		if($key !== null) {
 			return ArrayHelper::getValue($data, $key);
 		}
 		return $data;
