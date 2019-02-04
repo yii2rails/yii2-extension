@@ -45,10 +45,12 @@ class CoreHelper {
 		if($tokenDto) {
 			$headers[HttpHeaderEnum::AUTHORIZATION] = AuthHelper::getTokenString();
 		}
-		$partnerTokenDto = \App::$domain->partner->auth->forgeAuthToken();
-		if($partnerTokenDto) {
-			$headers['Authorization-partner'] = $partnerTokenDto->getTokenString();
-		}
+		if(isset(\App::$domain->partner)) {
+            $partnerTokenDto = \App::$domain->partner->auth->forgeAuthToken();
+            if($partnerTokenDto) {
+                $headers['Authorization-partner'] = $partnerTokenDto->getTokenString();
+            }
+        }
 		$headers[HttpHeaderEnum::LANGUAGE] = Yii::$app->language;
 		$headers[HttpHeaderEnum::TIME_ZONE] = Yii::$app->timeZone;
 		return $headers;

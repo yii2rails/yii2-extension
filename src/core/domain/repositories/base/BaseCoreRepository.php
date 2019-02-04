@@ -5,12 +5,12 @@ namespace yii2rails\extension\core\domain\repositories\base;
 use yii\helpers\ArrayHelper;
 use yii\web\ServerErrorHttpException;
 use yii\web\UnauthorizedHttpException;
+use yii2bundle\rest\domain\repositories\base\BaseRestRepository;
 use yii2rails\extension\core\domain\helpers\CoreHelper;
 use yii2rails\domain\exceptions\UnprocessableEntityHttpException;
 use yii2rails\extension\web\helpers\ClientHelper;
 use yii2lab\rest\domain\entities\RequestEntity;
 use yii2lab\rest\domain\entities\ResponseEntity;
-use yii2lab\rest\domain\repositories\base\BaseRestRepository;
 
 class BaseCoreRepository extends BaseRestRepository {
 	
