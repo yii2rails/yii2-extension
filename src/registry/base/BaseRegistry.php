@@ -46,6 +46,10 @@ abstract class BaseRegistry implements RegistryInterface {
     static function load($data) {
         self::$classesData[static::class] = $data;
     }
+
+    static function merge($data) {
+        self::$classesData[static::class] = ArrayHelper::merge(self::$classesData[static::class], $data);
+    }
 	
 	private static function key($key = null) {
 		$result = static::class;
