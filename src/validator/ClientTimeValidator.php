@@ -4,7 +4,6 @@ namespace yii2rails\extension\validator;
 
 use Yii;
 use yii\validators\Validator;
-use yii2rails\extension\common\helpers\Helper;
 
 class  ClientTimeValidator extends Validator
 {

@@ -21,6 +21,9 @@ class RegexpPatternEnum extends BaseEnum {
 	const BASE_64 = '[A-Za-z0-9+/]{2,}[=]*';
 	const BASE_64_REQUIRED = self::BEGIN_REQUIRED . self::BASE_64 . self::END_REQUIRED;
 	
+	const LOGIN = '[a-z0-9_-]{3,16}';
+	const LOGIN_REQUIRED = self::BEGIN_REQUIRED . self::LOGIN . self::END_REQUIRED;
+	
 	const EMAIL = '[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}';
 	const EMAIL_REQUIRED = self::BEGIN_REQUIRED . self::EMAIL . self::END_REQUIRED;
 
