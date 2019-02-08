@@ -23,16 +23,7 @@ class TypeHelper {
 	
 	private static function decodeValueObject($value) {
 		if($value instanceof TimeValue) {
-			// todo: crutch
-			$timeZone = Yii::$app->request->getHeaders()->get(HttpHeaderEnum::TIME_ZONE);
-			//if(empty($timeZone)) {
-			//	$timeZone = Yii::$app->timeZone;
-			//}
-			if($timeZone) {
-				$resultValue = $value->getInFormat(DateTime::ISO8601);
-			} else {
-				$resultValue = $value->getInFormat(TimeValue::FORMAT_API);
-			}
+            $resultValue = $value->getInFormat(DateTime::ISO8601);
 		} elseif($value instanceof ValueObjectInterface) {
 			$resultValue = $value->get();
 		} else {
