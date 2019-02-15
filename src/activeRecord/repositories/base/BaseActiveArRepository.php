@@ -11,21 +11,13 @@ use Yii;
 use yii\db\ActiveRecord;
 use yii\web\NotFoundHttpException;
 use yii\helpers\ArrayHelper;
-use yii2rails\domain\interfaces\repositories\SearchInterface;
 use yii2rails\extension\activeRecord\helpers\SearchHelper;
 use yii2rails\extension\activeRecord\traits\ActiveRepositoryTrait;
 
-abstract class BaseActiveArRepository extends BaseArRepository implements CrudInterface, SearchInterface {
+abstract class BaseActiveArRepository extends BaseArRepository implements CrudInterface {
 	
 	use ActiveRepositoryTrait;
-	
-	public function searchByText($text, Query $query = null) {
-		$query = $this->prepareQuery($query);
-		$searchByTextFields = $this->searchByTextFields();
-		SearchHelper::appendSearchCondition($query, $searchByTextFields, $text);
-		return $this->getDataProvider($query);
-	}
-	
+
 	public function count(Query $query = null) {
 		$this->queryValidator->validateWhereFields($query);
 		$this->resetQuery();
