@@ -7,6 +7,7 @@ use yii\base\Model;
 use yii\db\ActiveRecord;
 use yii\db\BaseActiveRecord;
 use yii\helpers\Inflector;
+use yii2lab\db\domain\helpers\TableHelper;
 use yii2rails\domain\BaseEntity;
 use yii2rails\domain\data\Query;
 use yii2rails\domain\exceptions\BadQueryHttpException;
@@ -79,7 +80,8 @@ abstract class BaseArRepository extends BaseRepository {
 		if(isset($this->model)) {
 			return;
 		}
-		$model = $this->domain->factory->model->createVirtual($this->tableName(), $this->getParentModelClassName(), ['primaryKey'=>$this->primaryKey]);
+        $tableName = TableHelper::getGlobalName($this->tableName());
+		$model = $this->domain->factory->model->createVirtual($tableName, $this->getParentModelClassName(), ['primaryKey'=>$this->primaryKey]);
 		$this->modelClass = $model['baseName'];
 		$this->model = $model['model'];
 	}
