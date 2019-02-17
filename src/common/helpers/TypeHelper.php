@@ -34,20 +34,25 @@ class TypeHelper {
 	
 	private static function entityToArray($entity) {
 		if(method_exists($entity, 'toArrayRaw')) {
-			$item = $entity->toArrayRaw();
+            /** @var BaseEntity $entity */
+		    $item = $entity->toArrayRaw([],[],false);
 		} elseif(method_exists($entity, 'toArray')) {
 			$item = $entity->toArray();
 		} else {
 			$item = ArrayHelper::toArray($entity);
 		}
 		foreach($item as $fieldName => $value) {
-			if($value instanceof ValueObjectInterface) {
-				$item[ $fieldName ] = self::decodeValueObject($value);
-			}
-			$pureValue = ArrayHelper::getValue($entity, $fieldName);
-			if($pureValue instanceof BaseEntity) {
-				$item[ $fieldName ] = self::entityToArray($pureValue);
-			}
+		    if(is_array($value) && ArrayHelper::isIndexed($value)) {
+                $item[ $fieldName ] = self::serializeModels($value);
+            } else {
+                if($value instanceof ValueObjectInterface) {
+                    $item[ $fieldName ] = self::decodeValueObject($value);
+                }
+                $pureValue = ArrayHelper::getValue($entity, $fieldName);
+                if($pureValue instanceof BaseEntity) {
+                    $item[ $fieldName ] = self::entityToArray($pureValue);
+                }
+            }
 		}
 		return $item;
 	}
@@ -79,9 +84,15 @@ class TypeHelper {
 		}
 		return $item;
 	}
-	
-	public static function serialize($entity, $formatMap) {
 
+    public static function serializeModels($models, $formatMap = null) {
+        foreach($models as &$item) {
+            $item = TypeHelper::serialize($item, $formatMap);
+        }
+        return $models;
+    }
+
+	public static function serialize($entity, $formatMap) {
 		$item = self::entityToArray($entity);
 		if(!empty($formatMap)) {
 			$item = self::normalizeItemTypes($item, $formatMap);
