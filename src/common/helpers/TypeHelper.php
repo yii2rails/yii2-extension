@@ -6,6 +6,7 @@ use DateTime;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii2rails\domain\BaseEntity;
+use yii2rails\domain\data\EntityCollection;
 use yii2rails\domain\helpers\types\BaseType;
 use yii2rails\domain\interfaces\ValueObjectInterface;
 use yii2rails\domain\values\TimeValue;
@@ -42,7 +43,9 @@ class TypeHelper {
 			$item = ArrayHelper::toArray($entity);
 		}
 		foreach($item as $fieldName => $value) {
-		    if(is_array($value) && ArrayHelper::isIndexed($value)) {
+		    $isIndexedArray = is_array($value) && ArrayHelper::isIndexed($value);
+		    $isCollection = $isIndexedArray || $value instanceof EntityCollection;
+		    if($isCollection) {
                 $item[ $fieldName ] = self::serializeModels($value);
             } else {
                 if($value instanceof ValueObjectInterface) {
@@ -86,6 +89,9 @@ class TypeHelper {
 	}
 
     public static function serializeModels($models, $formatMap = null) {
+        if($models instanceof EntityCollection) {
+            $models = $models->all();
+        }
         foreach($models as &$item) {
             $item = TypeHelper::serialize($item, $formatMap);
         }
