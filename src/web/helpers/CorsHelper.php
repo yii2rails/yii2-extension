@@ -18,7 +18,7 @@ class CorsHelper {
 			'class' => Cors::class,
 			'cors' => [
 				'Origin' => [$origin],
-				'Access-Control-Request-Method' => [HttpMethodEnum::values()],
+				'Access-Control-Request-Method' => HttpMethodEnum::values(),
 				'Access-Control-Request-Headers' => [
 					HttpHeaderEnum::CONTENT_TYPE,
 					HttpHeaderEnum::X_REQUESTED_WITH,
