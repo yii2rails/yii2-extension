@@ -13,10 +13,11 @@ class CorsHelper {
 		/*if(empty($origin)) {
 			$origin = self::generateOriginFromEnvUrls();
 		}*/
+		$origin = \Yii::$app->request->headers->get('Origin');
 		return [
 			'class' => Cors::class,
 			'cors' => [
-				'Origin' => ['*'],
+				'Origin' => [$origin],
 				'Access-Control-Request-Method' => [HttpMethodEnum::values()],
 				'Access-Control-Request-Headers' => [
 					HttpHeaderEnum::CONTENT_TYPE,
