@@ -33,7 +33,7 @@ class Behavior {
 		return $config;
 	}
 	
-	private function apiAuth($only = null) {
+	private static function apiAuth($only = null) {
 		$config = [
 			'class' => HttpTokenAuth::class,
 		];
