@@ -264,7 +264,7 @@ class MenuHelper
 		if(empty($menu['domain'])) {
 			return true;
 		}
-		return ModuleHelper::has($menu['module']);
+		return ModuleHelper::has($menu['domain']);
 	}
 
 	private static function isAllow($menu) {
