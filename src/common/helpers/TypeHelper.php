@@ -39,9 +39,14 @@ class TypeHelper {
 		    $item = $entity->toArrayRaw([],[],false);
 		} elseif(method_exists($entity, 'toArray')) {
 			$item = $entity->toArray();
-		} else {
+		} elseif(is_object($entity)) {
 			$item = ArrayHelper::toArray($entity);
-		}
+		} else {
+            $item = $entity;
+        }
+        if(!is_array($item)) {
+            return $item;
+        }
 		foreach($item as $fieldName => $value) {
 		    $isIndexedArray = is_array($value) && ArrayHelper::isIndexed($value);
 		    $isCollection = $isIndexedArray || $value instanceof EntityCollection;
