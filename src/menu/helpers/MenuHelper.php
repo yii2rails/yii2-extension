@@ -28,6 +28,9 @@ class MenuHelper
     }
 
 	public static function renderMenu($items, $glue = HtmlEnum::PIPE) {
+        if(empty($items)) {
+            return null;
+        }
 		$menuArr = [];
 		foreach($items as $item) {
 			$html = '';
@@ -45,6 +48,9 @@ class MenuHelper
 			$items = self::runClass(['class' => $items]);
 		}
 		$result = [];
+		if(empty($items)) {
+		    return $result;
+        }
 		foreach($items as $index => $config) {
 			$menu = self::genItem($config);
 			if(!empty($menu)) {
