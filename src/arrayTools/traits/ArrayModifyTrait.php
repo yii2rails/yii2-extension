@@ -2,6 +2,7 @@
 
 namespace yii2rails\extension\arrayTools\traits;
 
+use yii\helpers\ArrayHelper;
 use yii2rails\domain\BaseEntity;
 use yii2rails\domain\data\Query;
 use yii\web\NotFoundHttpException;
@@ -46,7 +47,7 @@ trait ArrayModifyTrait {
 	protected function getIndexOfEntity(BaseEntity $entity) {
 		$collection = $this->getCollection();
 		foreach($collection as $index => $data) {
-			if($data[$this->primaryKey] == $entity->{$this->primaryKey}) {
+			if(ArrayHelper::getValue($data, $this->primaryKey) == ArrayHelper::getValue($entity, $this->primaryKey)) {
 				return $index;
 			}
 		}
