@@ -28,5 +28,5 @@ class CityRepository extends BaseActiveCoreRepository {
 $query = Query::forge();
 $query->page(3);
 $query->with('country');
-$responseEntity = Yii::$app->geo->repositories->city->all($query);
+$responseEntity = App::$domain->geo->repositories->city->all($query);
 ```
