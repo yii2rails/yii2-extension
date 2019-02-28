@@ -44,6 +44,10 @@ trait ArrayModifyTrait {
 		$this->setCollection($collection);
 	}
 
+    public function truncate() {
+        $this->setCollection([]);
+    }
+
 	protected function getIndexOfEntity(BaseEntity $entity) {
 		$collection = $this->getCollection();
 		foreach($collection as $index => $data) {
