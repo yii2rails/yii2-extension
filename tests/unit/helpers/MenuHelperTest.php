@@ -9,15 +9,15 @@ use yii2module\account\domain\v2\helpers\TestAuthHelper;
 class MenuHelperTest extends Unit
 {
 	
-	const PACKAGE = 'yii2rails/yii2-extension';
+	const PACKAGE = 'vendor/yii2rails/yii2-extension';
 	const ADMIN_ID = 381949;
 	const USER_ID = 381070;
 	
 	public function testGenerateMenu()
 	{
-		$menu = DataHelper::load(self::PACKAGE, 'store/source/menu.php');
+		$menu = DataHelper::load(self::PACKAGE, 'tests/store/source/menu.php');
 		$resultMenu = MenuHelper::gen($menu);
-		$expect = DataHelper::load(self::PACKAGE, 'store/expect/generatedMenu.php', $resultMenu);
+		$expect = DataHelper::load(self::PACKAGE, 'tests/store/expect/generatedMenu.php', $resultMenu);
 		$this->tester->assertEquals($expect, $resultMenu);
 	}
 	
@@ -34,7 +34,7 @@ class MenuHelperTest extends Unit
 		];
 		
 		$resultMenu = MenuHelper::gen($menu);
-		$expect = DataHelper::load(self::PACKAGE, 'store/expect/generatedMenuForDomain.php', $resultMenu);
+		$expect = DataHelper::load(self::PACKAGE, 'tests/store/expect/generatedMenuForDomain.php', $resultMenu);
 		$this->tester->assertEquals($expect, $resultMenu);
 	}
 	
@@ -72,9 +72,9 @@ class MenuHelperTest extends Unit
 	
 	public function testRenderMenu()
 	{
-		$menu = DataHelper::load(self::PACKAGE, 'store/source/simpleMenu.php');
+		$menu = DataHelper::load(self::PACKAGE, 'tests/store/source/simpleMenu.php');
 		$resultMenu = MenuHelper::renderMenu($menu);
-		$expect = DataHelper::load(self::PACKAGE, 'store/expect/renderedMenu.php', $resultMenu);
+		$expect = DataHelper::load(self::PACKAGE, 'tests/store/expect/renderedMenu.php', $resultMenu);
 		$this->tester->assertEquals($expect, $resultMenu);
 	}
 	

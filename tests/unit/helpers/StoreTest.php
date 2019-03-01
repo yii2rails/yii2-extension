@@ -78,7 +78,7 @@ class StoreTest extends Unit
 	
 	private function fileName($name)
 	{
-		$fileName = codecept_data_dir() . DS . $name . '.json';
+		$fileName = ROOT_DIR . '/vendor/yii2rails/yii2-extension/tests/_expect/' . $name . '.json';
 		return $fileName;
 	}
 	
