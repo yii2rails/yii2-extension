@@ -8,7 +8,7 @@ use yii2rails\extension\yii\helpers\FileHelper;
 
 class TempHelper {
 	
-	const TEMP_ALIAS = '@common/runtime/temp';
+	const TEMP_ALIAS = '@common/runtime/temp/upload';
 
 	private static $_directoryName;
 	
@@ -32,7 +32,7 @@ class TempHelper {
 		$directory = FileHelper::up($fileName);
 		$isCreated = FileHelper::createDirectory($directory);
 		if($isCreated) {
-            register_shutdown_function([self::class, 'clearAll']);
+            register_shutdown_function(self::getCleanClosure());
         }
 	}
 	
@@ -53,9 +53,10 @@ class TempHelper {
 		$basePath = FileHelper::normalizePath($basePath);
 		return $basePath;
 	}
-	
-	public static function clearAll() {
-		FileHelper::removeDirectory(self::basePath());
-	}
-	
+
+	private static function getCleanClosure() {
+	    return function () {
+            FileHelper::removeDirectory(self::basePath());
+        };
+    }
 }
