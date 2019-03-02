@@ -38,8 +38,16 @@ abstract class BaseFlyRepository extends BaseRepository {
 		$staticFs = $this->storeInstance();
 		$file = $this->fullName($fileName);
 		$staticFs->write($file, $content);
+		$this->writeDirectoryIndex(dirname($file));
 	}
-	
+
+	protected function writeDirectoryIndex($directory) {
+        $staticFs = $this->storeInstance();
+        try {
+            $staticFs->write($directory . SL . 'index.html', 'Forbidden!');
+        } catch (\Exception $e) {}
+    }
+
 	protected function removeFile($fileName) {
 		$staticFs = $this->storeInstance();
 		$file = $this->fullName($fileName);
