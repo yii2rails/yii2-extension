@@ -8,7 +8,9 @@ use yii2rails\extension\yii\helpers\FileHelper;
 
 class TempHelper {
 	
-	const TEMP_ALIAS = '@runtime/temp';
+	const TEMP_ALIAS = '@common/runtime/temp';
+
+	private static $_directoryName;
 	
 	public static function remove($name) {
 		$fileName = self::fullName($name);
@@ -28,7 +30,10 @@ class TempHelper {
 	
 	public static function createDirectoryForFile($fileName) {
 		$directory = FileHelper::up($fileName);
-		FileHelper::createDirectory($directory);
+		$isCreated = FileHelper::createDirectory($directory);
+		if($isCreated) {
+            register_shutdown_function([self::class, 'clearAll']);
+        }
 	}
 	
 	public static function copyUploadedToTemp(UploadedFile $uploaded) {
@@ -38,7 +43,10 @@ class TempHelper {
 	}
 	
 	public static function basePath($path = null) {
-		$basePath = Yii::getAlias(self::TEMP_ALIAS) . DS . YII_BEGIN_TIME;
+	    if(!isset(self::$_directoryName)) {
+            self::$_directoryName = Yii::getAlias(self::TEMP_ALIAS) . DS . YII_BEGIN_TIME;
+        }
+        $basePath  = self::$_directoryName;
 		if($path) {
 			$basePath .= DS . $path;
 		}
