@@ -11,4 +11,4 @@ if(!class_exists(App::class)) {
     die('Run composer install');
 }
 
-App::init($name);
+App::initPhpApplication($name);
