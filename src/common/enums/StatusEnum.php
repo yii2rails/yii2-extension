@@ -6,10 +6,10 @@ use yii2rails\extension\enum\base\BaseEnum;
 
 class StatusEnum extends BaseEnum {
 
-    // откоючен
+    // откоючен / премодерация
     const DISABLE = 0;
 
-    // включен
+    // включен / одобрен
     const ENABLE = 1;
 
     // отвергнут
