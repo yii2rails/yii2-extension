@@ -21,6 +21,11 @@ class FileHelper extends BaseFileHelper
         return null;
     }
 
+    public static function fileNameOnly($name) {
+        $file_name = basename($name);
+        return FileHelper::fileRemoveExt($file_name);
+    }
+
     public static function fileRemoveExt($name) {
     	$ext = self::fileExt($name);
 	    $extLen = strlen($ext);
