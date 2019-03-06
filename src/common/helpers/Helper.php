@@ -8,7 +8,12 @@ use yii2rails\app\domain\helpers\EnvService;
 use yii2rails\extension\yii\helpers\FileHelper;
 
 class Helper {
-	
+
+    public static function includeConfig(string $file, array $mergeConfig = []) : array {
+        $parentConfig = include($file);
+        return ArrayHelper::merge($parentConfig, $mergeConfig);
+    }
+
 	public static function list2tree($secureAttributes) {
 		$tree = [];
 		foreach($secureAttributes as $attribute) {
