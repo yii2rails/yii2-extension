@@ -1,7 +1,5 @@
 <?php
 
-use yii2rails\app\domain\helpers\Env;
-
 $name = 'console';
 $path = '../../../../../..';
 

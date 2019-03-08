@@ -3,6 +3,7 @@
 namespace yii2rails\extension\core\domain\repositories\base;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 use yii2rails\domain\BaseEntity;
 use yii2rails\domain\data\Query;
@@ -77,5 +78,9 @@ class BaseActiveCoreRepository extends BaseCoreRepository implements CrudInterfa
 		$id = $entity->{$this->primaryKey};
 		return $id;
 	}
-	
+
+    public function truncate()
+    {
+        // TODO: Implement truncate() method.
+    }
 }

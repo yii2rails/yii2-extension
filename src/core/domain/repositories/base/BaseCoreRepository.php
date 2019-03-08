@@ -65,7 +65,7 @@ class BaseCoreRepository extends BaseRestRepository {
 		parent::showUserException($responseEntity);
 	}
 	
-	private function initBaseUrl() {
+	protected function initBaseUrl() {
 		$this->baseUrl = CoreHelper::forgeUrl($this->version, $this->point);
 	}
 	
