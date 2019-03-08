@@ -15,7 +15,7 @@ class JwtFilter extends BaseTokenFilter {
 		try {
 			$tokenEntity = \App::$domain->jwt->token->decode($token, $this->profile);
 		} catch(\Exception $e) {
-			throw new NotFoundHttpException('the_token_has_expired');
+			throw new NotFoundHttpException('the_token_has_expired', 0, $e);
 		}
 		/** @var LoginEntity $loginEntity */
 		$loginEntity = \App::$domain->account->login->oneById($tokenEntity->subject['id']);
