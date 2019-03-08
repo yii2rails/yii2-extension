@@ -24,6 +24,16 @@ class CoreRequestHelper {
 	
 	public static function sendRequest(RequestEntity $requestEntity) {
         $requestEntity->headers = CoreHelper::getHeaders();
+
+        /*$storageJwtProfile = EnvService::get('jwt.profiles.storage');
+        if(!empty($storageJwtProfile)) {
+            $userId = \App::$domain->account->auth->identity->id;
+            $subject = [
+                'id' => $userId,
+            ];
+            $tokenEntity = \App::$domain->jwt->token->forgeBySubject($subject, 'storage');
+        }*/
+
         $responseEntity = RestHelper::sendRequest($requestEntity);
         try {
             self::handleStatusCode($responseEntity);
