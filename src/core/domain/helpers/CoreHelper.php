@@ -46,9 +46,9 @@ class CoreHelper {
 			$headers[HttpHeaderEnum::AUTHORIZATION] = AuthHelper::getTokenString();
 		}
 		if(isset(\App::$domain->partner)) {
-            $partnerTokenDto = \App::$domain->partner->auth->forgeAuthToken();
-            if($partnerTokenDto) {
-                $headers['Authorization-partner'] = $partnerTokenDto->getTokenString();
+            $token = \App::$domain->partner->auth->forgeSelfToken();
+            if($token) {
+                $headers['Authorization-partner'] = 'jwt ' . $token;
             }
         }
 		$headers[HttpHeaderEnum::LANGUAGE] = Yii::$app->language;
