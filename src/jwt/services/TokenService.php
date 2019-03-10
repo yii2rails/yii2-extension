@@ -50,7 +50,7 @@ class TokenService extends BaseService implements TokenInterface {
         $profileEntity = $this->getProfile($profileName);
         $tokenEntity = new TokenEntity();
         $tokenEntity->subject = $subject;
-        \App::$domain->jwt->token->sign($tokenEntity, $profileName, $keyId, $head);
+        $this->sign($tokenEntity, $profileName, $keyId, $head);
         return $tokenEntity;
     }
 
