@@ -57,7 +57,7 @@ class CoreHelper {
 	}
 	
 	private static function getCoreDomain() {
-		$domain = EnvService::get('servers.core.domain');
+		$domain = EnvService::get('servers.core.host');
 		$domain = rtrim($domain, SL);
 		return $domain;
 	}
