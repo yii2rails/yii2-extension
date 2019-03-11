@@ -3,8 +3,9 @@
 namespace yii2rails\extension\core\domain\helpers;
 
 use Yii;
+use App;
 use yii\base\InvalidConfigException;
-use yii2rails\app\domain\helpers\EnvService;
+use yii2railsApp\domain\helpers\EnvService;
 use yii2rails\extension\web\enums\HttpHeaderEnum;
 use yii2module\account\domain\v2\helpers\AuthHelper;
 
@@ -45,8 +46,8 @@ class CoreHelper {
 		if($tokenDto) {
 			$headers[HttpHeaderEnum::AUTHORIZATION] = AuthHelper::getTokenString();
 		}
-		if(isset(\App::$domain->partner)) {
-            $token = \App::$domain->partner->auth->forgeSelfToken();
+		if(isset(App::$domain->partner) && !App::$domain->partner->auth->isAsCore()) {
+            $token = App::$domain->partner->auth->forgeSelfToken();
             if($token) {
                 $headers['Authorization-partner'] = 'jwt ' . $token;
             }
