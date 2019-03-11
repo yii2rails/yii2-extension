@@ -5,7 +5,7 @@ namespace yii2rails\extension\core\domain\helpers;
 use Yii;
 use App;
 use yii\base\InvalidConfigException;
-use yii2railsApp\domain\helpers\EnvService;
+use yii2rails\App\domain\helpers\EnvService;
 use yii2rails\extension\web\enums\HttpHeaderEnum;
 use yii2module\account\domain\v2\helpers\AuthHelper;
 
