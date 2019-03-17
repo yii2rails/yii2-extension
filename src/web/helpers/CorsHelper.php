@@ -24,8 +24,10 @@ class CorsHelper {
 					HttpHeaderEnum::X_REQUESTED_WITH,
 					HttpHeaderEnum::AUTHORIZATION,
 					HttpHeaderEnum::TIME_ZONE,
+                    HttpHeaderEnum::X_ENTITY_ID,
 				],
 				'Access-Control-Expose-Headers' => [
+                    HttpHeaderEnum::CONTENT_TYPE,
 					HttpHeaderEnum::LINK,
 					HttpHeaderEnum::ACCESS_TOKEN,
 					HttpHeaderEnum::AUTHORIZATION,
@@ -34,6 +36,7 @@ class CorsHelper {
 					HttpHeaderEnum::PAGE_COUNT,
 					HttpHeaderEnum::CURRENT_PAGE,
 					HttpHeaderEnum::PER_PAGE,
+                    HttpHeaderEnum::X_ENTITY_ID,
 				],
 				//'Access-Control-Allow-Credentials' => true,
 				//'Access-Control-Max-Age' => 3600, // Allow OPTIONS caching
