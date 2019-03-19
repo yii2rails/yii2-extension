@@ -82,12 +82,12 @@ class ClientHelper
 		Yii::$app->request->setQueryParams($getParams);
 	}
 	
-	public static function getQueryFromRequest($queryParams = null) {
+	public static function getQueryFromRequest($queryParams = null, Query $query = null) {
 		if($queryParams === null) {
 			$queryParams = Yii::$app->request->get();
 		}
 		$getParams = new GetParams();
-		return $getParams->getAllParams($queryParams);
+		return $getParams->getAllParams($queryParams, $query);
 	}
 	
     public static function ip() {
