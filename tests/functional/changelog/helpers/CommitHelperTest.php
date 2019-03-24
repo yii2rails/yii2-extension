@@ -21,7 +21,7 @@ class CommitHelperTest extends BaseDomainTest {
         DomainHelper::defineDomain('changelog', 'yii2rails\extension\changelog\Domain');
 	}
 	
-	public function testOneByDir() {
+	public function testParse() {
         $commits = [
             'test: remove passing test from blocklist (#29484)',
             'test(ivy): remove passing test from blocklist (#29484)',
@@ -51,7 +51,6 @@ class CommitHelperTest extends BaseDomainTest {
             'build: allow build-packages-dist.sh to be run from anywhere (#29092)',
             'breaking change(auth): refactor API',
         ];
-        $version = '1.3.12'; //$version = 'Unreleased';
         $collection = CommitHelper::parseArray($commits);
 
         $actual = ArrayHelper::toArray($collection);
