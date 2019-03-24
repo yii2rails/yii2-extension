@@ -12,7 +12,7 @@ use yii2rails\domain\BaseEntity;
  * @property $major
  * @property $minor
  * @property $patch
- * @property $source
+ * @property $as_string
  */
 class VersionEntity extends BaseEntity {
 

@@ -15,7 +15,7 @@ class VersionHelper {
         $versionEntity->{$versionWeight}++;
     }
 
-    public static function forgeVersionEntityFromString(string $version) {
+    public static function forgeVersionEntityFromString(string $version) : VersionEntity {
         preg_match('/(\d+)\.(\d+)\.(\d+)/i', $version, $matches);
         $versionEntity = new VersionEntity;
         //$versionEntity->source = $oldVersion;
