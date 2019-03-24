@@ -4,6 +4,7 @@ namespace yii2rails\extension\changelog\helpers;
 
 use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
+use yii2module\vendor\domain\enums\VersionTypeEnum;
 use yii2rails\domain\data\Query;
 use yii2rails\extension\changelog\entities\CommitEntity;
 use yii2rails\extension\changelog\entities\TypeEntity;
@@ -11,10 +12,18 @@ use yii2rails\extension\changelog\entities\TypeEntity;
 class LogHelper {
 
     public static function generate(array $collection, string $version) : string {
-        $code = self::generateHeader($version) . PHP_EOL;
+        $newVersion = self::incrementVersion($collection, $version);
+        $code = self::generateHeader($newVersion) . PHP_EOL;
         $code .= self::generateParts($collection);
         $code = trim($code);
         return $code;
+    }
+
+    private static function incrementVersion(array $collection, string $version) {
+        $weight = VersionHelper::getWeight($collection);
+        $versionEntity = VersionHelper::forgeVersionEntityFromString($version);
+        VersionHelper::incrementVersion($versionEntity, $weight);
+        return $versionEntity->as_string;
     }
 
     private static function generateHeader(string $version) : string {
