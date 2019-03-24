@@ -4,6 +4,7 @@ namespace tests\functional\git\services;
 
 use yii\helpers\ArrayHelper;
 use yii2lab\test\Test\BaseDomainTest;
+use yii2module\vendor\domain\enums\VersionTypeEnum;
 use yii2rails\domain\helpers\DomainHelper;
 use yii2rails\extension\changelog\helpers\CommitHelper;
 use yii2rails\extension\changelog\helpers\VersionHelper;
@@ -54,12 +55,9 @@ class VersionHelperTest extends BaseDomainTest {
         ];
 
         $collection = CommitHelper::parseArray($commits);
-        $versionWeight = VersionHelper::getWeight($collection);
+        $actual = VersionHelper::getWeight($collection);
 
-        $actual = [
-            'weight' => $versionWeight,
-        ];
-        $this->assertArray($actual, __METHOD__);
+        $this->tester->assertEquals($actual, VersionTypeEnum::MAJOR);
 	}
 
     public function testMinor() {
@@ -93,12 +91,9 @@ class VersionHelperTest extends BaseDomainTest {
         ];
 
         $collection = CommitHelper::parseArray($commits);
-        $versionWeight = VersionHelper::getWeight($collection);
+        $actual = VersionHelper::getWeight($collection);
 
-        $actual = [
-            'weight' => $versionWeight,
-        ];
-        $this->assertArray($actual, __METHOD__);
+        $this->tester->assertEquals($actual, VersionTypeEnum::MINOR);
     }
 
     public function testPatch() {
@@ -124,11 +119,35 @@ class VersionHelperTest extends BaseDomainTest {
         ];
 
         $collection = CommitHelper::parseArray($commits);
-        $versionWeight = VersionHelper::getWeight($collection);
+        $actual = VersionHelper::getWeight($collection);
 
-        $actual = [
-            'weight' => $versionWeight,
-        ];
+        $this->tester->assertEquals($actual, VersionTypeEnum::PATCH);
+    }
+
+    public function testIncrementMajor() {
+        $oldVersion = '1.3.12';
+        $versionEntity = VersionHelper::forgeVersionEntityFromString($oldVersion);
+        VersionHelper::incrementVersion($versionEntity, VersionTypeEnum::MAJOR);
+
+        $actual = $versionEntity->toArray();
+        $this->assertArray($actual, __METHOD__);
+    }
+
+    public function testIncrementMinor() {
+        $oldVersion = '1.3.12';
+        $versionEntity = VersionHelper::forgeVersionEntityFromString($oldVersion);
+        VersionHelper::incrementVersion($versionEntity, VersionTypeEnum::MINOR);
+
+        $actual = $versionEntity->toArray();
+        $this->assertArray($actual, __METHOD__);
+    }
+
+    public function testIncrementtPatch() {
+        $oldVersion = '1.3.12';
+        $versionEntity = VersionHelper::forgeVersionEntityFromString($oldVersion);
+        VersionHelper::incrementVersion($versionEntity, VersionTypeEnum::PATCH);
+
+        $actual = $versionEntity->toArray();
         $this->assertArray($actual, __METHOD__);
     }
 }

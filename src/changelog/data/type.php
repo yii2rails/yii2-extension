@@ -16,20 +16,6 @@ return [
         'desctiption' => 'добавление нового функционала',
     ],
     [
-        'name' => 'deprecated',
-        'title' => 'Deprecated',
-        'version' => 'patch',
-        'sort' => 5,
-        'desctiption' => 'Пометка устаревания кода (при смене мажорной версии, все устаревшее удаляется)',
-    ],
-    [
-        'name' => 'fix',
-        'title' => 'Bug fixes',
-        'version' => 'patch',
-        'sort' => 10,
-        'desctiption' => 'исправление какой-либо программной ошибки',
-    ],
-    [
         'name' => 'performance',
         'title' => 'Performance',
         'version' => 'minor',
@@ -42,6 +28,20 @@ return [
         'version' => 'minor',
         'sort' => 4,
         'desctiption' => 'изменения в коде, не исправляющие ошибок и не добавляющие новый функционал',
+    ],
+    [
+        'name' => 'deprecated',
+        'title' => 'Deprecated',
+        'version' => 'patch',
+        'sort' => 5,
+        'desctiption' => 'Пометка устаревания кода (при смене мажорной версии, все устаревшее удаляется)',
+    ],
+    [
+        'name' => 'fix',
+        'title' => 'Bug fixes',
+        'version' => 'patch',
+        'sort' => 10,
+        'desctiption' => 'исправление какой-либо программной ошибки',
     ],
     [
         'name' => 'Documentation',

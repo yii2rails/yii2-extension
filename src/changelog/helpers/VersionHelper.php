@@ -7,8 +7,23 @@ use yii\web\NotFoundHttpException;
 use yii2module\vendor\domain\enums\VersionTypeEnum;
 use yii2rails\domain\data\Query;
 use yii2rails\extension\changelog\entities\CommitEntity;
+use yii2rails\extension\changelog\entities\VersionEntity;
 
 class VersionHelper {
+
+    public static function incrementVersion(VersionEntity $versionEntity, string $versionWeight) {
+        $versionEntity->{$versionWeight}++;
+    }
+
+    public static function forgeVersionEntityFromString(string $version) {
+        preg_match('/(\d+)\.(\d+)\.(\d+)/i', $version, $matches);
+        $versionEntity = new VersionEntity;
+        //$versionEntity->source = $oldVersion;
+        $versionEntity->major = $matches[1];
+        $versionEntity->minor = $matches[2];
+        $versionEntity->patch = $matches[3];
+        return $versionEntity;
+    }
 
     public static function getWeight(array $collection) : string {
         $versions = self::extractWeightList($collection);
