@@ -11,9 +11,9 @@ use yii2rails\extension\changelog\entities\TypeEntity;
 
 class LogHelper {
 
-    public static function generate(array $collection, string $version) : string {
+    public static function generate(array $collection, string $version, $date = null) : string {
         $newVersion = self::incrementVersion($collection, $version);
-        $code = self::generateHeader($newVersion) . PHP_EOL;
+        $code = self::generateHeader($newVersion, $date) . PHP_EOL;
         $code .= self::generateParts($collection);
         $code = trim($code);
         return $code;
@@ -26,10 +26,13 @@ class LogHelper {
         return $versionEntity->as_string;
     }
 
-    private static function generateHeader(string $version) : string {
+    private static function generateHeader(string $version, $date = null) : string {
+        if(empty($date)) {
+            $date = date('Y-m-d');
+        }
         $code = '';
         $code .= '# Changelog' . PHP_EOL . PHP_EOL;
-        $code .= '## [' . $version . '] - (' . date('Y-m-d') . ')';
+        $code .= '## [' . $version . '] - (' . $date . ')';
         return $code;
     }
 
