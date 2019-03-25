@@ -16,7 +16,9 @@ class BinConsoleHelper
     public function init() {
         $args = \yii2rails\extension\console\helpers\ArgHelper::all();
         $command = \yii2rails\extension\yii\helpers\ArrayHelper::firstKey($args);
-        list($controllerName, $actionName) = explode('/', $command);
+        $commandArray = explode(SL, $command);
+        $controllerName = isset($commandArray[0]) ? $commandArray[0] : 'default';
+        $actionName = isset($commandArray[1]) ? $commandArray[1] : 'index';
         self::runAction($controllerName, $actionName);
     }
 
