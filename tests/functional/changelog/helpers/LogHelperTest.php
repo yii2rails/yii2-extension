@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\functional\git\services;
+namespace tests\functional\changelog\services;
 
 use yii\helpers\ArrayHelper;
 use yii2lab\test\Test\BaseDomainTest;
@@ -53,9 +53,10 @@ class LogHelperTest extends BaseDomainTest {
             'breaking change(auth): refactor API',
         ];
         $version = '1.3.12'; //$version = 'Unreleased';
+        $date = '2019-03-24';
         $collection = CommitHelper::parseArray($commits);
 
-        $code = LogHelper::generate($collection, $version);
+        $code = LogHelper::generate($collection, $version, $date);
 
         $actual = [
             'code' => $code,

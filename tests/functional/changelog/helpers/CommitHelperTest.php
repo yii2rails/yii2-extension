@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\functional\git\services;
+namespace tests\functional\changelog\services;
 
 use yii\helpers\ArrayHelper;
 use yii2lab\test\Test\BaseDomainTest;
