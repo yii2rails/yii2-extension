@@ -19,12 +19,12 @@ class BaseCoreRepository extends BaseRestRepository {
 	
 	public function init() {
 		parent::init();
-		$this->initVersion();
+		//$this->initVersion();
 		$this->initBaseUrl();
 //		$this->initHeaders();
 	}
 	
-	protected function sendRequest(RequestEntity $requestEntity) {
+	protected function sendRequest(RequestEntity $requestEntity) : ResponseEntity {
 		$headers = $requestEntity->headers;
 		$headers[ClientHelper::IP_HEADER_KEY] = ClientHelper::getIpFromRequest();
 		$requestEntity->headers = $headers;
@@ -58,24 +58,24 @@ class BaseCoreRepository extends BaseRestRepository {
 				\App::$domain->account->auth->breakSession();
 			} catch(UnauthorizedHttpException $e) {
 				$message = ArrayHelper::getValue($responseEntity->data, 'message');
-				throw new UnauthorizedHttpException($message);
+				throw new UnauthorizedHttpException($message, 0, $e);
 			}
 			return;
 		}
 		parent::showUserException($responseEntity);
 	}
 	
-	private function initBaseUrl() {
+	protected function initBaseUrl() {
 		$this->baseUrl = CoreHelper::forgeUrl($this->version, $this->point);
 	}
 	
 	/*private function initHeaders() {
 		$this->headers = ArrayHelper::merge($this->headers, CoreHelper::getHeaders());
-	}*/
+	}
 
     private function initVersion() {
 	    if(empty($this->version)) {
-		    $this->version = CoreHelper::defaultApiVersionNumber(1);
+		    //$this->version = CoreHelper::defaultApiVersionNumber(1);
 	    }
-    }
+    }*/
 }

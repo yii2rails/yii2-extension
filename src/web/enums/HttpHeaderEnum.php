@@ -7,15 +7,16 @@ use yii2rails\extension\enum\base\BaseEnum;
 class HttpHeaderEnum extends BaseEnum {
 	
 	const LINK = 'link';
-	const TOTAL_COUNT = 'X-Pagination-Total-Count';
-	const PAGE_COUNT = 'X-Pagination-Page-Count';
-	const CURRENT_PAGE = 'X-Pagination-Current-Page';
-	const PER_PAGE = 'X-Pagination-Per-Page';
-	const TIME_ZONE = 'Time-Zone';
-	const CONTENT_TYPE = 'Content-Type';
-	const AUTHORIZATION = 'Authorization';
+	const TOTAL_COUNT = 'x-pagination-total-count';
+	const PAGE_COUNT = 'x-pagination-page-count';
+	const CURRENT_PAGE = 'x-pagination-current-page';
+	const PER_PAGE = 'x-pagination-per-page';
+	const TIME_ZONE = 'time-zone';
+	const CONTENT_TYPE = 'content-type';
+	const AUTHORIZATION = 'authorization';
 	const ACCESS_TOKEN = 'access-token';
-	const X_REQUESTED_WITH = 'X-Requested-With';
+	const X_REQUESTED_WITH = 'x-requested-with';
+    const X_ENTITY_ID = 'x-entity-id';
 	const LANGUAGE = 'language';
 
 }

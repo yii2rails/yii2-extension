@@ -1,0 +1,422 @@
+[
+	{
+		"type": "test",
+		"scope": "",
+		"subject": " remove passing test from blocklist (#29484)",
+		"task_id": "29484",
+		"source_text": "test: remove passing test from blocklist (#29484)",
+		"class": {
+			"name": "test",
+			"type_name": "test",
+			"type": {
+				"name": "test",
+				"title": "Test",
+				"version": "patch",
+				"sort": 8,
+				"desctiption": "добавление новых тестов или исправление существующих"
+			}
+		}
+	},
+	{
+		"type": "test",
+		"scope": "ivy",
+		"subject": " remove passing test from blocklist (#29484)",
+		"task_id": "29484",
+		"source_text": "test(ivy): remove passing test from blocklist (#29484)",
+		"class": {
+			"name": "test",
+			"type_name": "test",
+			"type": {
+				"name": "test",
+				"title": "Test",
+				"version": "patch",
+				"sort": 8,
+				"desctiption": "добавление новых тестов или исправление существующих"
+			}
+		}
+	},
+	{
+		"type": "fix",
+		"scope": "ivy",
+		"subject": " TestBed overriding custom ErrorHandler (#29482)",
+		"task_id": "29482",
+		"source_text": "fix(ivy): TestBed overriding custom ErrorHandler (#29482)",
+		"class": {
+			"name": "fix",
+			"type_name": "fix",
+			"type": {
+				"name": "fix",
+				"title": "Bug fixes",
+				"version": "patch",
+				"sort": 10,
+				"desctiption": "исправление какой-либо программной ошибки"
+			}
+		}
+	},
+	{
+		"type": "test",
+		"scope": "bazel",
+		"subject": " Add router to bazel integration test (#29459)",
+		"task_id": "29459",
+		"source_text": "test(bazel): Add router to bazel integration test (#29459)",
+		"class": {
+			"name": "test",
+			"type_name": "test",
+			"type": {
+				"name": "test",
+				"title": "Test",
+				"version": "patch",
+				"sort": 8,
+				"desctiption": "добавление новых тестов или исправление существующих"
+			}
+		}
+	},
+	{
+		"type": "fix",
+		"scope": "bazel",
+		"subject": " workaround problem reading summary files from node_modules",
+		"task_id": null,
+		"source_text": "fix(bazel): workaround problem reading summary files from node_modules",
+		"class": {
+			"name": "fix",
+			"type_name": "fix",
+			"type": {
+				"name": "fix",
+				"title": "Bug fixes",
+				"version": "patch",
+				"sort": 10,
+				"desctiption": "исправление какой-либо программной ошибки"
+			}
+		}
+	},
+	{
+		"type": "fix",
+		"scope": "bazel",
+		"subject": " allow ng_module users to set createExternalSymbolFactoryR…",
+		"task_id": null,
+		"source_text": "fix(bazel): allow ng_module users to set createExternalSymbolFactoryR…",
+		"class": {
+			"name": "fix",
+			"type_name": "fix",
+			"type": {
+				"name": "fix",
+				"title": "Bug fixes",
+				"version": "patch",
+				"sort": 10,
+				"desctiption": "исправление какой-либо программной ошибки"
+			}
+		}
+	},
+	{
+		"type": "ci",
+		"scope": "",
+		"subject": " add `.codefresh/` to the `fw-dev-infra` group (#29478)",
+		"task_id": "29478",
+		"source_text": "ci: add `.codefresh/` to the `fw-dev-infra` group (#29478)",
+		"class": null
+	},
+	{
+		"type": "fix",
+		"scope": "ivy",
+		"subject": " ViewContainerRef.destroy should properly clean the DOM (#29414",
+		"task_id": "29414",
+		"source_text": "fix(ivy): ViewContainerRef.destroy should properly clean the DOM (#29414",
+		"class": {
+			"name": "fix",
+			"type_name": "fix",
+			"type": {
+				"name": "fix",
+				"title": "Bug fixes",
+				"version": "patch",
+				"sort": 10,
+				"desctiption": "исправление какой-либо программной ошибки"
+			}
+		}
+	},
+	{
+		"type": "fix",
+		"scope": "compiler",
+		"subject": " inherit param types when class has a constructor which…",
+		"task_id": null,
+		"source_text": "fix(compiler): inherit param types when class has a constructor which…",
+		"class": {
+			"name": "fix",
+			"type_name": "fix",
+			"type": {
+				"name": "fix",
+				"title": "Bug fixes",
+				"version": "patch",
+				"sort": 10,
+				"desctiption": "исправление какой-либо программной ошибки"
+			}
+		}
+	},
+	{
+		"type": "docs",
+		"scope": "",
+		"subject": " update developer guide for testing and IntelliJ (#29048)",
+		"task_id": "29048",
+		"source_text": "docs: update developer guide for testing and IntelliJ (#29048)",
+		"class": {
+			"name": "docs",
+			"type_name": "docs",
+			"type": null
+		}
+	},
+	{
+		"type": "refactor",
+		"scope": "ivy",
+		"subject": " use `ClassDeclaration` in more `ReflectionHost`",
+		"task_id": null,
+		"source_text": "refactor(ivy): use `ClassDeclaration` in more `ReflectionHost`",
+		"class": {
+			"name": "refactor",
+			"type_name": "refactor",
+			"type": {
+				"name": "refactor",
+				"title": "Refactor",
+				"version": "minor",
+				"sort": 4,
+				"desctiption": "изменения в коде, не исправляющие ошибок и не добавляющие новый функционал"
+			}
+		}
+	},
+	{
+		"type": "refactor",
+		"scope": "ivy",
+		"subject": " correctly type class declarations in `ngtsc`/`ngcc`",
+		"task_id": null,
+		"source_text": "refactor(ivy): correctly type class declarations in `ngtsc`/`ngcc`",
+		"class": {
+			"name": "refactor",
+			"type_name": "refactor",
+			"type": {
+				"name": "refactor",
+				"title": "Refactor",
+				"version": "minor",
+				"sort": 4,
+				"desctiption": "изменения в коде, не исправляющие ошибок и не добавляющие новый функционал"
+			}
+		}
+	},
+	{
+		"type": "refactor",
+		"scope": "ivy",
+		"subject": " implement `DtsModuleScopeResolver` from `MetadataDtsMo…",
+		"task_id": null,
+		"source_text": "refactor(ivy): implement `DtsModuleScopeResolver` from `MetadataDtsMo…",
+		"class": {
+			"name": "refactor",
+			"type_name": "refactor",
+			"type": {
+				"name": "refactor",
+				"title": "Refactor",
+				"version": "minor",
+				"sort": 4,
+				"desctiption": "изменения в коде, не исправляющие ошибок и не добавляющие новый функционал"
+			}
+		}
+	},
+	{
+		"type": "refactor",
+		"scope": "ivy",
+		"subject": " remove unused code from `TypeCheckContext` (#29209)",
+		"task_id": "29209",
+		"source_text": "refactor(ivy): remove unused code from `TypeCheckContext` (#29209)",
+		"class": {
+			"name": "refactor",
+			"type_name": "refactor",
+			"type": {
+				"name": "refactor",
+				"title": "Refactor",
+				"version": "minor",
+				"sort": 4,
+				"desctiption": "изменения в коде, не исправляющие ошибок и не добавляющие новый функционал"
+			}
+		}
+	},
+	{
+		"type": "build",
+		"scope": "",
+		"subject": " add @npm//jasmine-core dep back to jasmine_node_test in defaul…",
+		"task_id": null,
+		"source_text": "build: add @npm//jasmine-core dep back to jasmine_node_test in defaul…",
+		"class": null
+	},
+	{
+		"type": "build",
+		"scope": "bazel",
+		"subject": " also back out of jasmine bootstrap simplification (#29444)",
+		"task_id": "29444",
+		"source_text": "build(bazel): also back out of jasmine bootstrap simplification (#29444)",
+		"class": null
+	},
+	{
+		"type": "build",
+		"scope": "bazel",
+		"subject": " back out of @bazel/jasmine 0.27.7 with shard count (#29444)",
+		"task_id": "29444",
+		"source_text": "build(bazel): back out of @bazel/jasmine 0.27.7 with shard count (#29444)",
+		"class": null
+	},
+	{
+		"type": "build",
+		"scope": "compiler-cli",
+		"subject": " enable full TypeScript strictness (#29436)",
+		"task_id": "29436",
+		"source_text": "build(compiler-cli): enable full TypeScript strictness (#29436)",
+		"class": null
+	},
+	{
+		"type": "refactor",
+		"scope": "service-worker",
+		"subject": " use `Adapter#parseUrl()` for all URL parsing",
+		"task_id": null,
+		"source_text": "refactor(service-worker): use `Adapter#parseUrl()` for all URL parsing",
+		"class": {
+			"name": "refactor",
+			"type_name": "refactor",
+			"type": {
+				"name": "refactor",
+				"title": "Refactor",
+				"version": "minor",
+				"sort": 4,
+				"desctiption": "изменения в коде, не исправляющие ошибок и не добавляющие новый функционал"
+			}
+		}
+	},
+	{
+		"type": "test",
+		"scope": "service-worker",
+		"subject": " test support for multiple apps on different sub…",
+		"task_id": null,
+		"source_text": "test(service-worker): test support for multiple apps on different sub…",
+		"class": {
+			"name": "test",
+			"type_name": "test",
+			"type": {
+				"name": "test",
+				"title": "Test",
+				"version": "patch",
+				"sort": 8,
+				"desctiption": "добавление новых тестов или исправление существующих"
+			}
+		}
+	},
+	{
+		"type": "test",
+		"scope": "",
+		"subject": " remove symlink workaround (#29426)",
+		"task_id": "29426",
+		"source_text": "test: remove symlink workaround (#29426)",
+		"class": {
+			"name": "test",
+			"type_name": "test",
+			"type": {
+				"name": "test",
+				"title": "Test",
+				"version": "patch",
+				"sort": 8,
+				"desctiption": "добавление новых тестов или исправление существующих"
+			}
+		}
+	},
+	{
+		"type": "feat",
+		"scope": "ivy",
+		"subject": " ngcc - support creating a new copy of the entry-point form…",
+		"task_id": null,
+		"source_text": "feat(ivy): ngcc - support creating a new copy of the entry-point form…",
+		"class": {
+			"name": "feat",
+			"type_name": "feature",
+			"type": {
+				"name": "feature",
+				"title": "Features",
+				"version": "minor",
+				"sort": 2,
+				"desctiption": "добавление нового функционала"
+			}
+		}
+	},
+	{
+		"type": "refactor",
+		"scope": "ivy",
+		"subject": " ngcc - extract file writing out into a class (#29092)",
+		"task_id": "29092",
+		"source_text": "refactor(ivy): ngcc - extract file writing out into a class (#29092)",
+		"class": {
+			"name": "refactor",
+			"type_name": "refactor",
+			"type": {
+				"name": "refactor",
+				"title": "Refactor",
+				"version": "minor",
+				"sort": 4,
+				"desctiption": "изменения в коде, не исправляющие ошибок и не добавляющие новый функционал"
+			}
+		}
+	},
+	{
+		"type": "feat",
+		"scope": "ivy",
+		"subject": " ngcc - support dts compilation via ES5 bundles (#29092)",
+		"task_id": "29092",
+		"source_text": "feat(ivy): ngcc - support dts compilation via ES5 bundles (#29092)",
+		"class": {
+			"name": "feat",
+			"type_name": "feature",
+			"type": {
+				"name": "feature",
+				"title": "Features",
+				"version": "minor",
+				"sort": 2,
+				"desctiption": "добавление нового функционала"
+			}
+		}
+	},
+	{
+		"type": "style",
+		"scope": "ivy",
+		"subject": " ngcc - fix typo in comment (#29092)",
+		"task_id": "29092",
+		"source_text": "style(ivy): ngcc - fix typo in comment (#29092)",
+		"class": {
+			"name": "style",
+			"type_name": "style",
+			"type": {
+				"name": "style",
+				"title": "Code style",
+				"version": "patch",
+				"sort": 7,
+				"desctiption": "изменения в коде, не затрагивающие его содержание (форматирование, добавление точек с запятой и т.д.)"
+			}
+		}
+	},
+	{
+		"type": "build",
+		"scope": "",
+		"subject": " allow build-packages-dist.sh to be run from anywhere (#29092)",
+		"task_id": "29092",
+		"source_text": "build: allow build-packages-dist.sh to be run from anywhere (#29092)",
+		"class": null
+	},
+	{
+		"type": "breaking change",
+		"scope": "auth",
+		"subject": " refactor API",
+		"task_id": null,
+		"source_text": "breaking change(auth): refactor API",
+		"class": {
+			"name": "breaking change",
+			"type_name": "breaking_change",
+			"type": {
+				"name": "breaking_change",
+				"title": "Breaking change",
+				"version": "major",
+				"sort": 1,
+				"desctiption": "нарушений обратной совместимости"
+			}
+		}
+	}
+]

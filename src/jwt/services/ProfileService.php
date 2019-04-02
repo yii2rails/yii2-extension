@@ -21,7 +21,7 @@ class ProfileService extends BaseActiveService implements ProfileInterface {
         try {
             $profileEntity = $this->repository->oneById($id);
         } catch (NotFoundHttpException $e) {
-            throw new NotFoundHttpException("Profile \"{$id}\" not defined!");
+            throw new NotFoundHttpException("Profile \"{$id}\" not defined!", 0, $e);
         }
         $profileEntity->validate();
         return $profileEntity;

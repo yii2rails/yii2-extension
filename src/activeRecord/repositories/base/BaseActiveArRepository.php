@@ -11,12 +11,14 @@ use Yii;
 use yii\db\ActiveRecord;
 use yii\web\NotFoundHttpException;
 use yii\helpers\ArrayHelper;
+use yii2rails\domain\traits\repository\UpdateOrInsertTrait;
 use yii2rails\extension\activeRecord\helpers\SearchHelper;
 use yii2rails\extension\activeRecord\traits\ActiveRepositoryTrait;
 
 abstract class BaseActiveArRepository extends BaseArRepository implements CrudInterface {
 	
 	use ActiveRepositoryTrait;
+	use UpdateOrInsertTrait;
 
 	public function count(Query $query = null) {
 		$this->queryValidator->validateWhereFields($query);
@@ -29,25 +31,7 @@ abstract class BaseActiveArRepository extends BaseArRepository implements CrudIn
 			throw new BadQueryHttpException(null, 0, $e);
 		}
 	}
-	
-	protected function forgeUniqueFields() {
-		$unique = $this->uniqueFields();
-		if(!empty($unique)) {
-			$unique = ArrayHelper::toArray($unique);
-		}
-		if(!empty($this->primaryKey)) {
-			$unique[] = [$this->primaryKey];
-		}
-		return $unique;
-	}
-	
-	protected function findUnique(BaseEntity $entity, $isUpdate = false) {
-		$unique = $this->forgeUniqueFields();
-		foreach($unique as $uniqueItem) {
-			$this->findUniqueItem($entity, $uniqueItem, $isUpdate);
-		}
-	}
-	
+
 	public function insert(BaseEntity $entity) {
 		$entity->validate();
 		$this->findUnique($entity);
@@ -73,7 +57,7 @@ abstract class BaseActiveArRepository extends BaseArRepository implements CrudIn
 		}
 		return $entity;
 	}
-	
+
 	public function update(BaseEntity $entity) {
 		$entity->validate();
 		$this->findUnique($entity, true);
@@ -100,7 +84,16 @@ abstract class BaseActiveArRepository extends BaseArRepository implements CrudIn
 		}
 		$this->deleteOne($condition);
 	}
-	
+
+    public function deleteAll($condition) {
+        $encodedCondition = $this->alias->encode($condition);
+        $this->model->deleteAll($encodedCondition);
+    }
+
+    public function truncate() {
+        Yii::$app->db->createCommand()->truncateTable($this->model->tableName())->execute();
+    }
+
 	/**
 	 * @param $condition
 	 *
@@ -111,7 +104,7 @@ abstract class BaseActiveArRepository extends BaseArRepository implements CrudIn
 		$condition = $this->alias->encode($condition);
 		$model = $this->model->findOne($condition);
 		if(empty($model)) {
-			throw new NotFoundHttpException(__METHOD__ . ':' . __LINE__);
+			throw new NotFoundHttpException(__METHOD__ . ':' . __LINE__ . ' ' . json_encode($condition));
 		}
 		return $model;
 	}
@@ -121,13 +114,23 @@ abstract class BaseActiveArRepository extends BaseArRepository implements CrudIn
 		$encodedCondition = $this->alias->encode($condition);
 		$this->model::deleteAll($encodedCondition);
 	}
-	
-	public function deleteAll($condition) {
-		$encodedCondition = $this->alias->encode($condition);
-		$this->model->deleteAll($encodedCondition);
-	}
-	
-	public function truncate() {
-		Yii::$app->db->createCommand()->truncateTable($this->model->tableName())->execute();
-	}
+
+    protected function forgeUniqueFields() {
+        $unique = $this->uniqueFields();
+        if(!empty($unique)) {
+            $unique = ArrayHelper::toArray($unique);
+        }
+        if(!empty($this->primaryKey)) {
+            $unique[] = [$this->primaryKey];
+        }
+        return $unique;
+    }
+
+    protected function findUnique(BaseEntity $entity, $isUpdate = false) {
+        $unique = $this->forgeUniqueFields();
+        foreach($unique as $uniqueItem) {
+            $this->findUniqueItem($entity, $uniqueItem, $isUpdate);
+        }
+    }
+
 }
