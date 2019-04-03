@@ -21,7 +21,7 @@ abstract class BaseStrategyContext extends BaseObject {
 		return $this->strategyInstance;
 	}
 	
-	public function setStrategyInstance(Object $strategyInstance) {
+	public function setStrategyInstance($strategyInstance) {
 		$this->strategyInstance = $strategyInstance;
 	}
 	
