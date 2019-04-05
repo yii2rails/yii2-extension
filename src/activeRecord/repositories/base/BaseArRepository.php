@@ -15,6 +15,7 @@ use Yii;
 use yii\base\UnknownMethodException;
 use yii\web\NotFoundHttpException;
 use yii2rails\domain\repositories\BaseRepository;
+use yii2rails\domain\values\TimeValue;
 use yii2rails\extension\filedb\repositories\base\BaseActiveFiledbRepository;
 use yii2rails\extension\filedb\repositories\base\BaseFiledbRepository;
 use yii\helpers\ArrayHelper;
@@ -202,6 +203,15 @@ abstract class BaseArRepository extends BaseRepository {
 	protected function massAssignment(BaseActiveRecord $model, BaseEntity $entity, $scenario = null) {
 		$data = $entity->toArray();
 		$data = $this->unsetFieldsByKey($this->allFields(), $data);
+		
+		/*$rawAttributes = $entity->toArrayRaw();
+		foreach($rawAttributes as $rawAttribute) {
+			if($rawAttribute instanceof TimeValue) {
+				d($rawAttribute->get());
+			}
+		}
+		d($rawAttributes);*/
+		
 		$scenarios = $this->scenarios();
 		if(!empty($scenarios[ $scenario ]) && !empty($scenario)) {
 			$data = $this->unsetFieldsByKey($scenarios[ $scenario ], $data);
