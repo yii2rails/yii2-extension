@@ -7,6 +7,8 @@ use yii\base\Model;
 use yii\db\ActiveRecord;
 use yii\db\BaseActiveRecord;
 use yii\helpers\Inflector;
+use yii2lab\db\domain\enums\DbDriverEnum;
+use yii2lab\db\domain\helpers\ConnectionHelper;
 use yii2lab\db\domain\helpers\TableHelper;
 use yii2rails\domain\BaseEntity;
 use yii2rails\domain\data\Query;
@@ -159,6 +161,15 @@ abstract class BaseArRepository extends BaseRepository {
 	}
 	
 	protected function saveModel(BaseActiveRecord $model) {
+        $driver = ConnectionHelper::getDriverFromDb(Yii::$app->db);
+        if($driver != DbDriverEnum::PGSQL) {
+            foreach ($model as $key => $value) {
+                if(is_array($value)) {
+                    $value = json_encode($value);
+                    $model->{$key} = $value;
+                }
+            }
+        }
 		return $model->save();
 		/*try {
 		
