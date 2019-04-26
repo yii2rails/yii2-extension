@@ -51,7 +51,7 @@ class Debug {
 	}
 	
 	public static function prr($val, $exit = false, $forceToArray = false) {
-		if(!empty($forceToArray)) {
+		if(!empty($forceToArray) && !is_scalar($val)) {
 			$val = ArrayHelper::toArray($val);
 		}
 		if(class_exists('Yii')) {
