@@ -28,6 +28,7 @@ class ProfileRepository extends BaseRepository implements ProfileInterface {
         $profiles = [];
         foreach ($envProfiles as $name => $config) {
             $config['id'] = $name;
+            $config['name'] = $name;
             $profiles[$name] = $config;
         }
         return $profiles;

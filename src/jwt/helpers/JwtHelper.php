@@ -10,29 +10,6 @@ use yii2rails\extension\jwt\entities\ProfileEntity;
 class JwtHelper
 {
 
-    private static function validateHeader($header, ProfileEntity $profileEntity) {
-        $key = $profileEntity->key;
-        if (empty($header->alg)) {
-            throw new UnexpectedValueException('Empty algorithm');
-        }
-        if (empty(JWT::$supported_algs[$header->alg])) {
-            throw new UnexpectedValueException('Algorithm not supported');
-        }
-        if (!in_array($header->alg, $profileEntity->allowed_algs)) {
-            throw new UnexpectedValueException('Algorithm not allowed');
-        }
-        if (is_array($key) || $key instanceof \ArrayAccess) {
-            if (isset($header->kid)) {
-                if (!isset($key[$header->kid])) {
-                    throw new UnexpectedValueException('"kid" invalid, unable to lookup correct key');
-                }
-                //$key = $key[$header->kid];
-            } else {
-                throw new UnexpectedValueException('"kid" empty, unable to lookup correct key');
-            }
-        }
-    }
-
     public static function decodeRaw($token, ProfileEntity $profileEntity) {
         $decodedObject = JwtHelper::tokenDecode($token);
         /*if (empty($profileEntity->key)) {
@@ -63,6 +40,29 @@ class JwtHelper
             throw new UnexpectedValueException('Invalid encoding');
         }
         return $object;
+    }
+
+    private static function validateHeader($header, ProfileEntity $profileEntity) {
+        $key = $profileEntity->key;
+        if (empty($header->alg)) {
+            throw new UnexpectedValueException('Empty algorithm');
+        }
+        if (empty(JWT::$supported_algs[$header->alg])) {
+            throw new UnexpectedValueException('Algorithm not supported');
+        }
+        if (!in_array($header->alg, $profileEntity->allowed_algs)) {
+            throw new UnexpectedValueException('Algorithm not allowed');
+        }
+        if (is_array($key) || $key instanceof \ArrayAccess) {
+            if (isset($header->kid)) {
+                if (!isset($key[$header->kid])) {
+                    throw new UnexpectedValueException('"kid" invalid, unable to lookup correct key');
+                }
+                //$key = $key[$header->kid];
+            } else {
+                throw new UnexpectedValueException('"kid" empty, unable to lookup correct key');
+            }
+        }
     }
 
 }

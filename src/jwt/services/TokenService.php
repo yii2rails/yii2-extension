@@ -85,6 +85,9 @@ class TokenService extends BaseService implements TokenInterface {
     }
 
     private function getProfile($name) {
+        if($name instanceof ProfileEntity) {
+            return $name;
+        }
 	    /** @var ProfileEntity $profileEntity */
 	    try {
 		    $profileEntity = $this->domain->profile->oneById($name);
