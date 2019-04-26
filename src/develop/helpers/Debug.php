@@ -80,7 +80,9 @@ class Debug {
 				exit;
 			}
 		}
-		$val = Html::recursiveHtmlEntities($val);
+		if(APP != CONSOLE) {
+            $val = Html::recursiveHtmlEntities($val);
+        }
 		$store = new Store('php');
 		$content = $store->encode($val);
 		if(APP != CONSOLE && APP != API) {
