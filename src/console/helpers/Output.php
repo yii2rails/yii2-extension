@@ -159,6 +159,7 @@ class Output {
 		self::pipe($title, $charBorder);
 		//echo PHP_EOL;
 		foreach($data as $key => $item) {
+		    $item = is_scalar($item) ? $item : '{' . gettype($item) . '}';
 			self::item($key . ': ' . $item);
 		}
 		self::pipe('', $charBorder);
