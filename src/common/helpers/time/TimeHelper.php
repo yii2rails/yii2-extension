@@ -34,6 +34,8 @@ class TimeHelper {
 		if(empty(self::$driver)) {
 			if(APP == API) {
 				self::$driver = new TimeHeaderDriver;
+            } elseif(APP == CONSOLE) {
+                self::$driver = new TimeMockDriver;
 			} else {
 				self::$driver = new TimeCookieDriver;
 			}
