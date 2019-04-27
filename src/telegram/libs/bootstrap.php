@@ -7,7 +7,6 @@ use yii2rails\extension\telegram\helpers\AppHelper;
 
 DomainHelper::forgeDomains([
     'telegram' => 'yii2rails\extension\telegram\Domain',
-    'shop' => 'domain\shop\Domain',
 ]);
 
 $botToken = ArrayHelper::getValue($_GET, 'token');
