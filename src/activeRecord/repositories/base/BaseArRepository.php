@@ -236,10 +236,12 @@ abstract class BaseArRepository extends BaseRepository {
 			return;
 		}
 		$q = $query->toArray();
-		if(!empty($q['select'])) {
-			$fields = $this->alias->encode($q['select']);
+		/*if(!empty($q['select'])) {
+            $repositoryAttributes = $this->selectFields();
+            $select = array_intersect_key($repositoryAttributes, $q['select']);
+			$fields = $this->alias->encode($select);
 			$this->query->select($fields);
-		}
+		}*/
 		if(!empty($q['with'])) {
 			//$this->validateWithParam($q['with']);
 			$with = $this->alias->encode($q['with']);
