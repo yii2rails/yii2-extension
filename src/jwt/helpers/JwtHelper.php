@@ -25,7 +25,9 @@ class JwtHelper
 	 * @return JwtTokenEntity|null
 	 */
 	public static function tokenDecode(string $jwt) : JwtTokenEntity {
-        $tks = explode('.', $jwt);
+        $parts = explode(SPC, $jwt);
+	    $token = count($parts) == 1 ? $parts[0] : $parts[1];
+        $tks = explode('.', $token);
         $jwtTokenEntity = new JwtTokenEntity();
         $jwtTokenEntity->header = self::tokenDecodeItem($tks[0]);
         $jwtTokenEntity->payload = self::tokenDecodeItem($tks[1]);
