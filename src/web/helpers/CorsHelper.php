@@ -3,9 +3,21 @@
 namespace yii2rails\extension\web\helpers;
 
 use yii\filters\Cors;
+use yii\helpers\ArrayHelper;
 use yii2rails\app\domain\helpers\EnvService;
 use yii2rails\extension\web\enums\HttpHeaderEnum;
 use yii2rails\extension\web\enums\HttpMethodEnum;
+
+/*
+env-local:
+
+'cors' => [
+    'origin' => [
+        'http://host.project',
+    ],
+    'credentials' => true,
+],
+ */
 
 class CorsHelper {
 	
@@ -14,10 +26,12 @@ class CorsHelper {
 			$origin = self::generateOriginFromEnvUrls();
 		}*/
 		$origin = \Yii::$app->request->headers->get('Origin');
+		$origin = EnvService::get('cors.origin', $origin);
+        $origin = ArrayHelper::toArray($origin);
 		return [
 			'class' => Cors::class,
 			'cors' => [
-				'Origin' => [$origin],
+				'Origin' => $origin,
 				'Access-Control-Request-Method' => HttpMethodEnum::values(),
 				'Access-Control-Request-Headers' => [
 					HttpHeaderEnum::CONTENT_TYPE,
@@ -38,7 +52,7 @@ class CorsHelper {
 					HttpHeaderEnum::PER_PAGE,
                     HttpHeaderEnum::X_ENTITY_ID,
 				],
-				//'Access-Control-Allow-Credentials' => true,
+				'Access-Control-Allow-Credentials' => EnvService::get('cors.credentials', false),
 				//'Access-Control-Max-Age' => 3600, // Allow OPTIONS caching
 			],
 		];
