@@ -2,6 +2,8 @@
 
 namespace yii2rails\extension\code\helpers\parser;
 
+use yii\helpers\ArrayHelper;
+
 class DocCommentHelper
 {
 	
@@ -68,7 +70,7 @@ class DocCommentHelper
 	private static function getEntity($collection) {
 		$entity = [];
 		$collection = array_values($collection);
-		if($collection[0]['type'] == self::TYPE_STRING) {
+		if(ArrayHelper::getValue($collection, '0.type') == self::TYPE_STRING) {
 			$i = 0;
 			while(isset($collection[$i]) && $collection[$i]['type'] == self::TYPE_STRING) {
 				$entity['title'][] = $collection[$i]['value'];
