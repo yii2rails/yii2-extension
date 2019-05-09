@@ -26,8 +26,13 @@ abstract class BaseStrategyContext extends BaseObject {
 	}
 	
 	public function setStrategyDefinition($strategyDefinition) {
-		$strategyInstance = InstanceHelper::create($strategyDefinition, []);
+		$strategyInstance = $this->forgeStrategyInstance($strategyDefinition);
 		$this->setStrategyInstance($strategyInstance);
+	}
+	
+	public function forgeStrategyInstance($strategyDefinition) {
+		$strategyInstance = InstanceHelper::create($strategyDefinition, []);
+		return $strategyInstance;
 	}
 	
 }

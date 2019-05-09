@@ -26,6 +26,12 @@ abstract class BaseStrategyContextHandlers extends BaseStrategyContext {
 		$this->strategyDefinitions = $handlers;
 	}
 	
+	public function forgeStrategyInstanceByName(string $strategyName) {
+		$this->validate($strategyName);
+		$strategyDefinition = ArrayHelper::getValue($this->getStrategyDefinitions(), $strategyName);
+		return $this->forgeStrategyInstance($strategyDefinition);
+	}
+	
 	public function setStrategyName(string $strategyName) {
 		$this->validate($strategyName);
 		$strategyDefinition = ArrayHelper::getValue($this->getStrategyDefinitions(), $strategyName);
