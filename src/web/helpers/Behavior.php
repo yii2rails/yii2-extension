@@ -5,8 +5,8 @@ namespace yii2rails\extension\web\helpers;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
-use yii2module\account\domain\v2\filters\auth\ConsoleAuth;
-use yii2module\account\domain\v2\filters\auth\HttpTokenAuth;
+use yii2module\account\domain\v3\filters\auth\ConsoleAuth;
+use yii2module\account\domain\v3\filters\auth\HttpTokenAuth;
 
 class Behavior {
 	

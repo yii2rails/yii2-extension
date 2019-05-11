@@ -9,7 +9,7 @@ use yii2rails\domain\services\base\BaseService;
 use yii2lab\rest\domain\entities\RequestEntity;
 use yii2rails\extension\web\enums\HttpMethodEnum;
 use yii2lab\rest\domain\helpers\MiscHelper;
-use yii2module\account\domain\v2\helpers\AuthHelper;
+use yii2module\account\domain\v3\helpers\AuthHelper;
 
 /**
  * Class ClientService

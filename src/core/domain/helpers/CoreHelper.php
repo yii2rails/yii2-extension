@@ -7,7 +7,7 @@ use App;
 use yii\base\InvalidConfigException;
 use yii2rails\App\domain\helpers\EnvService;
 use yii2rails\extension\web\enums\HttpHeaderEnum;
-use yii2module\account\domain\v2\helpers\AuthHelper;
+use yii2module\account\domain\v3\helpers\AuthHelper;
 
 class CoreHelper {
 	

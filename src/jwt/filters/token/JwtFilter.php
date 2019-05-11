@@ -4,9 +4,15 @@ namespace yii2rails\extension\jwt\filters\token;
 
 use yii\web\NotFoundHttpException;
 use yii2rails\extension\yii\helpers\ArrayHelper;
-use yii2module\account\domain\v2\entities\LoginEntity;
-use yii2module\account\domain\v2\filters\token\BaseTokenFilter;
+use yii2module\account\domain\v3\entities\LoginEntity;
+use yii2module\account\domain\v3\filters\token\BaseTokenFilter;
 
+/**
+ * Class JwtFilter
+ *
+ * @package yii2rails\extension\jwt\filters\token
+ * @deprecated move to \yii2module\account\domain\v3\strategies\token
+ */
 class JwtFilter extends BaseTokenFilter {
 
 	public $profile = 'default';
@@ -28,7 +34,7 @@ class JwtFilter extends BaseTokenFilter {
 	}
 	
 	public function login($body, $ip) {
-		$loginEntity = \App::$domain->account->repositories->auth->authentication($body['login'], $body['password'], $ip);
+		$loginEntity = \App::$domain->account->auth->authentication($body['login'], $body['password'], $ip);
 		$subject = [
 			'id' => $loginEntity->id,
 			'token' => $loginEntity->token,
