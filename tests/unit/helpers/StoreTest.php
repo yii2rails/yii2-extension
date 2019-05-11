@@ -78,7 +78,7 @@ class StoreTest extends Unit
 	
 	private function fileName($name)
 	{
-		$fileName = ROOT_DIR . '/vendor/yii2rails/yii2-extension/tests/_expect/' . $name . '.json';
+		$fileName = ROOT_DIR . '/common/runtime/tests/store/_expect/' . $name . '.json';
 		return $fileName;
 	}
 	
