@@ -10,8 +10,8 @@ class MenuHelperTest extends Unit
 {
 	
 	const PACKAGE = 'vendor/yii2rails/yii2-extension';
-	const ADMIN_ID = 381949;
-	const USER_ID = 381070;
+	const ADMIN_ID = 1;
+	const USER_ID = 3;
 	
 	public function testGenerateMenu()
 	{

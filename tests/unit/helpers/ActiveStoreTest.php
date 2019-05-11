@@ -9,9 +9,9 @@ class ActiveStoreTest extends Unit
 	
 	public function testOne()
 	{
-		$result = Login::one(['login' => '77004163092']);
+		$result = Login::one(['login' => 'admin']);
 		$this->tester->assertEquals($result, [
-			'login' => '77004163092',
+			'login' => 'admin',
 			'role' => 'rAdministrator',
 			'is_active' => 1,
 		]);
@@ -22,12 +22,12 @@ class ActiveStoreTest extends Unit
 		$result = Login::all(['is_active' => 1]);
 		$this->tester->assertEquals($result, [
 			[
-				'login' => '77004163092',
+				'login' => 'admin',
 				'role' => 'rAdministrator',
 				'is_active' => 1,
 			],
 			[
-				'login' => '77783177384',
+				'login' => 'tester1',
 				'role' => 'rUnknownUser',
 				'is_active' => 1,
 			],
