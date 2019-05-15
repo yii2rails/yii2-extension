@@ -8,10 +8,15 @@ use yii2rails\extension\store\StoreFile;
 
 class FileHelper extends BaseFileHelper
 {
+    public static function mb_basename($name) {
+        $nameArray = explode('/',$name);
+        $name = end($nameArray);
+        return $name;
+    }
 
     public static function fileExt($name) {
     	$name = trim($name);
-    	$baseName = basename($name);
+    	$baseName = self::mb_basename($name);
         $start = strrpos($baseName, DOT);
         if($start) {
         	$ext = substr($baseName, $start + 1);
@@ -22,7 +27,7 @@ class FileHelper extends BaseFileHelper
     }
 
     public static function fileNameOnly($name) {
-        $file_name = basename($name);
+        $file_name = self::mb_basename($name);
         return FileHelper::fileRemoveExt($file_name);
     }
 
