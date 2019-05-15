@@ -36,12 +36,7 @@ class TempHelper {
         }
 	}
 	
-	public static function copyUploadedToTemp(UploadedFile $uploaded, $fileEncoding) {
-	    if ($fileEncoding == 'base64') {
-            $fileBase64Content = file_get_contents($uploaded->tempName);
-            $fileContent = base64_decode($fileBase64Content);
-            file_put_contents ($uploaded->tempName, $fileContent);
-        }
+	public static function copyUploadedToTemp(UploadedFile $uploaded) {
 		$tempFile = self::fullName($uploaded->name);
 		$uploaded->saveAs($tempFile);
 		return $tempFile;
