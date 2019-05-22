@@ -270,7 +270,7 @@ class MenuHelper
 		if(empty($menu['domain'])) {
 			return true;
 		}
-		return ModuleHelper::has($menu['domain']);
+		return \App::$domain->has($menu['domain']);
 	}
 
 	private static function isAllow($menu) {
