@@ -5,6 +5,8 @@ namespace yii2rails\extension\common\helpers;
 class StringHelper {
 	
 	const PATTERN_SPACES = '#\s+#m';
+    const WITHOUT_CHAR = '#\s+#m';
+    const NUM_CHAR = '#\D+#m';
 	
 	public static function stripContent($data, $beginText, $endText) {
 		$pattern = preg_quote($beginText) . '[\s\S]+' . preg_quote($endText);
@@ -114,8 +116,18 @@ class StringHelper {
 		$text = preg_replace(self::PATTERN_SPACES, EMP, $text);
 		return $text;
 	}
-	
-	public static function textToArray($text) {
+
+    public static function filterNumOnly($text, $charSet = self::NUM_CHAR) {
+        $text = preg_replace($charSet, EMP, $text);
+        return $text;
+    }
+
+    public static function filterChar($text, $charSet = self::WITHOUT_CHAR) {
+        $text = preg_replace($charSet, EMP, $text);
+        return $text;
+    }
+
+    public static function textToArray($text) {
 		$text = self::removeDoubleSpace($text);
 		return explode(SPC, $text);
 	}
