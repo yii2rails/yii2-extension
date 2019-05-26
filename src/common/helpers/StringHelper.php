@@ -144,6 +144,7 @@ class StringHelper {
 			$end = substr($value, 0 - $length);
 		}
 		$valueLength = !empty($valueLength) ? $valueLength : strlen($value) - $length * 2;
+        $valueLength = $valueLength > 1 ? $valueLength : 2;
 		return $begin . str_repeat('*', $valueLength) . $end;
 	}
 	
