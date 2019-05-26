@@ -9,6 +9,27 @@ use yii2rails\extension\yii\helpers\FileHelper;
 
 class Helper {
 
+    public static function microtimeId($length = 14) {
+        $timeArray = explode(DOT, MICRO_TIME);
+        $time = implode(EMP, $timeArray);
+        $len = mb_strlen($time);
+        if($len > 14) {
+
+        }
+        if($length < $len) {
+            $mock = str_repeat('0', $length - $len);
+            $time .= $mock;
+        }
+        if($length > 14) {
+            $diff = $length - 14;
+            $min = str_repeat('0', $diff);
+            $max = str_repeat('9', $diff);
+            $rand = mt_rand($min, $max);
+            $time .= $rand;
+        }
+        return $time;
+    }
+
     public static function includeConfig(string $file, array $mergeConfig = []) : array {
         $parentConfig = include($file);
         return ArrayHelper::merge($parentConfig, $mergeConfig);
