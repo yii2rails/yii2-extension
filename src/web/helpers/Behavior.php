@@ -21,6 +21,9 @@ class Behavior {
 		if(APP == API) {
 			return self::apiAuth($only);
 		}
+        if(APP == FRONTEND || APP == BACKEND) {
+            return self::webAuth($only);
+        }
 	}
 	
 	private static function consoleAuth($only = null) {
@@ -43,8 +46,32 @@ class Behavior {
         $config['except'] = ['options'];
 		return $config;
 	}
-	
-	static function verb($actions) {
+
+    private static function webAuth($only = null) {
+        $config = [
+            'class' => AccessControl::class,
+        ];
+        if(!empty($only)) {
+            $config['only'] = ArrayHelper::toArray($only);
+            $config['rules'] = [
+                [
+                    'allow' => true,
+                    'actions' => ArrayHelper::toArray($only),
+                    'roles' => ['@'],
+                ],
+            ];
+        } else {
+            $config['rules'] = [
+                [
+                    'allow' => true,
+                    'roles' => ['@'],
+                ],
+            ];
+        }
+        return $config;
+    }
+
+    static function verb($actions) {
 		foreach($actions as $actionName => &$actionMethods) {
 			$actionMethods = ArrayHelper::toArray($actionMethods);
 		}
