@@ -7,6 +7,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\UnauthorizedHttpException;
 use yii2rails\domain\services\base\BaseService;
 use yii2lab\rest\domain\entities\RequestEntity;
+use yii2rails\extension\web\enums\HttpHeaderEnum;
 use yii2rails\extension\web\enums\HttpMethodEnum;
 use yii2lab\rest\domain\helpers\MiscHelper;
 use yii2module\account\domain\v3\helpers\AuthHelper;
@@ -74,7 +75,7 @@ class ClientService extends BaseService {
 	}
 	
 	protected function getLanguage() {
-		$language = Yii::$app->request->headers->get('Language');
+		$language = Yii::$app->request->headers->get(HttpHeaderEnum::AUTHORIZATION);
 		if(!empty($language)) {
 			return $language;
 		}
@@ -82,16 +83,16 @@ class ClientService extends BaseService {
 	}
 	
 	protected function getHeaders($headers = []) {
-		if(empty($headers['Authorization'])) {
+		if(empty($headers[HttpHeaderEnum::AUTHORIZATION])) {
 			$authorization = AuthHelper::getTokenString();
 			if(!empty($authorization)) {
-				$headers['Authorization'] = $authorization;
+				$headers[HttpHeaderEnum::AUTHORIZATION] = $authorization;
 			}
 		}
-		if(empty($headers['Language'])) {
+		if(empty($headers[HttpHeaderEnum::LANGUAGE])) {
 			$language = $this->getLanguage();
 			if(!empty($language)) {
-				$headers['Language'] = $language;
+				$headers[HttpHeaderEnum::LANGUAGE] = $language;
 			}
 		}
 		return $headers;
