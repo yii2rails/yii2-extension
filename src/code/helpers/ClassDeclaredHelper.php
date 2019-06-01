@@ -38,9 +38,9 @@ class ClassDeclaredHelper
 	}*/
 	
 	private static function getDeclaredTree() {
+        $classes['interfaces'] = get_declared_interfaces();
+        $classes['traits'] = get_declared_traits();
 		$classes['classes'] = get_declared_classes();
-		$classes['traits'] = get_declared_traits();
-		$classes['interfaces'] = get_declared_interfaces();
 		return $classes;
 	}
 	
