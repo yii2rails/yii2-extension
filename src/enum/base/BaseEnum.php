@@ -68,4 +68,9 @@ class BaseEnum {
 	    $allFliped = array_flip($all);
 	    return ArrayHelper::getValue($allFliped, $value);
     }
+
+    public static function getValue($key, $default = null, $prefix = null) {
+        $all = self::all($prefix);
+        return ArrayHelper::getValue($all, $key, $default);
+    }
 }
