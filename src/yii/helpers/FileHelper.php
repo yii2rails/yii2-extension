@@ -4,6 +4,8 @@ namespace yii2rails\extension\yii\helpers;
 
 use Yii;
 use yii\helpers\BaseFileHelper;
+use yii2rails\extension\enum\enums\ByteEnum;
+use yii2rails\extension\enum\enums\TimeEnum;
 use yii2rails\extension\store\StoreFile;
 
 class FileHelper extends BaseFileHelper
@@ -230,7 +232,23 @@ class FileHelper extends BaseFileHelper
 		}
 		return $result;
 	}
-	
+
+    public static function sizeUnit(int $sizeByte) {
+        $units = ByteEnum::allUnits();
+        foreach ($units as $name => $value) {
+            if($sizeByte / $value < ByteEnum::STEP) {
+                return $name;
+            }
+        }
+    }
+
+    public static function sizeFormat(int $sizeByte, $precision = 2) {
+        $unitKey = self::sizeUnit($sizeByte);
+        $size = $sizeByte / ByteEnum::getValue($unitKey);
+        $size = round($size, $precision);
+        return $size . SPC . $unitKey;
+    }
+
 	public static function dirFromTime($level=3,$time=TIMESTAMP) {
 		if($level >= 1) $format[] = 'Y';
 		if($level >= 2) $format[] = 'm';
