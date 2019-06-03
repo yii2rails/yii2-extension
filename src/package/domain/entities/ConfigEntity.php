@@ -13,6 +13,14 @@ use yii2rails\domain\data\Query;
  *
  * property $id
  * @property $dir
+ * @property $name
+ * @property $type
+ * @property $keywords
+ * @property $license
+ * @property $authors
+ * @property $minimum_stability
+ * @property $autoload
+ * @property $require
  * @property $config
  */
 class ConfigEntity extends BaseEntity {

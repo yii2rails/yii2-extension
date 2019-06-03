@@ -2,6 +2,7 @@
 
 namespace yii2rails\extension\package\domain\services;
 
+use yii2rails\extension\package\domain\entities\ConfigEntity;
 use yii2rails\extension\package\domain\interfaces\services\ConfigInterface;
 use yii2rails\domain\services\base\BaseActiveService;
 
@@ -15,7 +16,7 @@ use yii2rails\domain\services\base\BaseActiveService;
  */
 class ConfigService extends BaseActiveService implements ConfigInterface {
 	
-	public function oneByDir($dir) {
+	public function oneByDir(string $dir) : ConfigEntity {
 		return $this->repository->oneByDir($dir);
 	}
 	

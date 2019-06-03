@@ -3,6 +3,7 @@
 namespace yii2rails\extension\package\domain\interfaces\services;
 
 use yii2rails\domain\interfaces\services\CrudInterface;
+use yii2rails\extension\package\domain\entities\ConfigEntity;
 
 /**
  * Interface ConfigInterface
@@ -13,5 +14,7 @@ use yii2rails\domain\interfaces\services\CrudInterface;
  * @property-read \yii2rails\extension\package\domain\interfaces\repositories\ConfigInterface $repository
  */
 interface ConfigInterface extends CrudInterface {
+
+    public function oneByDir(string $dir) : ConfigEntity;
 
 }
