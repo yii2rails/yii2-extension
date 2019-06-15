@@ -90,7 +90,7 @@ class Benchmark {
 			$item['duration'] = $item['end'] - $item['begin'];
 		}
         self::$data[$name] = $item;
-		if($item['duration']) {
+		if(!empty($item['duration'])) {
             $store = self::getStoreInstance();
             $store->save([
                 '_SERVER' => $_SERVER,
