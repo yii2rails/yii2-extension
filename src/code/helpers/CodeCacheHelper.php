@@ -4,6 +4,7 @@ namespace yii2rails\extension\code\helpers;
 
 use yii\helpers\ArrayHelper;
 use yii2rails\extension\code\entities\TokenEntity;
+use yii2rails\extension\code\helpers\parser\TokenCollectionHelper;
 use yii2rails\extension\code\helpers\parser\TokenHelper;
 use yii2rails\extension\develop\helpers\Benchmark;
 use yii2rails\extension\store\StoreFile;
@@ -48,25 +49,6 @@ class CodeCacheHelper
             '#(\?\>)$#',
         ], '', $code);
         return $code;
-    }
-
-	private static function hh($classes) {
-        $files = [];
-        foreach($classes as $class) {
-            if(!self::isExcludeClassName($class)) {
-                $code = self::loadClassCode($class);
-                if(preg_match('/namespace\s+('.self::NAMESPACE_EXP.');/i', $code, $matches)) {
-                    $namespace = $matches[1];
-                    $code = preg_replace('/(namespace\s+'.self::NAMESPACE_EXP.';)/i', '', $code);
-                } else {
-                    $namespace = '\\';
-                }
-                //if(strpos($namespace, 'yii2lab\navigation\domain') === 0) {
-                    $files[$namespace][] = $code;
-                //}
-            }
-        }
-        return $files;
     }
 
     private static function searchTag($codeTokenCollection, $needle, $start = 0) {
@@ -116,52 +98,85 @@ class CodeCacheHelper
 	    return $codeTokenCollection;
     }
 
-    private static function gg($files) {
+    private static function implodeCode($files) {
         $res = '';
-        foreach($files as $namespace => $codeArray) {
-            $namespaceCode = '';
-            foreach($codeArray as $code) {
-                $codeTokenCollection = TokenHelper::codeToCollection($code);
-                $uses = self::searchUses($codeTokenCollection);
-
-                $useClasses = [];
-                $uses = array_reverse($uses);
-                foreach($uses as $use) {
-                    $lastIndex = $use['end'] - 1;
-                    $className = $codeTokenCollection[$lastIndex]->value;
-                    $len = $use['end'] - $use['start'];
-                    $arr = array_slice($codeTokenCollection, $use['start'], $len);
-                    foreach ($arr as $tt => $item) {
-                        if($item->type != T_STRING && $item->type != T_NS_SEPARATOR) {
-                            unset($arr[$tt]);
-                        }
-                    }
-                    $useClasses[$className] = trim(TokenHelper::collectionToCode($arr), '\\');
-                    $codeTokenCollection = self::rewriteToSpaces($codeTokenCollection, $use['start'], $use['end']);
-                }
-                foreach($codeTokenCollection as $ii => $tokenEntity) {
-                    $prevValue = ArrayHelper::getValue($codeTokenCollection, ($ii - 1) . '.value');
-                    if($prevValue != '\\' && $tokenEntity->type == T_STRING && !empty($useClasses[$tokenEntity->value])) {
-                        $tokenEntity->value = '\\' . $useClasses[$tokenEntity->value];
-                    }
-                }
-                $code = TokenHelper::collectionToCode($codeTokenCollection);
-                $code = self::trimCode($code);
-                $namespaceCode .= PHP_EOL . PHP_EOL . $code . PHP_EOL . PHP_EOL;
-            }
-            if($namespace == '\\') {
-                $res .= PHP_EOL . PHP_EOL . $namespaceCode . PHP_EOL . PHP_EOL;
-            } else {
-                $res .= PHP_EOL . PHP_EOL . 'namespace ' . $namespace . ' {' . PHP_EOL . $namespaceCode .  PHP_EOL . '}' . PHP_EOL . PHP_EOL;
-            }
+        foreach($files as $code) {
+            $code = self::trimCode($code);
+            $res .= '<?php ' . $code . ' ?>';
         }
         return $res;
     }
 
+    private static function isMatchArray($pathesArray, $string) {
+        foreach ($pathesArray as $path) {
+            if(strpos($string, $path) === 0) {
+                return true;
+            }
+	    }
+        return false;
+    }
+
+    private static function loadClassesCode($classes) {
+        $files = [];
+        foreach($classes as $class) {
+            $code = self::loadClassCode($class);
+            if(strpos($code, '__DIR__') === false) {
+                $files[] = $code;
+            }
+        }
+        return $files;
+    }
+
+    public static function filter($classes, $needle, $isInvertMatch = false) {
+	    $fiteredClasses = [];
+        foreach($classes as $class) {
+            $isMatch = self::isMatchArray($needle, $class);
+            $isMatch = $isInvertMatch ? !$isMatch : $isMatch;
+            if($isMatch) {
+                $fiteredClasses[] = $class;
+            }
+        }
+        return $fiteredClasses;
+    }
+
 	public static function saveClassesCache($classes) {
-        $files = self::hh($classes);
-        $res = self::gg($files);
-        $res = '<?php' . $res;
+	    $include = [
+            /*'api\\',
+            'backend\\',
+            'common\\',
+            'console\\',
+            'domain\\',
+            'frontend\\',*/
+
+            'yii\\',
+
+            'yii2lab',
+            'yii2module',
+            'yii2rails',
+            'yii2tech',
+            //'yii2mod',
+            'yii2bundle',
+            'yii2tool',
+            'yubundle',
+        ];
+        $exclude = [
+            'yii\\helpers',
+            'yii2rails\\app\\domain\\helpers\\Env',
+            'yii2rails\\domain\\interfaces\\repositories',
+            'yii2rails\\domain\\interfaces\\services',
+            'yii2rails\\extension\\develop\\helpers\\Benchmark',
+            'yii2rails\\extension\\registry\\base\\BaseRegistry',
+            'yii2rails\\extension\\registry\\helpers\\Registry',
+            'yii2rails\\extension\\registry\\interfaces\\RegistryInterface',
+        ];
+
+        $classes = self::filter($classes, $include);
+        $classes = self::filter($classes, $exclude, true);
+        $files = self::loadClassesCode($classes);
+        $res = self::implodeCode($files);
+        $codeTokenCollection = TokenHelper::codeToCollection($res);
+        $codeTokenCollection = TokenCollectionHelper::removeComment($codeTokenCollection);
+        $res = TokenHelper::collectionToCode($codeTokenCollection);
 		$fileName = self::getFileName();
         FileHelper::save($fileName, $res);
 	}

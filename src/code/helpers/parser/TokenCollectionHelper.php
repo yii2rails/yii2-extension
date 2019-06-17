@@ -66,8 +66,16 @@ class TokenCollectionHelper {
 		];
 		return self::applyFilters($collection, $filterCollection);
 	}
-	
-	public static function unCompress($collection) {
+
+    public static function removeComment($collection) {
+        $filterCollection = [
+            RemoveComment::class,
+            RemoveDoubleEmptyLines::class,
+        ];
+        return self::applyFilters($collection, $filterCollection);
+    }
+
+    public static function unCompress($collection) {
 	
 	}
 	
