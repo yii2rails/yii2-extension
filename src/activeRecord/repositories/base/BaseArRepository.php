@@ -264,6 +264,10 @@ abstract class BaseArRepository extends BaseRepository {
 		if(empty($query)) {
 			return;
 		}
+		$select = $query->getParam('select');
+		if($select) {
+		    $this->query->select($select);
+        }
 		$limit = $query->getParam('limit');
 		if($limit) {
 			$this->query->limit($limit);
@@ -283,6 +287,10 @@ abstract class BaseArRepository extends BaseRepository {
 			$orderEncoded = $this->alias->encode($order);
 			$this->query->orderBy($orderEncoded);
 		}
+		$group = $query->getParam('group');
+		if ($group) {
+		    $this->query->groupBy($group);
+        }
 		$this->forgeQueryForOne($query);
 	}
 	
