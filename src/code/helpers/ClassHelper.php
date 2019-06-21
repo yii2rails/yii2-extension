@@ -34,8 +34,8 @@ class ClassHelper
 		$codeEntity->code = self::render($entity);
 		CodeHelper::save($codeEntity);
 	}
-	
-	private static function render(BaseEntity $entity) {
+
+    public static function render(BaseEntity $entity) {
 		/** @var ClassRender|InterfaceRender $render */
 		if($entity instanceof ClassEntity) {
 			$render = new ClassRender();
