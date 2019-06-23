@@ -3,7 +3,7 @@
 namespace yii2rails\extension\widget\helpers;
 
 use yii2rails\extension\package\domain\entities\ProviderEntity;
-use yii2module\vendor\domain\entities\RepoEntity;
+use yii2tool\vendor\domain\entities\RepoEntity;
 
 class WidgetHelper {
 

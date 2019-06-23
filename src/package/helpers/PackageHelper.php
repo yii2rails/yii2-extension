@@ -4,7 +4,7 @@ namespace yii2rails\extension\package\helpers;
 
 use yii2rails\extension\package\domain\entities\PackageEntity;
 use yii2rails\extension\yii\helpers\FileHelper;
-use yii2module\vendor\domain\helpers\GitShell;
+use yii2tool\vendor\domain\helpers\GitShell;
 
 class PackageHelper {
 	

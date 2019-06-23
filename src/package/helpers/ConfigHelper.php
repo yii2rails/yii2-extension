@@ -7,7 +7,7 @@ use yii2rails\app\domain\filters\env\LoadConfig;
 use yii2rails\extension\store\StoreFile;
 use yii2rails\extension\yii\helpers\ArrayHelper;
 use yii2rails\extension\yii\helpers\FileHelper;
-use yii2module\vendor\domain\helpers\GitShell;
+use yii2tool\vendor\domain\helpers\GitShell;
 
 class ConfigHelper {
 	

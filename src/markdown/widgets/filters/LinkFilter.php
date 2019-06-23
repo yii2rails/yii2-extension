@@ -4,7 +4,7 @@ namespace yii2rails\extension\markdown\widgets\filters;
 
 use yii\helpers\Url;
 use yii2rails\extension\scenario\base\BaseScenario;
-use yii2module\guide\module\helpers\NavigationHelper;
+use yii2tool\guide\module\helpers\NavigationHelper;
 
 class LinkFilter extends BaseScenario {
 	

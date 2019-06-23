@@ -4,7 +4,7 @@ namespace tests\functional\changelog\services;
 
 use yii\helpers\ArrayHelper;
 use yii2lab\test\Test\BaseDomainTest;
-use yii2module\vendor\domain\enums\VersionTypeEnum;
+use yii2tool\vendor\domain\enums\VersionTypeEnum;
 use yii2rails\domain\helpers\DomainHelper;
 use yii2rails\extension\changelog\helpers\CommitHelper;
 use yii2rails\extension\changelog\helpers\VersionHelper;

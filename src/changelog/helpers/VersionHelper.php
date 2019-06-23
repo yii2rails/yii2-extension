@@ -4,7 +4,7 @@ namespace yii2rails\extension\changelog\helpers;
 
 use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
-use yii2module\vendor\domain\enums\VersionTypeEnum;
+use yii2tool\vendor\domain\enums\VersionTypeEnum;
 use yii2rails\domain\data\Query;
 use yii2rails\extension\changelog\entities\CommitEntity;
 use yii2rails\extension\changelog\entities\VersionEntity;
