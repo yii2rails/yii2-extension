@@ -136,6 +136,9 @@ class ClassHelper {
     }
     
     static function isComponent($id, $definition) {
+		if(empty($definition)) {
+			return false;
+		}
     	return PhpHelper::isValidName($id) && array_key_exists('class', $definition);
     }
     
