@@ -94,6 +94,17 @@ abstract class BaseActiveArRepository extends BaseArRepository implements CrudIn
         Yii::$app->db->createCommand()->truncateTable($this->model->tableName())->execute();
     }
 
+    /**
+     * Транзакция
+     *
+     * @param \Closure $callback
+     * @return mixed
+     */
+    public function transaction(\Closure $callback)
+    {
+        return $this->getModel()->getDb()->transaction($callback);
+    }
+
 	/**
 	 * @param $condition
 	 *
