@@ -10,7 +10,7 @@ use yii2rails\extension\yii\helpers\FileHelper;
 class Helper {
 
     public static function microtimeId($length = 14) {
-        $timeArray = explode(DOT, MICRO_TIME);
+        $timeArray = explode(DOT, microtime(true));
         $time = implode(EMP, $timeArray);
         $len = mb_strlen($time);
         if($len > 14) {
