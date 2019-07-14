@@ -48,6 +48,15 @@ abstract class BaseFlyRepository extends BaseRepository {
         } catch (\Exception $e) {}
     }
 
+    protected function moveFile($fileName, $targetFileName) {
+        $staticFs = $this->storeInstance();
+        $file = $this->fullName($fileName);
+        $taregtFile = $this->fullName($targetFileName);
+        if($staticFs->has($file)) {
+            $staticFs->rename($file, $taregtFile);
+        }
+    }
+
 	protected function removeFile($fileName) {
 		$staticFs = $this->storeInstance();
 		$file = $this->fullName($fileName);
