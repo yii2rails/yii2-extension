@@ -20,6 +20,7 @@ class TempHelper {
 	public static function save($name, $content) {
 		$fileName = self::fullName($name);
 		FileHelper::save($fileName, $content);
+		return $fileName;
 	}
 	
 	public static function fullName($name) {
