@@ -6,9 +6,11 @@ use yii2rails\extension\console\helpers\Output;
 
 class Select {
 
-	static function display($message, $options, $isMulti = false, $isCustom = false) {
+	static function display($message, $options, $isMulti = false, $isCustom = false, $answer = null) {
 		self::selectPrint($message, $options, $isMulti, $isCustom);
-		$answer = trim(fgets(STDIN));
+		if(empty($answer)) {
+            $answer = trim(fgets(STDIN));
+        }
 		if($answer == 'a') {
 			return $options;
 		} elseif($answer == 'q' || $answer == '') {
