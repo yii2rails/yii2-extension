@@ -4,6 +4,7 @@ namespace yii2rails\extension\yii\helpers;
 
 use Yii;
 use yii\helpers\Html as YiiHtml;
+use yii2lab\rest\domain\helpers\RestHelper;
 
 class Html extends YiiHtml
 {
@@ -74,6 +75,13 @@ class Html extends YiiHtml
             $val = htmlentities($val);
         }
         return $val;
+    }
+
+    public static function generateDataUrl($fileName) {
+        $resp = RestHelper::get($fileName);
+        $mimeType = $resp->getHeader('content-type', 1)[0];
+        $base64code = 'data:'.$mimeType.';base64, ' . base64_encode($resp->content);
+        return $base64code;
     }
 
 	public static function getDataUrl($fileName) {
