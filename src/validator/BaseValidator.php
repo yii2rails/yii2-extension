@@ -3,7 +3,7 @@
 namespace yii2rails\extension\validator;
 
 use yii\validators\Validator;
-use yii2module\lang\domain\helpers\LangHelper;
+use yii2bundle\lang\domain\helpers\LangHelper;
 
 abstract class BaseValidator extends Validator {
 	

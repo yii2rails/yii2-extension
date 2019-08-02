@@ -5,7 +5,7 @@ namespace yii2rails\extension\widget\entityActions\actions;
 use yii\helpers\Url;
 use yii2rails\extension\widget\helpers\WidgetHelper;
 use yii2rails\extension\yii\helpers\Html;
-use yii2module\lang\domain\helpers\LangHelper;
+use yii2bundle\lang\domain\helpers\LangHelper;
 
 class BaseAction {
 	

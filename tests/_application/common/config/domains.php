@@ -5,7 +5,7 @@ use yii2lab\test\helpers\TestHelper;
 
 $config = [
     'rbac' => [
-        'class' => 'yii2lab\rbac\domain\Domain',
+        'class' => 'yii2bundle\rbac\domain\Domain',
         'repositories' => [
             'rule' => [
                 'ruleFile' => '@vendor/yii2tool/yii2-test/src/base/_application/common/data/rbac/rules.php',
