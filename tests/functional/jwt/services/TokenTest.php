@@ -9,8 +9,8 @@ use yii\helpers\ArrayHelper;
 use yii2rails\app\domain\helpers\EnvService;
 use yii2rails\extension\jwt\entities\TokenEntity;
 use yii2rails\extension\enum\enums\TimeEnum;
-use yii2lab\test\helpers\DataHelper;
-use yii2lab\test\Test\Unit;
+use yii2tool\test\helpers\DataHelper;
+use yii2tool\test\Test\Unit;
 
 class TokenTest extends Unit
 {

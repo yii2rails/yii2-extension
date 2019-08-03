@@ -6,7 +6,7 @@ use yii2rails\domain\helpers\DomainHelper;
 use yii2rails\extension\git\domain\entities\BranchEntity;
 use yii2rails\extension\git\domain\entities\GitEntity;
 use yii2rails\extension\git\domain\entities\RemoteEntity;
-use yii2lab\test\Test\Unit;
+use yii2tool\test\Test\Unit;
 
 class GitTest extends Unit {
 	

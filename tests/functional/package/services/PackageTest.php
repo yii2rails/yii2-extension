@@ -7,7 +7,7 @@ use yii2rails\domain\helpers\DomainHelper;
 use yii2rails\extension\package\domain\entities\ConfigEntity;
 use yii2rails\extension\package\domain\entities\GroupEntity;
 use yii2rails\extension\package\domain\entities\PackageEntity;
-use yii2lab\test\Test\Unit;
+use yii2tool\test\Test\Unit;
 
 class PackageTest extends Unit {
 	
