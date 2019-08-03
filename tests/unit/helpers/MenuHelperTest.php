@@ -4,7 +4,7 @@ namespace tests\unit\helpers;
 use yii2lab\test\Test\Unit;
 use yii2rails\extension\menu\helpers\MenuHelper;
 use yii2lab\test\helpers\DataHelper;
-use yii2module\account\domain\v3\helpers\TestAuthHelper;
+use yii2bundle\account\domain\v3\helpers\TestAuthHelper;
 
 class MenuHelperTest extends Unit
 {

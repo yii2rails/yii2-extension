@@ -8,7 +8,7 @@ use yii2lab\rest\domain\entities\RequestEntity;
 use yii2rails\app\domain\helpers\EnvService;
 use yii2rails\domain\exceptions\UnprocessableEntityHttpException;
 use yii2rails\extension\web\enums\HttpHeaderEnum;
-use yii2module\account\domain\v3\helpers\AuthHelper;
+use yii2bundle\account\domain\v3\helpers\AuthHelper;
 use yii\helpers\ArrayHelper;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;

@@ -4,7 +4,7 @@ namespace yii2rails\extension\jwt\interfaces\services;
 
 use yii2rails\extension\jwt\entities\AuthenticationEntity;
 use yii2rails\extension\jwt\entities\TokenEntity;
-use yii2module\account\domain\v3\entities\LoginEntity;
+use yii2bundle\account\domain\v3\entities\LoginEntity;
 
 /**
  * Interface TokenInterface

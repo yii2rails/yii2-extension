@@ -16,7 +16,7 @@ BaseCoreRepository
 use yii2lab\core\domain\repositories\base\BaseCoreRepository;
 use yii2lab\misc\enums\HttpMethodEnum;
 use yii2lab\rest\domain\entities\RequestEntity;
-use yii2module\account\domain\v2\entities\LoginEntity;
+use yii2bundle\account\domain\v2\entities\LoginEntity;
 
 class AuthRepository extends BaseCoreRepository {
 

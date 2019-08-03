@@ -4,14 +4,14 @@ namespace yii2rails\extension\jwt\filters\token;
 
 use yii\web\NotFoundHttpException;
 use yii2rails\extension\yii\helpers\ArrayHelper;
-use yii2module\account\domain\v3\entities\LoginEntity;
-use yii2module\account\domain\v3\filters\token\BaseTokenFilter;
+use yii2bundle\account\domain\v3\entities\LoginEntity;
+use yii2bundle\account\domain\v3\filters\token\BaseTokenFilter;
 
 /**
  * Class JwtFilter
  *
  * @package yii2rails\extension\jwt\filters\token
- * @deprecated move to \yii2module\account\domain\v3\strategies\token
+ * @deprecated move to \yii2bundle\account\domain\v3\strategies\token
  */
 class JwtFilter extends BaseTokenFilter {
 
