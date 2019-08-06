@@ -10,8 +10,9 @@ use yii2rails\extension\store\StoreFile;
 
 class FileHelper extends BaseFileHelper
 {
-    public static function mb_basename($name) {
-        $nameArray = explode('/',$name);
+    public static function mb_basename($name, $ds = DIRECTORY_SEPARATOR) {
+        $name = self::normalizePath($name);
+        $nameArray = explode($ds, $name);
         $name = end($nameArray);
         return $name;
     }
