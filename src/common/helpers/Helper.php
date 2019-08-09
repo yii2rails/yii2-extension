@@ -13,7 +13,7 @@ class Helper {
         $timeArray = explode(DOT, microtime(true));
         $time = implode(EMP, $timeArray);
         $time = strval($time);
-        $time = StringHelper::fillString($time, $length, '0');
+        $time = StringHelper::fill($time, $length, '0');
         if($length > 14) {
             $diff = $length - 14;
             $min = str_repeat('0', $diff);

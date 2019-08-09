@@ -8,10 +8,10 @@ class StringHelper {
     const WITHOUT_CHAR = '#\s+#m';
     const NUM_CHAR = '#\D+#m';
 	
-    public static function fillString($value, $length, $char) {
+    public static function fill($value, $length, $char) {
         $value = strval($value);
         $len = mb_strlen($value);
-        if($length < $len) {
+        if($length > $len) {
             $mock = str_repeat('0', $length - $len);
             $value .= $mock;
         }
