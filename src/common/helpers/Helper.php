@@ -12,14 +12,8 @@ class Helper {
     public static function microtimeId($length = 14) {
         $timeArray = explode(DOT, microtime(true));
         $time = implode(EMP, $timeArray);
-        $len = mb_strlen($time);
-        if($len > 14) {
-
-        }
-        if($length < $len) {
-            $mock = str_repeat('0', $length - $len);
-            $time .= $mock;
-        }
+        $time = strval($time);
+        $time = StringHelper::fillString($time, $length, '0');
         if($length > 14) {
             $diff = $length - 14;
             $min = str_repeat('0', $diff);
