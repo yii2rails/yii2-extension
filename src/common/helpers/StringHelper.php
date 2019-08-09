@@ -8,7 +8,17 @@ class StringHelper {
     const WITHOUT_CHAR = '#\s+#m';
     const NUM_CHAR = '#\D+#m';
 	
-	public static function stripContent($data, $beginText, $endText) {
+    public static function fillString($value, $length, $char) {
+        $value = strval($value);
+        $len = mb_strlen($value);
+        if($length < $len) {
+            $mock = str_repeat('0', $length - $len);
+            $value .= $mock;
+        }
+        return $value;
+    }
+
+    public static function stripContent($data, $beginText, $endText) {
 		$pattern = preg_quote($beginText) . '[\s\S]+' . preg_quote($endText);
 		$data = preg_replace('#' . $pattern . '#i', EMP, $data);
 		return $data;
