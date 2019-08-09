@@ -65,11 +65,13 @@ class RegexpPatternEnum extends BaseEnum {
 	 * Набор из цифр
 	 */
 	const NUM = '[0-9]';
+    const NUM_REQUIRED = self::BEGIN_REQUIRED . self::NUM . '+' . self::END_REQUIRED;
 	
 	/**
 	 * Набор из букв (латиница)
 	 */
 	const CHAR = '[a-zA-Z]';
+    const CHAR_REQUIRED = self::BEGIN_REQUIRED . self::CHAR . self::END_REQUIRED;
 	
 	/**
 	 * Набор из букв (латиница)
