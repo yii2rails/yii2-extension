@@ -7,13 +7,37 @@ class StringHelper {
 	const PATTERN_SPACES = '#\s+#m';
     const WITHOUT_CHAR = '#\s+#m';
     const NUM_CHAR = '#\D+#m';
-	
-    public static function fill($value, $length, $char) {
+
+    public static function formatByMask($login, $mask)
+    {
+        $maskArray = str_split($mask, 1);
+        $pos = 0;
+        $result = '';
+        foreach($maskArray as $char) {
+            if(is_numeric($char)) {
+                if($char == '9') {
+                    $result .= $login[$pos];
+                    $pos++;
+                } else {
+                    $result .= $char;
+                }
+            } else {
+                $result .= $char;
+            }
+        }
+        return $result;
+    }
+
+    public static function fill($value, $length, $char, $place = 'after') {
         $value = strval($value);
         $len = mb_strlen($value);
         if($length > $len) {
             $mock = str_repeat('0', $length - $len);
-            $value .= $mock;
+            if($place == 'after') {
+                $value = $value . $mock;
+            } else {
+                $value = $mock . $value;
+            }
         }
         return $value;
     }

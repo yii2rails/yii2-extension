@@ -4,7 +4,7 @@ namespace tests\functional\encrypt\helpers;
 
 use yii2rails\domain\data\Query;
 use yii2rails\domain\helpers\DomainHelper;
-use yii2rails\extension\encrypt\entities\RsaKeyEntity;
+use yii2rails\extension\encrypt\entities\KeyEntity;
 use yii2rails\extension\encrypt\enums\EncryptFunctionEnum;
 use yii2rails\extension\encrypt\helpers\Base64Helper;
 use yii2rails\extension\encrypt\helpers\RsaHelper;
@@ -57,16 +57,16 @@ MwIDAQAB
 
 	public function testOpenSsl() {
         $msg = 'Test message';
-        $rsaKeyEntity = new RsaKeyEntity([
+        $keyEntity = new KeyEntity([
             'private' => self::PRIVATE_KEY,
             'public' => self::PUBLIC_KEY,
         ]);
 
-        $signature = SignatureHelper::sign($msg, $rsaKeyEntity->private, EncryptFunctionEnum::OPENSSL);
-        $isVerifed = SignatureHelper::verify($msg, $rsaKeyEntity->public, $signature, EncryptFunctionEnum::OPENSSL);
+        $signature = SignatureHelper::sign($msg, $keyEntity->private, EncryptFunctionEnum::OPENSSL);
+        $isVerified = SignatureHelper::verify($msg, $keyEntity->public, $signature, EncryptFunctionEnum::OPENSSL);
 
         $this->tester->assertNotEmpty($signature);
-        $this->tester->assertTrue($isVerifed);
+        $this->tester->assertTrue($isVerified);
         $expectedSignature = 'e5No0L5R3rEPeWJ+C0KAxM9EUP2QvU2zua42444jKcrJRfkcNfcm+0JCrtFEevXPbOQNHAJI8a3OMtKBX22zaN9FRrwp5Jmgr+MCsPVs5eqrH0Ys/AvIViyvAfI7yy5SkfvLR0Ff+8LA/UVnQVpMIwJ8A4MvpOTK6NuX8r4b6nRmCoA3HIboxIGh5okcd9MNGil++QZsfVddJxGl3mDkgfMzQjRwc8tpR9kCiUHcJq9MHgV15UQ6VeTMRpBU+QsmLv1xFsT5U5UCg534Ong57CuqKxFAJlGQqhaBG+auiQVWgQR9yHIUfYNlMVYv98CHTV/twz43E1Nb4ofG0Wu1tA==';
         $this->tester->assertEquals($expectedSignature, base64_encode($signature));
 	}
@@ -76,10 +76,10 @@ MwIDAQAB
         $key = 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz';
 
         $signature = SignatureHelper::sign($msg, $key);
-        $isVerifed = SignatureHelper::verify($msg, $key, $signature);
+        $isVerified = SignatureHelper::verify($msg, $key, $signature);
 
         $this->tester->assertNotEmpty($signature);
-        $this->tester->assertTrue($isVerifed);
+        $this->tester->assertTrue($isVerified);
         $this->tester->assertEquals('PO3iX07a6QW1MoZuFKXrLMRM/kESLM42RWWaVJ3ST2s=', base64_encode($signature));
 	}
 
