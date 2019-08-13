@@ -19,5 +19,6 @@ class HttpHeaderEnum extends BaseEnum {
     const X_ENTITY_ID = 'X-Entity-Id';
 	const LANGUAGE = 'Language';
     const X_RUNTIME = 'X-Runtime';
+    const X_AGENT_FINGERPRINT = 'X-Agent-Fingerprint';
 
 }

@@ -39,6 +39,7 @@ class CorsHelper {
 					HttpHeaderEnum::AUTHORIZATION,
 					HttpHeaderEnum::TIME_ZONE,
                     HttpHeaderEnum::X_ENTITY_ID,
+                    HttpHeaderEnum::X_AGENT_FINGERPRINT,
 				],
 				'Access-Control-Expose-Headers' => [
                     HttpHeaderEnum::CONTENT_TYPE,
@@ -51,6 +52,7 @@ class CorsHelper {
 					HttpHeaderEnum::CURRENT_PAGE,
 					HttpHeaderEnum::PER_PAGE,
                     HttpHeaderEnum::X_ENTITY_ID,
+                    HttpHeaderEnum::X_AGENT_FINGERPRINT,
 				],
 				'Access-Control-Allow-Credentials' => EnvService::get('cors.credentials', false),
 				//'Access-Control-Max-Age' => 3600, // Allow OPTIONS caching
