@@ -8,6 +8,13 @@ class StringHelper {
     const WITHOUT_CHAR = '#\s+#m';
     const NUM_CHAR = '#\D+#m';
 
+    public static function vectorizeText($data) {
+        $data = StringHelper::textToLine($data);
+        $data = StringHelper::removeDoubleSpace($data);
+        $data = str_replace(SPC, DOT, $data);
+        return $data;
+    }
+
     public static function formatByMask($login, $mask)
     {
         $maskArray = str_split($mask, 1);
