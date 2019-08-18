@@ -47,7 +47,11 @@ class Benchmark {
 		}
 		self::append($item);
 	}
-	
+
+    public static function flushAll() {
+        self::$data = [];
+    }
+
 	public static function all() {
 		return self::$data;
 	}
