@@ -47,12 +47,18 @@ class IinDateHelper {
 	private static function validateDate($date) {
 		return checkdate ( $date['month'] , $date['day'] , $date['year'] );
 	}
-	
-	private static function getAge($value) {
-		$century = self::parseCentury($value);
-		$centuryDiv = floor($century / 2);
-		return $centuryDiv + 18;
-	}
+
+    private static function getAge($value) {
+        $century = self::parseCentury($value);
+        $residue = $century % 2;
+        if($residue == 0) {
+            $century --;
+        }
+
+        $centuryDiv = floor($century / 2);
+
+        return $centuryDiv + 18;
+    }
 	
 	private static function dateStringToTimestamp($dateString) {
 		list($year, $month, $day) = explode('-', $dateString);
