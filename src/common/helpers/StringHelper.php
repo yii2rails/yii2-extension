@@ -8,6 +8,15 @@ class StringHelper {
     const WITHOUT_CHAR = '#\s+#m';
     const NUM_CHAR = '#\D+#m';
 
+	/**
+     * Векторизует текст для получения хэша или подписи.
+     *
+     * Заменяет двойные пробелы и переносы на точку.
+     * В результате получается сплошная строка.
+     *
+     * @param $data
+     * @return string
+     */
     public static function vectorizeText($data) {
         $data = StringHelper::textToLine($data);
         $data = StringHelper::removeDoubleSpace($data);
