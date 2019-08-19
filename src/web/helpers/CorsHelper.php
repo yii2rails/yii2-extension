@@ -20,12 +20,26 @@ env-local:
  */
 
 class CorsHelper {
-	
+
+    public static function autoload() {
+        $corsData = self::generate();
+        $cors = $corsData['cors'];
+        $cors['Access-Control-Allow-Origin'] = $cors['Origin'];
+        unset($cors['Origin']);
+        foreach ($cors as $name => $value) {
+            header("{$name}: " . implode(',', $value));
+        }
+        if($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+            //exit;
+        }
+    }
+
 	public static function generate($origin = null) {
 		/*if(empty($origin)) {
 			$origin = self::generateOriginFromEnvUrls();
 		}*/
-		$origin = \Yii::$app->request->headers->get('Origin');
+        $origin = $_SERVER['HTTP_ORIGIN'];
+        //$origin = \Yii::$app->request->headers->get('Origin');
 		$origin = EnvService::get('cors.origin', $origin);
         $origin = ArrayHelper::toArray($origin);
 		return [
@@ -59,14 +73,5 @@ class CorsHelper {
 			],
 		];
 	}
-	
-	private static function generateOriginFromEnvUrls() {
-		$origin = [];
-		$urls = EnvService::get('url');
-		foreach($urls as $url) {
-			$origin[] = trim($url, SL);
-		}
-		return $origin;
-	}
-	
+
 }
