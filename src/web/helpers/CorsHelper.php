@@ -22,13 +22,12 @@ env-local:
 class CorsHelper {
 
     public static function autoload() {
-        $corsData = self::generate();
-        $cors = $corsData['cors'];
-        $cors['Access-Control-Allow-Origin'] = $cors['Origin'];
-        unset($cors['Origin']);
-        foreach ($cors as $name => $value) {
-            header("{$name}: " . implode(',', $value));
-        }
+        $origin = ArrayHelper::getValue($_SERVER, 'HTTP_ORIGIN');
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Headers: ' . ArrayHelper::getValue($_SERVER, 'HTTP_ACCESS_CONTROL_REQUEST_HEADERS'));
+        //header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH, TRACE, CONNECT');
+        //header('Access-Control-Allow-Credentials: true');
+        //header('Access-Control-Expose-Headers: Content-Type, Link, Access-Token, Authorization, Time-Zone, X-Pagination-Total-Count, X-Pagination-Page-Count, X-Pagination-Current-Page, X-Pagination-Per-Page, X-Entity-Id, X-Agent-Fingerprint');
         if($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
             exit;
         }
