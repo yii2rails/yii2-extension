@@ -30,7 +30,7 @@ class CorsHelper {
             header("{$name}: " . implode(',', $value));
         }
         if($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-            //exit;
+            exit;
         }
     }
 
@@ -38,7 +38,7 @@ class CorsHelper {
 		/*if(empty($origin)) {
 			$origin = self::generateOriginFromEnvUrls();
 		}*/
-        $origin = $_SERVER['HTTP_ORIGIN'];
+        $origin = ArrayHelper::getValue($_SERVER, 'HTTP_ORIGIN');
         //$origin = \Yii::$app->request->headers->get('Origin');
 		$origin = EnvService::get('cors.origin', $origin);
         $origin = ArrayHelper::toArray($origin);
