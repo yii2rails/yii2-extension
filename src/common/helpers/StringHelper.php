@@ -48,7 +48,7 @@ class StringHelper {
         $value = strval($value);
         $len = mb_strlen($value);
         if($length > $len) {
-            $mock = str_repeat('0', $length - $len);
+            $mock = str_repeat($char, $length - $len);
             if($place == 'after') {
                 $value = $value . $mock;
             } else {
