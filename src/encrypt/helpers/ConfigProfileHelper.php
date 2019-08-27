@@ -14,10 +14,10 @@ use yii2rails\extension\encrypt\enums\RsaBitsEnum;
 
 class ConfigProfileHelper {
 
-    public static function load(string $profile) : ProfileEntity
+    public static function load(string $profile, $profileEntityClass = ProfileEntity::class) : ProfileEntity
     {
         $config = EnvService::get('encrypt.profiles.' . $profile);
-        $profileEntity = new ProfileEntity($config);
+        $profileEntity = new $profileEntityClass($config);
         if($profileEntity->key == null) {
             throw new InvalidConfigException('Empty encryption key in profile!');
         }
