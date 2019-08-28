@@ -47,7 +47,7 @@ class JwtHelper {
         // todo: make select key (public or private)
         $key = $profileEntity->key->private;
         $decoded = JWT::decode($token, $key, $profileEntity->allowed_algs);
-        $tokenEntity = new TokenEntity($decoded);
+        $tokenEntity = new TokenEntity((array)$decoded);
         return $tokenEntity;
     }
 
