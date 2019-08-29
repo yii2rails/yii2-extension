@@ -19,6 +19,13 @@ use UnexpectedValueException;
 
 class JwtHelper {
 
+    public static function forgeBySubject(array $subject, JwtProfileEntity $profileEntity, $keyId = null, $head = null) : TokenEntity {
+        $tokenEntity = new TokenEntity;
+        $tokenEntity->subject = $subject;
+        $tokenEntity->token = self::sign($tokenEntity, $profileEntity, $keyId, $head);
+        return $tokenEntity;
+    }
+
     public static function sign(TokenEntity $tokenEntity, JwtProfileEntity $profileEntity, $keyId = null, $head = null) : string {
         //$profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
         $keyId = $keyId ?  : StringHelper::genUuid();
