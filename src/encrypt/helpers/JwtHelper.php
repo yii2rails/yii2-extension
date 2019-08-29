@@ -7,6 +7,7 @@ use yii\helpers\ArrayHelper;
 use yii2rails\app\domain\helpers\EnvService;
 use yii2rails\domain\Alias;
 use yii2rails\extension\common\helpers\StringHelper;
+use yii2rails\extension\encrypt\entities\JwtEntity;
 use yii2rails\extension\encrypt\entities\JwtHeaderEntity;
 use yii2rails\extension\encrypt\entities\JwtProfileEntity;
 use yii2rails\extension\encrypt\entities\JwtTokenEntity;
@@ -14,30 +15,29 @@ use yii2rails\extension\encrypt\entities\KeyEntity;
 use yii2rails\extension\encrypt\enums\EncryptAlgorithmEnum;
 use yii2rails\extension\encrypt\enums\RsaBitsEnum;
 use yii2rails\extension\enum\base\BaseEnum;
-use yii2rails\extension\jwt\entities\TokenEntity;
 use UnexpectedValueException;
 
 class JwtHelper {
 
-    public static function forgeBySubject(array $subject, JwtProfileEntity $profileEntity, $keyId = null, $head = null) : TokenEntity {
-        $tokenEntity = new TokenEntity;
-        $tokenEntity->subject = $subject;
-        $tokenEntity->token = self::sign($tokenEntity, $profileEntity, $keyId, $head);
-        return $tokenEntity;
+    public static function forgeBySubject(array $subject, JwtProfileEntity $profileEntity, $keyId = null, $head = null) : JwtEntity {
+        $jwtEntity = new JwtEntity;
+        $jwtEntity->subject = $subject;
+        $jwtEntity->token = self::sign($jwtEntity, $profileEntity, $keyId, $head);
+        return $jwtEntity;
     }
 
-    public static function sign(TokenEntity $tokenEntity, JwtProfileEntity $profileEntity, $keyId = null, $head = null) : string {
+    public static function sign(JwtEntity $jwtEntity, JwtProfileEntity $profileEntity, $keyId = null, $head = null) : string {
         //$profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
         $keyId = $keyId ?  : StringHelper::genUuid();
-        $token = self::signToken($tokenEntity, $profileEntity, $keyId, $head);
+        $token = self::signToken($jwtEntity, $profileEntity, $keyId, $head);
         return $token;
     }
 
-    public static function decode($token, JwtProfileEntity $profileEntity) : TokenEntity {
+    public static function decode($token, JwtProfileEntity $profileEntity) : JwtEntity {
         //$profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
-        $tokenEntity = self::decodeToken($token, $profileEntity);
-        $tokenEntity->token = $token;
-        return $tokenEntity;
+        $jwtEntity = self::decodeToken($token, $profileEntity);
+        $jwtEntity->token = $token;
+        return $jwtEntity;
     }
 
     public static function decodeRaw($token, JwtProfileEntity $profileEntity) : JwtTokenEntity {
@@ -50,12 +50,12 @@ class JwtHelper {
         return $jwtTokenEntity;
     }
 
-    private static function decodeToken(string $token, JwtProfileEntity $profileEntity) : TokenEntity {
+    private static function decodeToken(string $token, JwtProfileEntity $profileEntity) : JwtEntity {
         // todo: make select key (public or private)
         $key = $profileEntity->key->private;
         $decoded = JWT::decode($token, $key, $profileEntity->allowed_algs);
-        $tokenEntity = new TokenEntity((array)$decoded);
-        return $tokenEntity;
+        $jwtEntity = new JwtEntity((array)$decoded);
+        return $jwtEntity;
     }
 
     private static function tokenDecode(string $jwt) : JwtTokenEntity {
@@ -101,19 +101,19 @@ class JwtHelper {
         }
     }
 
-    private static function signToken(TokenEntity $tokenEntity, JwtProfileEntity $profileEntity, string $keyId = null, $head = null) : string {
+    private static function signToken(JwtEntity $jwtEntity, JwtProfileEntity $profileEntity, string $keyId = null, $head = null) : string {
         if($profileEntity->audience) {
-            $tokenEntity->audience = ArrayHelper::merge($tokenEntity->audience, $profileEntity->audience);
+            $jwtEntity->audience = ArrayHelper::merge($jwtEntity->audience, $profileEntity->audience);
         }
-        if(!$tokenEntity->expire_at && $profileEntity->life_time) {
-            $tokenEntity->expire_at = TIMESTAMP + $profileEntity->life_time;
+        if(!$jwtEntity->expire_at && $profileEntity->life_time) {
+            $jwtEntity->expire_at = TIMESTAMP + $profileEntity->life_time;
         }
-        $data = self::entityToToken($tokenEntity);
+        $data = self::entityToToken($jwtEntity);
         return JWT::encode($data, $profileEntity->key->private, $profileEntity->default_alg, $keyId, $head);
     }
 
-    private static function entityToToken(TokenEntity $tokenEntity) {
-        $data = $tokenEntity->toArray();
+    private static function entityToToken(JwtEntity $jwtEntity) {
+        $data = $jwtEntity->toArray();
         $data = array_filter($data, function ($value) {return $value !== null;});
         $alias = new Alias;
         $alias->setAliases([

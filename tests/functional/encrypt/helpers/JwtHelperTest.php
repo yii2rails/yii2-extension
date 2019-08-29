@@ -6,11 +6,11 @@ use Firebase\JWT\BeforeValidException;
 use Firebase\JWT\ExpiredException;
 use Firebase\JWT\SignatureInvalidException;
 use yii\helpers\ArrayHelper;
+use yii2rails\extension\encrypt\entities\JwtEntity;
 use yii2rails\extension\encrypt\entities\JwtProfileEntity;
 use yii2rails\extension\encrypt\enums\EncryptAlgorithmEnum;
 use yii2rails\extension\encrypt\helpers\JwtHelper;
 use yii2rails\extension\enum\enums\TimeEnum;
-use yii2rails\extension\jwt\entities\TokenEntity;
 use yii2tool\test\helpers\DataHelper;
 use yii2tool\test\Test\Unit;
 
@@ -43,7 +43,7 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy...
 
     public function testSign() {
         $profileEntity = new JwtProfileEntity($this->profile);
-        $tokenEntity = new TokenEntity;
+        $tokenEntity = new JwtEntity;
         $tokenEntity->subject = 123;
         $token = JwtHelper::sign($tokenEntity, $profileEntity);
         $tokenEntityDecoded = JwtHelper::decode($token, $profileEntity);
@@ -54,7 +54,7 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy...
     public function testDecodeExpired() {
         $profileEntity = new JwtProfileEntity($this->profile);
 
-        $tokenEntity = new TokenEntity;
+        $tokenEntity = new JwtEntity;
         $tokenEntity->subject = 123;
         $tokenEntity->expire_at = TIMESTAMP - TimeEnum::SECOND_PER_HOUR;
         $token = JwtHelper::sign($tokenEntity, $profileEntity);
@@ -153,7 +153,7 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy...
     }
 
     private function forgeTokenEntity($userId) {
-        $tokenEntity = new TokenEntity();
+        $tokenEntity = new JwtEntity;
         $tokenEntity->subject = [
             'id' => $userId,
         ];
