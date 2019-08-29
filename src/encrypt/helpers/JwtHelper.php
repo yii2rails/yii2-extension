@@ -5,6 +5,7 @@ namespace yii2rails\extension\encrypt\helpers;
 use Firebase\JWT\JWT;
 use yii\helpers\ArrayHelper;
 use yii2rails\app\domain\helpers\EnvService;
+use yii2rails\domain\Alias;
 use yii2rails\extension\common\helpers\StringHelper;
 use yii2rails\extension\encrypt\entities\JwtHeaderEntity;
 use yii2rails\extension\encrypt\entities\JwtProfileEntity;
@@ -15,7 +16,6 @@ use yii2rails\extension\encrypt\enums\RsaBitsEnum;
 use yii2rails\extension\enum\base\BaseEnum;
 use yii2rails\extension\jwt\entities\TokenEntity;
 use UnexpectedValueException;
-use yii2rails\extension\jwt\entities\ProfileEntity;
 
 class JwtHelper {
 
@@ -43,7 +43,7 @@ class JwtHelper {
         return $jwtTokenEntity;
     }
 
-    public static function decodeToken(string $token, JwtProfileEntity $profileEntity) : TokenEntity {
+    private static function decodeToken(string $token, JwtProfileEntity $profileEntity) : TokenEntity {
         // todo: make select key (public or private)
         $key = $profileEntity->key->private;
         $decoded = JWT::decode($token, $key, $profileEntity->allowed_algs);
@@ -51,7 +51,7 @@ class JwtHelper {
         return $tokenEntity;
     }
 
-    public static function tokenDecode(string $jwt) : JwtTokenEntity {
+    private static function tokenDecode(string $jwt) : JwtTokenEntity {
         $parts = explode(SPC, $jwt);
         $token = count($parts) == 1 ? $parts[0] : $parts[1];
         $tks = explode('.', $token);
@@ -108,7 +108,15 @@ class JwtHelper {
     private static function entityToToken(TokenEntity $tokenEntity) {
         $data = $tokenEntity->toArray();
         $data = array_filter($data, function ($value) {return $value !== null;});
-        //$data = $this->alias->encode($data);
+        $alias = new Alias;
+        $alias->setAliases([
+            'issuer_url' => 'iss',
+            'subject_url' => 'sub',
+            'audience' => 'aud',
+            'expire_at' => 'exp',
+            'begin_at' => 'nbf',
+        ]);
+        $data = $alias->encode($data);
         return $data;
     }
 

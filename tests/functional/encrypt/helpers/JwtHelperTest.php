@@ -2,6 +2,7 @@
 
 namespace tests\functional\encrypt\helpers;
 
+use Firebase\JWT\ExpiredException;
 use Firebase\JWT\SignatureInvalidException;
 use yii2rails\extension\encrypt\entities\JwtProfileEntity;
 use yii2rails\extension\encrypt\helpers\JwtHelper;
@@ -52,8 +53,12 @@ class JwtHelperTest extends Unit {
         $tokenEntity->expire_at = TIMESTAMP - TimeEnum::SECOND_PER_HOUR;
         $token = JwtHelper::sign($tokenEntity, $profileEntity);
 
-        $decoded = JwtHelper::decode($token, $profileEntity);
-        //d($decoded);
+        try {
+            JwtHelper::decode($token, $profileEntity);
+            $this->tester->assertTrue(false);
+        } catch (ExpiredException $e) {
+            $this->tester->assertTrue(true);
+        }
     }
 
     public function testDecodeFail() {
