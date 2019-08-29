@@ -43,25 +43,25 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy...
 
     public function testSign() {
         $profileEntity = new JwtProfileEntity($this->profile);
-        $tokenEntity = new JwtEntity;
-        $tokenEntity->subject = 123;
-        $token = JwtHelper::sign($tokenEntity, $profileEntity);
-        $tokenEntityDecoded = JwtHelper::decode($token, $profileEntity);
-        $this->tester->assertEquals($tokenEntity->subject, $tokenEntityDecoded->subject);
+        $jwtEntity = new JwtEntity;
+        $jwtEntity->subject = 123;
+        $token = JwtHelper::sign($jwtEntity, $profileEntity);
+        $jwtEntityDecoded = JwtHelper::decode($token, $profileEntity);
+        $this->tester->assertEquals($jwtEntity->subject, $jwtEntityDecoded->subject);
         $this->tester->assertRegExp('#^[a-zA-Z0-9-_\.]+$#', $token);
     }
 
     public function testDecodeExpired() {
         $profileEntity = new JwtProfileEntity($this->profile);
 
-        $tokenEntity = new JwtEntity;
-        $tokenEntity->subject = 123;
-        $tokenEntity->expire_at = TIMESTAMP - TimeEnum::SECOND_PER_HOUR;
-        $token = JwtHelper::sign($tokenEntity, $profileEntity);
+        $jwtEntity = new JwtEntity;
+        $jwtEntity->subject = 123;
+        $jwtEntity->expire_at = TIMESTAMP - TimeEnum::SECOND_PER_HOUR;
+        $token = JwtHelper::sign($jwtEntity, $profileEntity);
 
         try {
-            $tokenEntityDecoded = JwtHelper::decode($token, $profileEntity);
-            $this->tester->assertBad($tokenEntityDecoded);
+            $jwtEntityDecoded = JwtHelper::decode($token, $profileEntity);
+            $this->tester->assertBad($jwtEntityDecoded);
         } catch (ExpiredException $e) {
             $this->tester->assertExceptionMessage('Expired token', $e);
         }
@@ -71,12 +71,12 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy...
     {
         $profileEntity = new JwtProfileEntity($this->profile);
         $userId = 1;
-        $tokenEntity = $this->forgeTokenEntity($userId);
-        $tokenEntity->begin_at = TIMESTAMP + TimeEnum::SECOND_PER_HOUR;
-        $tokenEntity->token = JwtHelper::sign($tokenEntity, $profileEntity, '6c6979ec-9575-4794-9303-0d2b851edb02');
+        $jwtEntity = $this->forgeTokenEntity($userId);
+        $jwtEntity->begin_at = TIMESTAMP + TimeEnum::SECOND_PER_HOUR;
+        $jwtEntity->token = JwtHelper::sign($jwtEntity, $profileEntity, '6c6979ec-9575-4794-9303-0d2b851edb02');
         try {
-            $tokenEntityDecoded = JwtHelper::decode($tokenEntity->token, $profileEntity);
-            $this->tester->assertBad($tokenEntityDecoded);
+            $jwtEntityDecoded = JwtHelper::decode($jwtEntity->token, $profileEntity);
+            $this->tester->assertBad($jwtEntityDecoded);
         } catch (BeforeValidException $e) {
             $this->tester->assertExceptionMessageRegexp('#Cannot handle token prior to#', $e);
         }
@@ -84,10 +84,10 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy...
 
     public function testDecode() {
         $profileEntity = new JwtProfileEntity($this->profile);
-        $tokenEntityDecoded = JwtHelper::decode($this->token, $profileEntity);
-        $this->tester->assertEquals(123, $tokenEntityDecoded->subject);
-        $this->tester->assertEquals($tokenEntityDecoded->token, $this->token);
-        //$this->tester->assertEquals($tokenEntity->subject['id'], $tokenEntityDecoded->subject->id);
+        $jwtEntityDecoded = JwtHelper::decode($this->token, $profileEntity);
+        $this->tester->assertEquals(123, $jwtEntityDecoded->subject);
+        $this->tester->assertEquals($jwtEntityDecoded->token, $this->token);
+        //$this->tester->assertEquals($jwtEntity->subject['id'], $jwtEntityDecoded->subject->id);
     }
 
     public function testDecodeFail() {
@@ -105,10 +105,10 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy...
     {
         $profileEntity = new JwtProfileEntity($this->profileRsa);
         $userId = 1;
-        $tokenEntity = $this->forgeTokenEntity($userId);
-        $tokenEntity->token = JwtHelper::sign($tokenEntity, $profileEntity);
-        $tokenEntityDecoded = JwtHelper::decode($tokenEntity->token, $profileEntity);
-        $this->tester->assertEquals($tokenEntity->subject['id'], $tokenEntityDecoded->subject->id);
+        $jwtEntity = $this->forgeTokenEntity($userId);
+        $jwtEntity->token = JwtHelper::sign($jwtEntity, $profileEntity);
+        $jwtEntityDecoded = JwtHelper::decode($jwtEntity->token, $profileEntity);
+        $this->tester->assertEquals($jwtEntity->subject['id'], $jwtEntityDecoded->subject->id);
     }
 
     public function testSignAndDecodeRaw()
@@ -146,18 +146,18 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy...
         $subject = [
             'id' => 1,
         ];
-        $tokenEntity = JwtHelper::forgeBySubject($subject, $profileEntity, '6c6979ec-9575-4794-9303-0d2b851edb02');
-        $tokenEntityDecoded = JwtHelper::decode($tokenEntity->token, $profileEntity);
-        $this->tester->assertEquals($tokenEntity->subject['id'], $tokenEntityDecoded->subject->id);
-        $this->tester->assertRegExp('#^[a-zA-Z0-9-_\.]+$#', $tokenEntity->token);
+        $jwtEntity = JwtHelper::forgeBySubject($subject, $profileEntity, '6c6979ec-9575-4794-9303-0d2b851edb02');
+        $jwtEntityDecoded = JwtHelper::decode($jwtEntity->token, $profileEntity);
+        $this->tester->assertEquals($jwtEntity->subject['id'], $jwtEntityDecoded->subject->id);
+        $this->tester->assertRegExp('#^[a-zA-Z0-9-_\.]+$#', $jwtEntity->token);
     }
 
     private function forgeTokenEntity($userId) {
-        $tokenEntity = new JwtEntity;
-        $tokenEntity->subject = [
+        $jwtEntity = new JwtEntity;
+        $jwtEntity->subject = [
             'id' => $userId,
         ];
-        return $tokenEntity;
+        return $jwtEntity;
     }
 
 }
