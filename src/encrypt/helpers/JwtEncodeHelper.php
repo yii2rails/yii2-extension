@@ -16,6 +16,7 @@ use DomainException;
 use UnexpectedValueException;
 use InvalidArgumentException;
 use DateTime;
+use yii2rails\extension\encrypt\strategies\func\FuncContext;
 use yii2rails\extension\jwt\entities\TokenEntity;
 
 class JwtEncodeHelper
@@ -64,7 +65,8 @@ class JwtEncodeHelper
 
     private static function verifySignature(TokenDto $tokenDto, string $key)
     {
-        if (!static::verify($tokenDto, $key)) {
+        $isVerified = static::verify($tokenDto, $key);
+        if (!$isVerified) {
             throw new SignatureInvalidException('Signature verification failed');
         }
     }
@@ -76,18 +78,8 @@ class JwtEncodeHelper
             throw new DomainException('Algorithm not supported');
         }
         list($function, $algorithm) = JwtAlgorithmEnum::$supportedAlgorithms[$alg];
-        switch ($function) {
-            case EncryptFunctionEnum::HASH_HMAC:
-                return hash_hmac($algorithm, $msg, $key, true);
-            case EncryptFunctionEnum::OPENSSL:
-                $signature = '';
-                $success = openssl_sign($msg, $signature, $key, $algorithm);
-                if (!$success) {
-                    throw new DomainException("OpenSSL unable to sign data");
-                } else {
-                    return $signature;
-                }
-        }
+        $loginContext = new FuncContext;
+        return $loginContext->sign($function, $msg, $algorithm, $key);
     }
 
     private static function verify(TokenDto $tokenDto, string $key)
@@ -96,36 +88,9 @@ class JwtEncodeHelper
         $msg = self::buildTokenFromDto($tokenDto, false);
         $signature = $tokenDto->signature;
         $alg = $tokenDto->header->alg;
-
         list($function, $algorithm) = JwtAlgorithmEnum::$supportedAlgorithms[$alg];
-        switch ($function) {
-            case EncryptFunctionEnum::OPENSSL:
-                $success = openssl_verify($msg, $signature, $key, $algorithm);
-                if ($success === 1) {
-                    return true;
-                } elseif ($success === 0) {
-                    return false;
-                }
-                // returns 1 on success, 0 on failure, -1 on error.
-                throw new DomainException(
-                    'OpenSSL error: ' . openssl_error_string()
-                );
-            case EncryptFunctionEnum::HASH_HMAC:
-            default:
-                $hash = hash_hmac($algorithm, $msg, $key, true);
-                if (function_exists('hash_equals')) {
-                    return hash_equals($signature, $hash);
-                }
-                $len = min(EncryptHelper::safeStrlen($signature), EncryptHelper::safeStrlen($hash));
-
-                $status = 0;
-                for ($i = 0; $i < $len; $i++) {
-                    $status |= (ord($signature[$i]) ^ ord($hash[$i]));
-                }
-                $status |= (EncryptHelper::safeStrlen($signature) ^ EncryptHelper::safeStrlen($hash));
-
-                return ($status === 0);
-        }
+        $loginContext = new FuncContext;
+        return $loginContext->verify($function, $msg, $algorithm, $key, $signature);
     }
 
 }
