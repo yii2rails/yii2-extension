@@ -4,6 +4,7 @@ namespace yii2rails\extension\encrypt\entities;
 
 use yii2rails\domain\BaseEntity;
 use yii2rails\extension\encrypt\enums\EncryptAlgorithmEnum;
+use yii2rails\extension\encrypt\enums\JwtAlgorithmEnum;
 use yii2rails\extension\enum\enums\TimeEnum;
 
 /**
@@ -21,8 +22,14 @@ class JwtProfileEntity extends ProfileEntity {
 
     protected $name;
     protected $life_time = TimeEnum::SECOND_PER_MINUTE * 20;
-    protected $allowed_algs = ['HS256', 'SHA512', 'HS384', 'RS256'];
-    protected $default_alg = 'HS256';
+    // protected $allowed_algs = ['HS256', 'SHA512', 'HS384', 'RS256'];
+    protected $allowed_algs = [
+        JwtAlgorithmEnum::HS256,
+        JwtAlgorithmEnum::HS512,
+        JwtAlgorithmEnum::HS384,
+        JwtAlgorithmEnum::RS256,
+    ];
+    protected $default_alg = JwtAlgorithmEnum::HS256;
     protected $audience = [];
     protected $issuer_url;
 

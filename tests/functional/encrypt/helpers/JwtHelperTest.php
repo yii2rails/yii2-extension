@@ -2,9 +2,10 @@
 
 namespace tests\functional\encrypt\helpers;
 
-use Firebase\JWT\BeforeValidException;
-use Firebase\JWT\ExpiredException;
-use Firebase\JWT\SignatureInvalidException;
+use yii2rails\extension\encrypt\enums\JwtAlgorithmEnum;
+use yii2rails\extension\encrypt\exceptions\BeforeValidException;
+use yii2rails\extension\encrypt\exceptions\ExpiredException;
+use yii2rails\extension\encrypt\exceptions\SignatureInvalidException;
 use yii\helpers\ArrayHelper;
 use yii2rails\extension\encrypt\entities\JwtEntity;
 use yii2rails\extension\encrypt\entities\JwtProfileEntity;
@@ -123,7 +124,7 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy...
             'sig' => base64_decode('XjAxVetPxtldVYLQwkVmKNwbjlatLD5yo/PXfHcwEHo='),
             'header' => [
                 'typ' => 'JWT',
-                'alg' => 'HS256',
+                'alg' => JwtAlgorithmEnum::HS256,
                 'kid' => '6c6979ec-9575-4794-9303-0d2b851edb02',
             ],
             'payload' => [

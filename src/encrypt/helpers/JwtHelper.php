@@ -2,7 +2,6 @@
 
 namespace yii2rails\extension\encrypt\helpers;
 
-use Firebase\JWT\JWT;
 use yii\helpers\ArrayHelper;
 use yii2rails\app\domain\helpers\EnvService;
 use yii2rails\domain\Alias;
@@ -13,6 +12,7 @@ use yii2rails\extension\encrypt\entities\JwtProfileEntity;
 use yii2rails\extension\encrypt\entities\JwtTokenEntity;
 use yii2rails\extension\encrypt\entities\KeyEntity;
 use yii2rails\extension\encrypt\enums\EncryptAlgorithmEnum;
+use yii2rails\extension\encrypt\enums\JwtAlgorithmEnum;
 use yii2rails\extension\encrypt\enums\RsaBitsEnum;
 use yii2rails\extension\enum\base\BaseEnum;
 use UnexpectedValueException;
@@ -26,10 +26,10 @@ class JwtHelper {
         return $jwtEntity;
     }
 
-    public static function sign(JwtEntity $jwtEntity, JwtProfileEntity $profileEntity, $keyId = null, $head = null) : string {
+    public static function sign(JwtEntity $jwtEntity, JwtProfileEntity $profileEntity, $keyId = null/*, $head = null*/) : string {
         //$profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
         $keyId = $keyId ?  : StringHelper::genUuid();
-        $token = self::signToken($jwtEntity, $profileEntity, $keyId, $head);
+        $token = self::signToken($jwtEntity, $profileEntity, $keyId/*, $head*/);
         return $token;
     }
 
@@ -40,38 +40,30 @@ class JwtHelper {
         return $jwtEntity;
     }
 
-    public static function decodeRaw($token, JwtProfileEntity $profileEntity) : JwtTokenEntity {
+    public static function decodeRaw($jwt, JwtProfileEntity $profileEntity) : JwtTokenEntity {
         //$profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
-        $jwtTokenEntity = self::tokenDecode($token);
+        $tokenDto = JwtModelHelper::parseToken($jwt);
+        $jwtTokenEntity = new JwtTokenEntity;
+        $jwtTokenEntity->header = (array) $tokenDto->header;
+        $jwtTokenEntity->payload = $tokenDto->payload;
+        $jwtTokenEntity->sig = $tokenDto->signature;
         /*if (empty($profileEntity->key)) {
             throw new InvalidArgumentException('Key may not be empty');
         }*/
-        self::validateHeader($jwtTokenEntity->header, $profileEntity);
+        //self::validateHeader($jwtTokenEntity->header, $profileEntity);
         return $jwtTokenEntity;
     }
 
     private static function decodeToken(string $token, JwtProfileEntity $profileEntity) : JwtEntity {
         // todo: make select key (public or private)
-        $key = $profileEntity->key->private;
-        $decoded = JWT::decode($token, $key, $profileEntity->allowed_algs);
-        $jwtEntity = new JwtEntity((array)$decoded);
+        $tokenDto = JwtEncodeHelper::decode($token, $profileEntity);
+        $jwtEntity = new JwtEntity($tokenDto->payload);
         return $jwtEntity;
-    }
-
-    private static function tokenDecode(string $jwt) : JwtTokenEntity {
-        $parts = explode(SPC, $jwt);
-        $token = count($parts) == 1 ? $parts[0] : $parts[1];
-        $tks = explode('.', $token);
-        $jwtTokenEntity = new JwtTokenEntity();
-        $jwtTokenEntity->header = self::tokenDecodeItem($tks[0]);
-        $jwtTokenEntity->payload = self::tokenDecodeItem($tks[1]);
-        $jwtTokenEntity->sig = Base64Helper::urlSafeDecode($tks[2]);
-        return $jwtTokenEntity;
     }
 
     private static function tokenDecodeItem(string $data) {
         $jsonCode = Base64Helper::urlSafeDecode($data);
-        $object = JWT::jsonDecode($jsonCode);
+        $object = JwtJsonHelper::decode($jsonCode);
         if (null === $object) {
             throw new UnexpectedValueException('Invalid encoding');
         }
@@ -83,7 +75,7 @@ class JwtHelper {
         if (empty($headerEntity->alg)) {
             throw new UnexpectedValueException('Empty algorithm');
         }
-        if (empty(JWT::$supported_algs[$headerEntity->alg])) {
+        if (!JwtAlgorithmEnum::isSupported($headerEntity->alg)) {
             throw new UnexpectedValueException('Algorithm not supported');
         }
         if (!in_array($headerEntity->alg, $profileEntity->allowed_algs)) {
@@ -101,7 +93,7 @@ class JwtHelper {
         }
     }
 
-    private static function signToken(JwtEntity $jwtEntity, JwtProfileEntity $profileEntity, string $keyId = null, $head = null) : string {
+    private static function signToken(JwtEntity $jwtEntity, JwtProfileEntity $profileEntity, string $keyId = null/*, $head = null*/) : string {
         if($profileEntity->audience) {
             $jwtEntity->audience = ArrayHelper::merge($jwtEntity->audience, $profileEntity->audience);
         }
@@ -109,7 +101,12 @@ class JwtHelper {
             $jwtEntity->expire_at = TIMESTAMP + $profileEntity->life_time;
         }
         $data = self::entityToToken($jwtEntity);
-        return JWT::encode($data, $profileEntity->key->private, $profileEntity->default_alg, $keyId, $head);
+
+        $jwtHeaderEntity = new JwtHeaderEntity;
+        $jwtHeaderEntity->alg = $profileEntity->default_alg;
+        $jwtHeaderEntity->kid = $keyId;
+
+        return JwtEncodeHelper::encode($data, $profileEntity->key->private, $jwtHeaderEntity);
     }
 
     private static function entityToToken(JwtEntity $jwtEntity) {

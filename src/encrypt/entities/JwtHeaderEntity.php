@@ -4,6 +4,7 @@ namespace yii2rails\extension\encrypt\entities;
 
 use yii2rails\domain\BaseEntity;
 use yii2rails\extension\encrypt\enums\EncryptAlgorithmEnum;
+use yii2rails\extension\encrypt\enums\JwtAlgorithmEnum;
 use yii2rails\extension\enum\enums\TimeEnum;
 
 /**
@@ -17,7 +18,7 @@ use yii2rails\extension\enum\enums\TimeEnum;
 class JwtHeaderEntity extends BaseEntity {
 
     protected $typ = 'JWT';
-    protected $alg = 'HS256';
+    protected $alg = JwtAlgorithmEnum::HS256;
     protected $kid;
 
 }

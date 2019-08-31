@@ -4,7 +4,7 @@ namespace yii2rails\extension\encrypt\helpers;
 
 class Base64Helper {
 
-    public static function urlSafeDecode($input)
+    public static function urlSafeDecode(string $input)
     {
         $remainder = strlen($input) % 4;
         if ($remainder) {
@@ -14,7 +14,7 @@ class Base64Helper {
         return base64_decode(strtr($input, '-_', '+/'));
     }
 
-    public static function urlSafeEncode($input)
+    public static function urlSafeEncode($input) : string
     {
         return str_replace('=', '', strtr(base64_encode($input), '+/', '-_'));
     }
