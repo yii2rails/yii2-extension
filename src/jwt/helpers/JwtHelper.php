@@ -44,7 +44,7 @@ class JwtHelper
         return $object;
     }
 
-    private static function validateHeader($header, ProfileEntity $profileEntity) {
+    public static function validateHeader($header, ProfileEntity $profileEntity) {
         $key = $profileEntity->key;
         if (empty($header->alg)) {
             throw new UnexpectedValueException('Empty algorithm');

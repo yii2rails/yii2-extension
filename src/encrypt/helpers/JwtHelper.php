@@ -33,16 +33,17 @@ class JwtHelper {
         return $token;
     }
 
-    public static function decode($token, JwtProfileEntity $profileEntity) : JwtEntity {
+    public static function decode(string $token, JwtProfileEntity $profileEntity) : JwtEntity {
         //$profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
-        $jwtEntity = self::decodeToken($token, $profileEntity);
+        $tokenDto = JwtEncodeHelper::decode($token, $profileEntity);
+        JwtEncodeHelper::verifyTokenDto($tokenDto, $profileEntity);
+        $jwtEntity = new JwtEntity($tokenDto->payload);
         $jwtEntity->token = $token;
         return $jwtEntity;
     }
 
-    public static function decodeRaw($jwt, JwtProfileEntity $profileEntity) : JwtTokenEntity {
-        //$profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
-        $tokenDto = JwtModelHelper::parseToken($jwt);
+    public static function decodeRaw(string $jwt, JwtProfileEntity $profileEntity) : JwtTokenEntity {
+        $tokenDto = JwtEncodeHelper::decode($jwt, $profileEntity);
         $jwtTokenEntity = new JwtTokenEntity;
         $jwtTokenEntity->header = (array) $tokenDto->header;
         $jwtTokenEntity->payload = $tokenDto->payload;
@@ -50,15 +51,7 @@ class JwtHelper {
         /*if (empty($profileEntity->key)) {
             throw new InvalidArgumentException('Key may not be empty');
         }*/
-        //self::validateHeader($jwtTokenEntity->header, $profileEntity);
         return $jwtTokenEntity;
-    }
-
-    private static function decodeToken(string $token, JwtProfileEntity $profileEntity) : JwtEntity {
-        // todo: make select key (public or private)
-        $tokenDto = JwtEncodeHelper::decode($token, $profileEntity);
-        $jwtEntity = new JwtEntity($tokenDto->payload);
-        return $jwtEntity;
     }
 
     private static function tokenDecodeItem(string $data) {
@@ -109,9 +102,14 @@ class JwtHelper {
         return JwtEncodeHelper::encode($data, $profileEntity->key->private, $jwtHeaderEntity);
     }
 
-    private static function entityToToken(JwtEntity $jwtEntity) {
+    private static function entityToToken(JwtEntity $jwtEntity) : array {
         $data = $jwtEntity->toArray();
         $data = array_filter($data, function ($value) {return $value !== null;});
+        $data = self::encodeAliases($data);
+        return $data;
+    }
+
+    private static function encodeAliases(array $data) : array {
         $alias = new Alias;
         $alias->setAliases([
             'issuer_url' => 'iss',

@@ -23,19 +23,19 @@ class JwtEncodeHelper
 
     public static function decode(string $jwt, JwtProfileEntity $profileEntity): TokenDto
     {
-        $allowed_algs = $profileEntity->allowed_algs;
-        $key = $profileEntity->key->private;
-        if (empty($key)) {
-            throw new InvalidArgumentException('Key may not be empty');
-        }
         $tokenDto = JwtModelHelper::parseToken($jwt);
-        JwtModelHelper::validateToken($tokenDto, $key, $allowed_algs);
-        self::verifySignature($tokenDto, $key);
-        JwtModelHelper::verifyTime($tokenDto);
         return $tokenDto;
     }
 
-    public static function encode(array $payload, string $key, JwtHeaderEntity $jwtHeaderEntity = null)
+    public static function verifyTokenDto(TokenDto $tokenDto, JwtProfileEntity $profileEntity)
+    {
+        JwtModelHelper::validateToken($tokenDto, $profileEntity->allowed_algs);
+        JwtModelHelper::verifyTime($tokenDto);
+        $key = self::extractKey($profileEntity);
+        self::verifySignature($tokenDto, $key);
+    }
+
+    public static function encode(array $payload, string $key, JwtHeaderEntity $jwtHeaderEntity = null) : string
     {
         $tokenDto = new TokenDto;
         $tokenDto->header_encoded = JwtSegmentHelper::encodeSegment(ArrayHelper::toArray($jwtHeaderEntity));
@@ -45,7 +45,7 @@ class JwtEncodeHelper
         return self::buildTokenFromDto($tokenDto);
     }
 
-    public static function buildTokenFromDto(TokenDto $tokenDto, $full = true)
+    private static function buildTokenFromDto(TokenDto $tokenDto, $full = true) : string
     {
         $token = $tokenDto->header_encoded . '.' . $tokenDto->payload_encoded;
         if ($full && $tokenDto->signature_encoded) {
@@ -54,14 +54,22 @@ class JwtEncodeHelper
         return $token;
     }
 
-    public static function verifySignature(TokenDto $tokenDto, string $key)
+    private static function extractKey(JwtProfileEntity $profileEntity) {
+        $key = $profileEntity->key->private;
+        if (empty($key)) {
+            throw new InvalidArgumentException('Key may not be empty');
+        }
+        return $key;
+    }
+
+    private static function verifySignature(TokenDto $tokenDto, string $key)
     {
         if (!static::verify($tokenDto, $key)) {
             throw new SignatureInvalidException('Signature verification failed');
         }
     }
 
-    public static function sign(TokenDto $tokenDto, string $key, $alg = JwtAlgorithmEnum::HS256)
+    private static function sign(TokenDto $tokenDto, string $key, $alg = JwtAlgorithmEnum::HS256)
     {
         $msg = self::buildTokenFromDto($tokenDto, false);
         if (!JwtAlgorithmEnum::isSupported($alg)) {
@@ -84,6 +92,7 @@ class JwtEncodeHelper
 
     private static function verify(TokenDto $tokenDto, string $key)
     {
+        JwtModelHelper::validateKey($tokenDto, $key);
         $msg = self::buildTokenFromDto($tokenDto, false);
         $signature = $tokenDto->signature;
         $alg = $tokenDto->header->alg;

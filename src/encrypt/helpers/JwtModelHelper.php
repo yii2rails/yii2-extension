@@ -14,6 +14,7 @@ use yii2rails\extension\encrypt\exceptions\SignatureInvalidException;
 use DomainException;
 use UnexpectedValueException;
 use DateTime;
+use ArrayAccess;
 
 class JwtModelHelper
 {
@@ -71,7 +72,7 @@ class JwtModelHelper
         }
     }
 
-    public static function validateToken(TokenDto $tokenDto, string $key, array $allowed_algs) {
+    public static function validateToken(TokenDto $tokenDto, array $allowed_algs) {
         $alg = $tokenDto->header->alg;
         if (empty($alg)) {
             throw new UnexpectedValueException('Empty algorithm');
@@ -85,12 +86,15 @@ class JwtModelHelper
         if (!in_array($alg, $allowed_algs)) {
             throw new UnexpectedValueException('Algorithm not allowed');
         }
-        if (is_array($key) || $key instanceof \ArrayAccess) {
+    }
+
+    public static function validateKey(TokenDto $tokenDtostring,  $key) {
+        if (is_array($key) || $key instanceof ArrayAccess) {
             if (isset($tokenDto->header->kid)) {
                 if (!isset($key[$tokenDto->header->kid])) {
                     throw new UnexpectedValueException('"kid" invalid, unable to lookup correct key');
                 }
-                $key = $key[$tokenDto->header->kid];
+                //$key = $key[$tokenDto->header->kid];
             } else {
                 throw new UnexpectedValueException('"kid" empty, unable to lookup correct key');
             }
