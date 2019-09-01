@@ -6,6 +6,7 @@ use yii\helpers\ArrayHelper;
 use yii2rails\app\domain\helpers\EnvService;
 use yii2rails\domain\Alias;
 use yii2rails\extension\common\helpers\StringHelper;
+use yii2rails\extension\common\traits\classAttribute\MagicSetTrait;
 use yii2rails\extension\encrypt\entities\JwtEntity;
 use yii2rails\extension\encrypt\entities\JwtHeaderEntity;
 use yii2rails\extension\encrypt\entities\JwtProfileEntity;
@@ -20,17 +21,38 @@ use yii2rails\extension\jwt\entities\ProfileEntity;
 
 class JwtService {
 
-    private $profileInstances = [];
+    use MagicSetTrait;
+
+    private $profiles = [];
+
+    /*public function __set($name, $value)
+    {
+        if($name == 'profiles') {
+            $this->profiles = $value;
+        }
+    }*/
+
+    public function setProfiles(array $profiles = [])
+    {
+        $this->profiles = $profiles;
+    }
+
+    public function __construct(array $profiles = [])
+    {
+        $this->profiles = $profiles;
+    }
 
     public function setProfile(string $profileName, array $definition) {
-        $this->profileInstances[$profileName] = ConfigProfileHelper::createInstanse($definition, JwtProfileEntity::class);
+        $this->profiles[$profileName] = $definition;
     }
 
     public function getProfile(string $profileName) : JwtProfileEntity {
-        if(!isset($this->profileInstances[$profileName])) {
-            $this->profileInstances[$profileName] = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
+        if(!isset($this->profiles[$profileName])) {
+            $this->profiles[$profileName] = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
+        } elseif(!is_object($this->profiles[$profileName])) {
+            $this->profiles[$profileName] = ConfigProfileHelper::createInstanse($this->profiles[$profileName], JwtProfileEntity::class);
         }
-        return $this->profileInstances[$profileName];
+        return $this->profiles[$profileName];
     }
 
     public function sign(JwtEntity $jwtEntity, string $profileName) : string {

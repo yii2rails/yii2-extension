@@ -2,6 +2,7 @@
 
 namespace tests\functional\encrypt\helpers;
 
+use yii2rails\extension\container\Container;
 use yii2rails\extension\encrypt\enums\JwtAlgorithmEnum;
 use yii2rails\extension\encrypt\exceptions\BeforeValidException;
 use yii2rails\extension\encrypt\exceptions\ExpiredException;
@@ -33,6 +34,65 @@ class JwtServiceTest extends Unit
 
     private function prepareJwtService(): JwtService
     {
+        $profiles = [
+            'hmac1' => [
+                'key' => [
+                    'private' => 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz',
+                ],
+            ],
+            'hmac2' => [
+                'key' => [
+                    'private' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+                ],
+            ],
+            'rsa1' => [
+                'key' => [
+                    'type' => OPENSSL_KEYTYPE_RSA,
+                    'private_file' => __DIR__ . '/../../../_data/key/rsa1/priv',
+                    'public_file' => __DIR__ . '/../../../_data/key/rsa1/pub',
+                ],
+            ],
+            'rsa2' => [
+                'key' => [
+                    'type' => OPENSSL_KEYTYPE_RSA,
+                    'private_file' => __DIR__ . '/../../../_data/key/rsa2/priv',
+                    'public_file' => __DIR__ . '/../../../_data/key/rsa2/pub',
+                ],
+            ],
+        ];
+        $jwtService = new JwtService($profiles);
+        return $jwtService;
+    }
+
+    public function testSetProfile1()
+    {
+        $definitions = [
+            'jwt' => [
+                'class' => JwtService::class,
+                'profiles' => [
+                    'hmac1' => [
+                        'key' => [
+                            'private' => 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz',
+                        ],
+                    ],
+                ],
+            ],
+        ];
+        $container = new Container($definitions);
+        $jwtService = $container->jwt;
+
+        $jwtEntity = new JwtEntity;
+        $jwtEntity->subject = [
+            'id' => 123,
+        ];
+        $token = $jwtService->sign($jwtEntity, 'hmac1');
+        $jwtEntityDecoded = $jwtService->decode($token, 'hmac1');
+        $this->tester->assertEquals($jwtEntity->subject['id'], $jwtEntityDecoded->payload->subject->id);
+        $this->tester->assertRegExp('#^[a-zA-Z0-9-_\.]+$#', $token);
+    }
+
+    public function testSetProfile()
+    {
         $jwtService = new JwtService;
         $jwtService->setProfile('hmac1', [
             'key' => [
@@ -58,7 +118,14 @@ class JwtServiceTest extends Unit
                 'public_file' => __DIR__ . '/../../../_data/key/rsa2/pub',
             ],
         ]);
-        return $jwtService;
+        $jwtEntity = new JwtEntity;
+        $jwtEntity->subject = [
+            'id' => 123,
+        ];
+        $jwtService->sign($jwtEntity, 'hmac1');
+        $jwtService->sign($jwtEntity, 'hmac2');
+        $jwtService->sign($jwtEntity, 'rsa1');
+        $jwtService->sign($jwtEntity, 'rsa2');
     }
 
     public function testSign()
