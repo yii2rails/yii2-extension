@@ -20,32 +20,32 @@ use yii2rails\extension\jwt\entities\ProfileEntity;
 
 class JwtService {
 
-    private static $profileInstances = [];
+    private $profileInstances = [];
 
-    public static function setProfile(string $profileName, array $definition) {
-        self::$profileInstances[$profileName] = ConfigProfileHelper::createInstanse($definition);
+    public function setProfile(string $profileName, array $definition) {
+        $this->profileInstances[$profileName] = ConfigProfileHelper::createInstanse($definition, JwtProfileEntity::class);
     }
 
-    public static function getProfile(string $profileName) : ProfileEntity {
-        if(!isset(self::$profileInstances[$profileName])) {
-            self::$profileInstances[$profileName] = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
+    public function getProfile(string $profileName) : JwtProfileEntity {
+        if(!isset($this->profileInstances[$profileName])) {
+            $this->profileInstances[$profileName] = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
         }
-        return self::$profileInstances[$profileName];
+        return $this->profileInstances[$profileName];
     }
 
-    public static function sign(JwtEntity $jwtEntity, string $profileName) : string {
-        $profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
+    public function sign(JwtEntity $jwtEntity, string $profileName) : string {
+        $profileEntity = $this->getProfile($profileName);
         $token = JwtHelper::sign($jwtEntity, $profileEntity);
         return $token;
     }
 
-    public static function verify(string $token, string $profileName) : JwtEntity {
-        $profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
+    public function verify(string $token, string $profileName) : JwtEntity {
+        $profileEntity = $this->getProfile($profileName);
         $jwtEntity = JwtHelper::decode($token, $profileEntity);
         return $jwtEntity;
     }
 
-    public static function decode(string $token) {
+    public function decode(string $token) {
         $jwtEntity = JwtEncodeHelper::decode($token);
         return $jwtEntity;
     }

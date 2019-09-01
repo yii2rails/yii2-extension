@@ -29,12 +29,17 @@ class JwtHelperTest extends Unit {
             'type' => OPENSSL_KEYTYPE_RSA,
             'private' => '-----BEGIN PRIVATE KEY-----
 MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAzC7Yuot/UR4sODkS
-...
+TnvelgpNfjveUfIUWGcvNW/kpqL3NG4dZ2wQZ5lhuFid/nZFGdObtdkSbA8toWV8
+k0G92wIDAQABAkAYqZ/sCGV8etSEhgA8EqI0JVJu6PRVmZPziaMeJUHNDrK8XuDo
+bisPU5RtaHQ/4c+zHBhJCUsXteZzoTEdUeGhAiEA98XzM8iOujJNKFmiibT1B+G/
+ecdfcYIJIjMnmZ7nZ38CIQDS9mIp7xi6irfbrsFov0iX/69hzEYCrTFwaPMX6QB3
+pQIgZ926at3LPzCw+ZZBtbp+8VPoIZO7ZejeDVEma5aaaN8CIGNXTGBsy9tD6VJU
 l5UIxll1OJQ4ChvGjMpfUWHIAcVVAiEA0KqXpZZiNCNFHxU9RrYeIXmiFfh4PRc6
 AlnzJRz8c5M=
 -----END PRIVATE KEY-----',
             'public' => '-----BEGIN PUBLIC KEY-----
-MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy...
+MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy
+FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
 -----END PUBLIC KEY-----',
         ],
         'algorithm' => EncryptAlgorithmEnum::SHA256,

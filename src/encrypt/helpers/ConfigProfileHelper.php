@@ -3,6 +3,7 @@
 namespace yii2rails\extension\encrypt\helpers;
 
 use yii\base\InvalidConfigException;
+use yii2rails\extension\common\helpers\ClassHelper;
 use yii2rails\extension\encrypt\entities\ConfigEntity;
 use yii2rails\extension\encrypt\entities\ProfileEntity;
 use yii2rails\extension\enum\base\BaseEnum;
@@ -23,8 +24,15 @@ class ConfigProfileHelper {
 
     public static function createInstanse($config, $profileEntityClass = ProfileEntity::class) : ProfileEntity
     {
+        //$profileEntityClass = ArrayHelper::getValue($config, 'class', $profileEntityClass);
+        //unset($config['class']);
         $profileEntity = new $profileEntityClass($config);
-        if($profileEntity->key == null) {
+        //ClassHelper::createObject($config);
+        //
+
+        //if(!$profileEntity->key instanceof KeyEntity) {
+        if(!$profileEntity->key) {
+            //d(debug_backtrace());
             throw new InvalidConfigException('Empty encryption key in profile!');
         }
         return $profileEntity;
