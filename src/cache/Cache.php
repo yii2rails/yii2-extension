@@ -8,6 +8,7 @@ use Psr\Cache\CacheItemPoolInterface;
 class Cache implements CacheItemPoolInterface {
 
     public function getItem($key) : CacheItemInterface {
+        CacheItem::assertKey($key);
         $value = \Yii::$app->cache->get($key);
         return new CacheItem($key, $value);
     }
@@ -17,6 +18,7 @@ class Cache implements CacheItemPoolInterface {
     }
 
     public function hasItem($key) : bool {
+        CacheItem::assertKey($key);
         return \Yii::$app->cache->exists($key);
     }
 
@@ -25,6 +27,7 @@ class Cache implements CacheItemPoolInterface {
     }
 
     public function deleteItem($key) : bool {
+        CacheItem::assertKey($key);
         return \Yii::$app->cache->delete($key);
     }
 

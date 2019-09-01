@@ -2,9 +2,11 @@
 
 namespace tests\functional\container;
 
+use yii2rails\extension\cache\InvalidArgumentException;
 use yii2rails\extension\cache\Cache;
 use yii2rails\extension\cache\CacheItem;
 use yii2rails\extension\container\Container;
+use yii2rails\extension\encrypt\exceptions\SignatureInvalidException;
 use yii2rails\extension\encrypt\helpers\JwtService;
 use yii2tool\test\Test\Unit;
 
@@ -36,6 +38,32 @@ class CacheTest extends Unit {
         $this->tester->assertEquals('val1', $cache->getItem('key1')->get());
         $cache->deleteItem('key1');
         $this->tester->assertEquals(null, $cache->getItem('key1')->get());
+    }
+
+    public function testAssertKey()
+    {
+        $cache = new Cache;
+
+        try {
+            $cache->getItem(32);
+            $this->tester->assertBad();
+        } catch (InvalidArgumentException $e) {
+            $this->tester->assertExceptionMessage('Key most be string', $e);
+        }
+
+        try {
+            $item = new CacheItem(32, 'val1');
+            $this->tester->assertBad($item);
+        } catch (InvalidArgumentException $e) {
+            $this->tester->assertExceptionMessage('Key most be string', $e);
+        }
+
+        /*try {
+            $item = new CacheItem('ety54sdw54s3w*^%$^', 'val1');
+            $this->tester->assertBad($item);
+        } catch (InvalidArgumentException $e) {
+            $this->tester->assertExceptionMessage('Invalid key format', $e);
+        }*/
     }
 
     public function testSetExpire() {

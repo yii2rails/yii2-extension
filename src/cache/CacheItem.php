@@ -3,6 +3,7 @@
 namespace yii2rails\extension\cache;
 
 use Psr\Cache\CacheItemInterface;
+use yii2rails\extension\common\enums\RegexpPatternEnum;
 
 class CacheItem implements CacheItemInterface
 {
@@ -12,8 +13,9 @@ class CacheItem implements CacheItemInterface
     private $expire = null;
     private $isHit = false;
 
-    public function __construct(string $key, $value, $duration = null)
+    public function __construct($key, $value, $duration = null)
     {
+        self::assertKey($key);
         $this->key = $key;
         $this->value = $value;
         $this->expiresAfter($duration);
@@ -43,9 +45,7 @@ class CacheItem implements CacheItemInterface
     public function expiresAt($expiration) : self
     {
         /** @var $expiration \DateTimeInterface */
-        //if($expiration !== null) {
-            $this->expire = $expiration;
-        //}
+        $this->expire = $expiration;
         return $this;
     }
 
@@ -65,6 +65,15 @@ class CacheItem implements CacheItemInterface
     public function getExpire()
     {
         return $this->expire;
+    }
+
+    public static function assertKey($key) {
+        if(!is_string($key)) {
+            throw new InvalidArgumentException('Key most be string');
+        }
+        /*if(!preg_match(RegexpPatternEnum::LOGIN_REQUIRED, $key)) {
+            throw new InvalidArgumentException('Invalid key format');
+        }*/
     }
 
 }
