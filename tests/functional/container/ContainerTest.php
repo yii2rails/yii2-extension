@@ -10,7 +10,7 @@ class ContainerTest extends Unit {
 	
 	const PACKAGE = 'yii2rails/yii2-extension';
 
-    public function test() {
+    public function testDefine() {
         $definitions = [
             'service1' => Service1::class,
             'service2' => [

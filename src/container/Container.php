@@ -26,18 +26,13 @@ class Container implements ContainerInterface {
         return isset($this->services[$id]);
     }
 
-    private function addInstance($id, $instance) {
-        $this->services[$id] = $instance;
-    }
-
     private function addDefinition(string $id, $definition) {
         if(is_object($definition)) {
             $instance = $definition;
         } else {
             $instance = ClassHelper::createObject($definition);
         }
-        //$instance = ClassHelper::createObject($definition);
-        $this->addInstance($id, $instance);
+        $this->services[$id] = $instance;
     }
 
     private function addDefinitions(array $definitions) {
