@@ -67,7 +67,9 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
     public function testSign()
     {
         $jwtEntity = new JwtEntity;
-        $jwtEntity->subject = 123;
+        $jwtEntity->subject = [
+            'id' => 123,
+        ];
         $jwtService = $this->prepareJwtService();
         $token = $jwtService->sign($jwtEntity, 'auth1');
         $jwtEntityDecoded = $jwtService->decode($token, 'auth1');
@@ -75,10 +77,12 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
         $this->tester->assertRegExp('#^[a-zA-Z0-9-_\.]+$#', $token);
     }
 
-    public function testDecodeExpired()
+    public function testVerifyExpired()
     {
         $jwtEntity = new JwtEntity;
-        $jwtEntity->subject = 123;
+        $jwtEntity->subject = [
+            'id' => 123,
+        ];
         $jwtEntity->expire_at = TIMESTAMP - TimeEnum::SECOND_PER_HOUR;
         $jwtService = $this->prepareJwtService();
         $token = $jwtService->sign($jwtEntity, 'auth1');
@@ -94,7 +98,9 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
     public function testBegin()
     {
         $jwtEntity = new JwtEntity;
-        $jwtEntity->subject = 123;
+        $jwtEntity->subject = [
+            'id' => 123,
+        ];
         $jwtEntity->begin_at = TIMESTAMP + TimeEnum::SECOND_PER_HOUR;
         $jwtService = $this->prepareJwtService();
         $token = $jwtService->sign($jwtEntity, 'auth1');
@@ -109,7 +115,9 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
     public function testVerify()
     {
         $jwtEntity = new JwtEntity;
-        $jwtEntity->subject = 123;
+        $jwtEntity->subject = [
+            'id' => 123,
+        ];
         $jwtService = $this->prepareJwtService();
         $token = $jwtService->sign($jwtEntity, 'auth1');
         $jwtEntityDecoded = $jwtService->verify($token, 'auth1');
@@ -120,7 +128,9 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
     public function testVerofyFail()
     {
         $jwtEntity = new JwtEntity;
-        $jwtEntity->subject = 123;
+        $jwtEntity->subject = [
+            'id' => 123,
+        ];
         $jwtService = $this->prepareJwtService();
         $token = $jwtService->sign($jwtEntity, 'auth1');
         $failToken = $this->token . '1';
@@ -135,7 +145,9 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
     public function testSignAndVerifyByRsa()
     {
         $jwtEntity = new JwtEntity;
-        $jwtEntity->subject = 123;
+        $jwtEntity->subject = [
+            'id' => 123,
+        ];
         $jwtService = $this->prepareJwtService('profileRsa');
         $token = $jwtService->sign($jwtEntity, 'auth1');
         $jwtEntityDecoded = $jwtService->verify($token, 'auth1');
