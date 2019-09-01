@@ -22,7 +22,7 @@ use yii2rails\extension\jwt\entities\TokenEntity;
 class JwtEncodeHelper
 {
 
-    public static function decode(string $jwt, JwtProfileEntity $profileEntity): TokenDto
+    public static function decode(string $jwt): TokenDto
     {
         $tokenDto = JwtModelHelper::parseToken($jwt);
         return $tokenDto;

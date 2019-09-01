@@ -2,16 +2,36 @@
 
 namespace yii2rails\extension\encrypt\dto;
 
-use yii2rails\domain\base\BaseDto;
+use yii2rails\domain\BaseEntity;
 
-class TokenDto extends BaseDto {
+/**
+ * Class TokenDto
+ * @package yii2rails\extension\encrypt\dto
+ *
+ * @property $header_encoded
+ * @property $payload_encoded
+ * @property $signature_encoded
+ * @property $header
+ * @property $payload
+ * @property $signature
+ */
+class TokenDto extends BaseEntity {
 
-    public $header_encoded = null;
-    public $payload_encoded = null;
-    public $signature_encoded = null;
+    protected $header_encoded = null;
+    protected $payload_encoded = null;
+    protected $signature_encoded = null;
 
-    public $header = null;
-    public $payload = null;
-    public $signature = null;
+    protected $header = null;
+    protected $payload = null;
+    protected $signature = null;
+
+    public function fields()
+    {
+        $fields = parent::fields();
+        unset($fields['header_encoded']);
+        unset($fields['payload_encoded']);
+        unset($fields['signature_encoded']);
+        return $fields;
+    }
 
 }

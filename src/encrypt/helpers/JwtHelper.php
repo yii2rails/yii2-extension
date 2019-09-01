@@ -35,7 +35,7 @@ class JwtHelper {
 
     public static function decode(string $token, JwtProfileEntity $profileEntity) : JwtEntity {
         //$profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
-        $tokenDto = JwtEncodeHelper::decode($token, $profileEntity);
+        $tokenDto = JwtEncodeHelper::decode($token);
         JwtEncodeHelper::verifyTokenDto($tokenDto, $profileEntity);
         $jwtEntity = new JwtEntity($tokenDto->payload);
         $jwtEntity->token = $token;
@@ -43,7 +43,7 @@ class JwtHelper {
     }
 
     public static function decodeRaw(string $jwt, JwtProfileEntity $profileEntity) : JwtTokenEntity {
-        $tokenDto = JwtEncodeHelper::decode($jwt, $profileEntity);
+        $tokenDto = JwtEncodeHelper::decode($jwt);
         $jwtTokenEntity = new JwtTokenEntity;
         $jwtTokenEntity->header = (array) $tokenDto->header;
         $jwtTokenEntity->payload = $tokenDto->payload;

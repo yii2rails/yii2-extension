@@ -17,6 +17,12 @@ class ConfigProfileHelper {
     public static function load(string $profile, $profileEntityClass = ProfileEntity::class) : ProfileEntity
     {
         $config = EnvService::get('encrypt.profiles.' . $profile);
+        $profileEntity = self::createInstanse($config, $profileEntityClass);
+        return $profileEntity;
+    }
+
+    public static function createInstanse($config, $profileEntityClass = ProfileEntity::class) : ProfileEntity
+    {
         $profileEntity = new $profileEntityClass($config);
         if($profileEntity->key == null) {
             throw new InvalidConfigException('Empty encryption key in profile!');
