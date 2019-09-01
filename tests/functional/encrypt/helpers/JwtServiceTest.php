@@ -21,31 +21,6 @@ class JwtServiceTest extends Unit
 
     const PACKAGE = 'yii2rails/yii2-extension';
 
-    private $profile = [
-        'key' => [
-            'private' => 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz',
-        ],
-    ];
-    private $profileRsa = [
-        'key' => [
-                'type' => OPENSSL_KEYTYPE_RSA,
-                'private' => '-----BEGIN PRIVATE KEY-----
-MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAzC7Yuot/UR4sODkS
-TnvelgpNfjveUfIUWGcvNW/kpqL3NG4dZ2wQZ5lhuFid/nZFGdObtdkSbA8toWV8
-k0G92wIDAQABAkAYqZ/sCGV8etSEhgA8EqI0JVJu6PRVmZPziaMeJUHNDrK8XuDo
-bisPU5RtaHQ/4c+zHBhJCUsXteZzoTEdUeGhAiEA98XzM8iOujJNKFmiibT1B+G/
-ecdfcYIJIjMnmZ7nZ38CIQDS9mIp7xi6irfbrsFov0iX/69hzEYCrTFwaPMX6QB3
-pQIgZ926at3LPzCw+ZZBtbp+8VPoIZO7ZejeDVEma5aaaN8CIGNXTGBsy9tD6VJU
-l5UIxll1OJQ4ChvGjMpfUWHIAcVVAiEA0KqXpZZiNCNFHxU9RrYeIXmiFfh4PRc6
-AlnzJRz8c5M=
------END PRIVATE KEY-----',
-                'public' => '-----BEGIN PUBLIC KEY-----
-MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwu2LqLf1EeLDg5Ek573pYKTX473lHy
-FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
------END PUBLIC KEY-----',
-        ],
-        'algorithm' => EncryptAlgorithmEnum::SHA256,
-    ];
     private $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6IjdhNzI0MDM2LWFjMzktNGE2Yi1kODhhLWU3MzE4MmQzZGQ2YyJ9.eyJzdWJqZWN0IjoxMjMsImF1ZGllbmNlIjpbXSwiZXhwaXJlX2F0IjoxODgyMzQyMzQ3fQ.1uXnpzNY2b6YNRWcY5Wl83jvEE-v_qW-oYCbfGv1iWg';
     private $tokenExpired = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6ImM0YTNmNTViLThjYWQtNDYwZC04YjViLTYyMjU1YWY2ZWEyYiJ9.eyJzdWJqZWN0IjoxMjMsImF1ZGllbmNlIjpbXSwiZXhwaXJlX2F0IjoxNTY3MDA2NTExfQ.MXhmeeSWgNJMII7_tvlhk4deBsvV7nHAxTU1qNvBmLg';
 
@@ -56,11 +31,33 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
         return $jwtEntity;
     }
 
-    private function prepareJwtService($profileName = 'profile'): JwtService
+    private function prepareJwtService(): JwtService
     {
         $jwtService = new JwtService;
-        $profile = $this->{$profileName};
-        $jwtService->setProfile('auth1', $profile, JwtProfileEntity::class);
+        $jwtService->setProfile('hmac1', [
+            'key' => [
+                'private' => 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz',
+            ],
+        ]);
+        $jwtService->setProfile('hmac2', [
+            'key' => [
+                'private' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+            ],
+        ]);
+        $jwtService->setProfile('rsa1', [
+            'key' => [
+                'type' => OPENSSL_KEYTYPE_RSA,
+                'private_file' => __DIR__ . '/../../../_data/key/rsa1/priv',
+                'public_file' => __DIR__ . '/../../../_data/key/rsa1/pub',
+            ],
+        ]);
+        $jwtService->setProfile('rsa2', [
+            'key' => [
+                'type' => OPENSSL_KEYTYPE_RSA,
+                'private_file' => __DIR__ . '/../../../_data/key/rsa2/priv',
+                'public_file' => __DIR__ . '/../../../_data/key/rsa2/pub',
+            ],
+        ]);
         return $jwtService;
     }
 
@@ -71,9 +68,9 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
             'id' => 123,
         ];
         $jwtService = $this->prepareJwtService();
-        $token = $jwtService->sign($jwtEntity, 'auth1');
-        $jwtEntityDecoded = $jwtService->decode($token, 'auth1');
-        $this->tester->assertEquals($jwtEntity->subject, $jwtEntityDecoded->payload->subject);
+        $token = $jwtService->sign($jwtEntity, 'hmac1');
+        $jwtEntityDecoded = $jwtService->decode($token, 'hmac1');
+        $this->tester->assertEquals($jwtEntity->subject['id'], $jwtEntityDecoded->payload->subject->id);
         $this->tester->assertRegExp('#^[a-zA-Z0-9-_\.]+$#', $token);
     }
 
@@ -85,15 +82,14 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
         ];
         $jwtEntity->expire_at = TIMESTAMP - TimeEnum::SECOND_PER_HOUR;
         $jwtService = $this->prepareJwtService();
-        $token = $jwtService->sign($jwtEntity, 'auth1');
+        $token = $jwtService->sign($jwtEntity, 'hmac1');
         try {
-            $jwtEntityDecoded = $jwtService->verify($token, 'auth1');
+            $jwtEntityDecoded = $jwtService->verify($token, 'hmac1');
             $this->tester->assertBad($jwtEntityDecoded);
         } catch (ExpiredException $e) {
             $this->tester->assertExceptionMessage('Expired token', $e);
         }
     }
-
 
     public function testBegin()
     {
@@ -103,9 +99,9 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
         ];
         $jwtEntity->begin_at = TIMESTAMP + TimeEnum::SECOND_PER_HOUR;
         $jwtService = $this->prepareJwtService();
-        $token = $jwtService->sign($jwtEntity, 'auth1');
+        $token = $jwtService->sign($jwtEntity, 'hmac1');
         try {
-            $jwtEntityDecoded = $jwtService->verify($token, 'auth1');
+            $jwtEntityDecoded = $jwtService->verify($token, 'hmac1');
             $this->tester->assertBad($jwtEntityDecoded);
         } catch (BeforeValidException $e) {
             $this->tester->assertExceptionMessageRegexp('#Cannot handle token prior to#', $e);
@@ -119,9 +115,9 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
             'id' => 123,
         ];
         $jwtService = $this->prepareJwtService();
-        $token = $jwtService->sign($jwtEntity, 'auth1');
-        $jwtEntityDecoded = $jwtService->verify($token, 'auth1');
-        $this->tester->assertEquals($jwtEntity->subject, $jwtEntityDecoded->subject);
+        $token = $jwtService->sign($jwtEntity, 'hmac1');
+        $jwtEntityDecoded = $jwtService->verify($token, 'hmac1');
+        $this->tester->assertEquals($jwtEntity->subject['id'], $jwtEntityDecoded->subject->id);
         $this->tester->assertRegExp('#^[a-zA-Z0-9-_\.]+$#', $token);
     }
 
@@ -132,27 +128,65 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
             'id' => 123,
         ];
         $jwtService = $this->prepareJwtService();
-        $token = $jwtService->sign($jwtEntity, 'auth1');
+        $token = $jwtService->sign($jwtEntity, 'hmac1');
         $failToken = $this->token . '1';
         try {
-            $jwtEntityDecoded = $jwtService->verify($failToken, 'auth1');
+            $jwtEntityDecoded = $jwtService->verify($failToken, 'hmac1');
             $this->tester->assertTrue(false);
         } catch (SignatureInvalidException $e) {
             $this->tester->assertTrue(true);
         }
     }
 
-    public function testSignAndVerifyByRsa()
+    public function testSignAndVerifyByRsa1()
     {
         $jwtEntity = new JwtEntity;
         $jwtEntity->subject = [
             'id' => 123,
         ];
-        $jwtService = $this->prepareJwtService('profileRsa');
-        $token = $jwtService->sign($jwtEntity, 'auth1');
-        $jwtEntityDecoded = $jwtService->verify($token, 'auth1');
-        $this->tester->assertEquals($jwtEntity->subject, $jwtEntityDecoded->subject);
+        $jwtService = $this->prepareJwtService();
+        $token = $jwtService->sign($jwtEntity, 'rsa1');
+        $jwtEntityDecoded = $jwtService->verify($token, 'rsa1');
+        $this->tester->assertEquals($jwtEntity->subject['id'], $jwtEntityDecoded->subject->id);
         $this->tester->assertRegExp('#^[a-zA-Z0-9-_\.]+$#', $token);
+    }
+
+    public function testSignAndVerifyByRsa2()
+    {
+        $jwtEntity = new JwtEntity;
+        $jwtEntity->subject = [
+            'id' => 123,
+        ];
+        $jwtService = $this->prepareJwtService();
+        $token = $jwtService->sign($jwtEntity, 'rsa2');
+        $jwtEntityDecoded = $jwtService->verify($token, 'rsa2');
+        $this->tester->assertEquals($jwtEntity->subject['id'], $jwtEntityDecoded->subject->id);
+        $this->tester->assertRegExp('#^[a-zA-Z0-9-_\.]+$#', $token);
+    }
+
+    public function testSignAndVerifyByRsaAlien()
+    {
+        $jwtEntity = new JwtEntity;
+        $jwtEntity->subject = [
+            'id' => 123,
+        ];
+        $jwtService = $this->prepareJwtService();
+
+        $token = $jwtService->sign($jwtEntity, 'rsa1');
+        try {
+            $jwtEntityDecoded = $jwtService->verify($token, 'rsa2');
+            $this->tester->assertTrue(false);
+        } catch (SignatureInvalidException $e) {
+            $this->tester->assertTrue(true);
+        }
+
+        $token = $jwtService->sign($jwtEntity, 'rsa2');
+        try {
+            $jwtEntityDecoded = $jwtService->verify($token, 'rsa1');
+            $this->tester->assertTrue(false);
+        } catch (SignatureInvalidException $e) {
+            $this->tester->assertTrue(true);
+        }
     }
 
     public function testSignAndDecodeRaw()
@@ -162,8 +196,8 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
             'id' => 123,
         ];
         $jwtService = $this->prepareJwtService();
-        $token = $jwtService->sign($jwtEntity, 'auth1');
-        $decoded = $jwtService->decode($token, 'auth1');
+        $token = $jwtService->sign($jwtEntity, 'hmac1');
+        $decoded = $jwtService->decode($token, 'hmac1');
 
         $this->tester->assertNotEmpty($decoded->signature);
         $this->tester->assertNotEmpty($decoded->payload->exp);
@@ -196,14 +230,5 @@ FFhnLzVv5Kai9zRuHWdsEGeZYbhYnf52RRnTm7XZEmwPLaFlfJNBvdsCAwEAAQ==
         $this->tester->assertEquals($jwtEntity->subject['id'], $jwtEntityDecoded->subject->id);
         $this->tester->assertRegExp('#^[a-zA-Z0-9-_\.]+$#', $jwtEntity->token);
     }*/
-
-    private function forgeTokenEntity($userId)
-    {
-        $jwtEntity = new JwtEntity;
-        $jwtEntity->subject = [
-            'id' => $userId,
-        ];
-        return $jwtEntity;
-    }
 
 }

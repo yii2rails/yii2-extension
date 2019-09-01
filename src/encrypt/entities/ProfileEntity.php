@@ -17,6 +17,7 @@ class ProfileEntity extends BaseEntity {
 	protected $key;
 	protected $algorithm = EncryptAlgorithmEnum::SHA256;
 
+
 	public function fieldType()
     {
         return [

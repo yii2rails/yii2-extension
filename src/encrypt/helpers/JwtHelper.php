@@ -96,7 +96,9 @@ class JwtHelper {
         $jwtHeaderEntity->alg = $profileEntity->default_alg;
         $jwtHeaderEntity->kid = $keyId;
 
-        return JwtEncodeHelper::encode($data, $profileEntity->key->private, $jwtHeaderEntity);
+
+
+        return JwtEncodeHelper::encode($data, $profileEntity->key, $jwtHeaderEntity);
     }
 
     private static function entityToToken(JwtEntity $jwtEntity) : array {

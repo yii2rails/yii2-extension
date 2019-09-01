@@ -22,6 +22,11 @@ class JwtAlgorithmEnum extends BaseEnum {
         JwtAlgorithmEnum::RS512 => [EncryptFunctionEnum::OPENSSL, EncryptAlgorithmEnum::SHA512],
     ];
 
+    public static function getHashAlgorithm($alg) {
+        list($function, $algorithm) = self::$supportedAlgorithms[$alg];
+        return $algorithm;
+    }
+
     public static function isSupported($algorithm) {
         return array_key_exists($algorithm, self::$supportedAlgorithms);
     }
