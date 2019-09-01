@@ -29,6 +29,7 @@
 		"yii2mod/yii2-helpers": "*",
 		"donatj/phpuseragentparser": ">=0.3.6",
 		"php": ">=5.4.0",
-		"psr/container": "^1.0"
+		"psr/container": "^1.0",
+		"psr/cache": "^1.0"
 	}
 }
