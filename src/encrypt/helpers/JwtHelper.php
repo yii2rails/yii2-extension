@@ -19,17 +19,17 @@ use UnexpectedValueException;
 
 class JwtHelper {
 
-    public static function forgeBySubject(array $subject, JwtProfileEntity $profileEntity, $keyId = null, $head = null) : JwtEntity {
+    public static function forgeBySubject(array $subject, JwtProfileEntity $profileEntity, $keyId = null) : JwtEntity {
         $jwtEntity = new JwtEntity;
         $jwtEntity->subject = $subject;
-        $jwtEntity->token = self::sign($jwtEntity, $profileEntity, $keyId, $head);
+        $jwtEntity->token = self::sign($jwtEntity, $profileEntity, $keyId);
         return $jwtEntity;
     }
 
-    public static function sign(JwtEntity $jwtEntity, JwtProfileEntity $profileEntity, $keyId = null/*, $head = null*/) : string {
+    public static function sign(JwtEntity $jwtEntity, JwtProfileEntity $profileEntity, $keyId = null) : string {
         //$profileEntity = ConfigProfileHelper::load($profileName, JwtProfileEntity::class);
         $keyId = $keyId ?  : StringHelper::genUuid();
-        $token = self::signToken($jwtEntity, $profileEntity, $keyId/*, $head*/);
+        $token = self::signToken($jwtEntity, $profileEntity, $keyId);
         return $token;
     }
 
@@ -48,14 +48,11 @@ class JwtHelper {
         $jwtTokenEntity->header = (array) $tokenDto->header;
         $jwtTokenEntity->payload = $tokenDto->payload;
         $jwtTokenEntity->sig = $tokenDto->signature;
-        /*if (empty($profileEntity->key)) {
-            throw new InvalidArgumentException('Key may not be empty');
-        }*/
         return $jwtTokenEntity;
     }
 
     private static function tokenDecodeItem(string $data) {
-        $jsonCode = Base64Helper::urlSafeDecode($data);
+        $jsonCode = SafeBase64Helper::decode($data);
         $object = JwtJsonHelper::decode($jsonCode);
         if (null === $object) {
             throw new UnexpectedValueException('Invalid encoding');
@@ -86,7 +83,7 @@ class JwtHelper {
         }
     }
 
-    private static function signToken(JwtEntity $jwtEntity, JwtProfileEntity $profileEntity, string $keyId = null/*, $head = null*/) : string {
+    private static function signToken(JwtEntity $jwtEntity, JwtProfileEntity $profileEntity, string $keyId = null) : string {
         if($profileEntity->audience) {
             $jwtEntity->audience = ArrayHelper::merge($jwtEntity->audience, $profileEntity->audience);
         }

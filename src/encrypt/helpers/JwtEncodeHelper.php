@@ -42,7 +42,7 @@ class JwtEncodeHelper
         $tokenDto->header_encoded = JwtSegmentHelper::encodeSegment(ArrayHelper::toArray($jwtHeaderEntity));
         $tokenDto->payload_encoded = JwtSegmentHelper::encodeSegment($payload);
         $signature = static::sign($tokenDto, $key, $jwtHeaderEntity->alg);
-        $tokenDto->signature_encoded = Base64Helper::urlSafeEncode($signature);
+        $tokenDto->signature_encoded = SafeBase64Helper::encode($signature);
         return self::buildTokenFromDto($tokenDto);
     }
 

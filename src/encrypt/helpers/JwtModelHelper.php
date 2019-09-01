@@ -47,7 +47,7 @@ class JwtModelHelper
     private static function decodeTokenDto(TokenDto $tokenDto) {
         $tokenDto->header = JwtSegmentHelper::decodeSegment($tokenDto->header_encoded);
         $tokenDto->payload = JwtSegmentHelper::decodeSegment($tokenDto->payload_encoded);
-        $tokenDto->signature = Base64Helper::urlSafeDecode($tokenDto->signature_encoded);
+        $tokenDto->signature = SafeBase64Helper::decode($tokenDto->signature_encoded);
     }
 
     private static function validateTokenDto(TokenDto $tokenDto) {

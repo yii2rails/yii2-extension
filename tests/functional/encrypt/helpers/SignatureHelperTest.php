@@ -6,7 +6,7 @@ use yii2rails\domain\data\Query;
 use yii2rails\domain\helpers\DomainHelper;
 use yii2rails\extension\encrypt\entities\KeyEntity;
 use yii2rails\extension\encrypt\enums\EncryptFunctionEnum;
-use yii2rails\extension\encrypt\helpers\Base64Helper;
+use yii2rails\extension\encrypt\helpers\SafeBase64Helper;
 use yii2rails\extension\encrypt\helpers\RsaHelper;
 use yii2rails\extension\encrypt\helpers\SignatureHelper;
 use yii2rails\extension\package\domain\entities\ConfigEntity;
