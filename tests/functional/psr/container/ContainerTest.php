@@ -81,6 +81,19 @@ class ContainerTest extends Unit {
         $this->tester->assertEquals(Service3::class, get_class($container->domain2->service3));
     }
 
+    public function testDefine4() {
+        $definitions = [
+            Service1::class => Service2::class,
+            'service1' => Service1::class,
+            'service2' => Service2::class,
+            'service3' => Service3::class,
+        ];
+
+        $container = new Container($definitions);
+        $this->tester->assertEquals(Service2::class, get_class($container->get(Service1::class)));
+        //$this->tester->assertEquals(Service2::class, get_class($container->get('service1')));
+    }
+
 }
 
 class Domain1 {
