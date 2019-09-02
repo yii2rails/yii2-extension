@@ -1,13 +1,13 @@
 <?php
 
-namespace tests\functional\container;
+namespace tests\functional\psr\cache;
 
-use yii2rails\extension\cache\InvalidArgumentException;
-use yii2rails\extension\cache\Cache;
-use yii2rails\extension\cache\CacheItem;
-use yii2rails\extension\container\Container;
+use yii2rails\extension\psr\cache\InvalidArgumentException;
+use yii2rails\extension\psr\cache\Cache;
+use yii2rails\extension\psr\cache\CacheItem;
+use yii2rails\extension\psr\container\Container;
 use yii2rails\extension\encrypt\exceptions\SignatureInvalidException;
-use yii2rails\extension\encrypt\helpers\JwtService;
+use yii2rails\extension\encrypt\libs\JwtService;
 use yii2tool\test\Test\Unit;
 
 class CacheTest extends Unit {

@@ -1,9 +1,10 @@
 <?php
 
-namespace tests\functional\container;
+namespace tests\functional\psr\container;
 
-use yii2rails\extension\container\Container;
-use yii2rails\extension\encrypt\helpers\JwtService;
+use yii2rails\extension\common\exceptions\NotFoundException;
+use yii2rails\extension\psr\container\Container;
+use yii2rails\extension\encrypt\libs\JwtService;
 use yii2tool\test\Test\Unit;
 
 class ContainerTest extends Unit {
@@ -20,6 +21,7 @@ class ContainerTest extends Unit {
                 'param3' => 333,
             ],
             'service3' => new Service3,
+            'service4' => null,
         ];
         $container = new Container($definitions);
         $this->tester->assertEquals(Service1::class, get_class($container->service1));
@@ -28,6 +30,12 @@ class ContainerTest extends Unit {
         $this->tester->assertEquals(222, $container->service2->param2);
         $this->tester->assertEquals(333, $container->service2->param3);
         $this->tester->assertEquals(Service3::class, get_class($container->service3));
+        try {
+            $container->service4;
+            $this->tester->assertBad();
+        } catch (NotFoundException $e) {
+            $this->tester->assertExceptionMessage('Component "service4" not found!', $e);
+        }
     }
 
     public function testDefine2() {
@@ -39,6 +47,31 @@ class ContainerTest extends Unit {
             'domain2' => new Container([
                 'service3' => Service3::class,
             ]),
+        ];
+
+        $container = new Container($definitions);
+
+        $this->tester->assertEquals(Service1::class, get_class($container->domain1->service1));
+        $this->tester->assertEquals(Service2::class, get_class($container->domain1->service2));
+        $this->tester->assertEquals(Service3::class, get_class($container->domain2->service3));
+    }
+
+    public function testDefine3() {
+        $definitions = [
+            'domain1' => [
+                'class' => Container::class,
+                'components' => [
+                    'service1' => Service1::class,
+                    'service2' => Service2::class,
+                ],
+
+            ],
+            'domain2' => [
+                'class' => Container::class,
+                'components' => [
+                    'service3' => Service3::class,
+                ],
+            ],
         ];
 
         $container = new Container($definitions);

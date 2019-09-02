@@ -22,7 +22,18 @@ class ConfigProfileHelper {
         return $profileEntity;
     }
 
-    public static function createInstanse($config, $profileEntityClass = ProfileEntity::class) : ProfileEntity
+    public static function prepareDefinition($config) : array
+    {
+        if(isset($config['key']['private_file'])) {
+            $config['key']['private'] = file_get_contents($config['key']['private_file']);
+        }
+        if(isset($config['key']['public_file'])) {
+            $config['key']['public'] = file_get_contents($config['key']['public_file']);
+        }
+        return $config;
+    }
+
+    private static function createInstanse($config, $profileEntityClass = ProfileEntity::class) : ProfileEntity
     {
 
         if(isset($config['key']['private_file'])) {

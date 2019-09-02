@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2rails\extension\cache;
+namespace yii2rails\extension\psr\cache;
 
 use Psr\Cache\CacheItemInterface;
 use yii2rails\extension\common\enums\RegexpPatternEnum;
