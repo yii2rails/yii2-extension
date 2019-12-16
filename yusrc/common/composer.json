@@ -1,0 +1,25 @@
+{
+	"name": "yubundle/yii2-common",
+	"type": "yii2-extension",
+	"keywords": [
+		"yii2",
+		"common"
+	],
+	"authors": [
+		{
+			"name": "Yamshikov Vitaliy",
+			"email": "theyamshikov@yandex.ru"
+		}
+	],
+	"minimum-stability": "dev",
+	"autoload": {
+		"psr-4": {
+			"yubundle\\common\\": "src",
+			"yubundle\\common\\tests\\": "tests"
+		}
+	},
+	"require": {
+		"yiisoft/yii2": "*",
+		"php": ">=7.2.0"
+	}
+}

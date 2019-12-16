@@ -1,0 +1,10 @@
+description: "Управление пользователями"
+/{phone}:
+    uriParameters:
+        phone:
+            description: "Телефон пользователя"
+            type: integer
+    delete:
+        securedBy: [Auth]
+        description: "Удалить пользователя"
+        is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/delete.raml

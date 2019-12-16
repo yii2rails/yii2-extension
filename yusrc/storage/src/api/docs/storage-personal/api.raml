@@ -1,0 +1,12 @@
+description: "Временное хранилище файлов пользователя"
+post:
+    securedBy: [Auth]
+    description: "Загрузить файл на сервер"
+    is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/create.raml
+    body:
+        multipart/form-data:
+            properties:
+                file:
+                    description: Файл для загрузки
+                    required: true
+                    type: file

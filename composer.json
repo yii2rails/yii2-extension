@@ -18,7 +18,13 @@
 			"yii2lab\\extension\\": "src",
 			"yii2lab\\extension\\tests\\": "tests",
 			"yii2rails\\extension\\": "src",
-			"yii2rails\\extension\\tests\\": "tests"
+			"yii2rails\\extension\\tests\\": "tests",
+			"yubundle\\account\\": "yusrc\\account\\src",
+			"yubundle\\common\\": "yusrc\\common\\src",
+			"yubundle\\reference\\": "yusrc\\reference\\src",
+			"yubundle\\staff\\": "yusrc\\staff\\src",
+			"yubundle\\storage\\": "yusrc\\storage\\src",
+			"yubundle\\user\\": "yusrc\\user\\src"
 		}
 	},
 	"require": {

@@ -1,0 +1,48 @@
+description: "Файловое хранилище"
+get:
+    description: "Получть список файлов"
+    is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/all.raml
+    responses:
+        200:
+            body:
+                application/json:
+                    example: !include example/all-response-body.json
+post:
+    securedBy: [Auth]
+    description: "Загрузить файл на сервер"
+    is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/create.raml
+    body:
+        multipart/form-data:
+            properties:
+                service_id:
+                    description: ID сервиса
+                    required: true
+                    type: integer
+                file:
+                    description: Файл для загрузки
+                    required: true
+                    type: file
+/{id}:
+    uriParameters:
+        id:
+            description: "ID файла"
+            type: integer
+    get:
+        description: "Получить файл"
+        is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/one.raml
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include example/one-response-body.json
+    put:
+        securedBy: [Auth]
+        description: "Изменить файл"
+        is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/update.raml
+        body:
+            application/json:
+                example: !include example/update-request-body.json
+    delete:
+        securedBy: [Auth]
+        description: "Удалить файл"
+        is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/delete.raml

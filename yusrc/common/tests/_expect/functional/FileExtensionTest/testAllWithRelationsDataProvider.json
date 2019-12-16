@@ -1,0 +1,372 @@
+{
+	"pagination": {
+		"page": 0,
+		"pageCount": 51,
+		"pageSize": 20,
+		"totalCount": 1011,
+		"limit": 20,
+		"offset": 0
+	},
+	"collection": [
+		{
+			"id": 21,
+			"code": "sea",
+			"type_id": 4,
+			"mime": "application/octet-stream",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 43,
+			"code": "gzip",
+			"type_id": 4,
+			"mime": "application/x-gzip",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 47,
+			"code": "phtml",
+			"type_id": 4,
+			"mime": "application/x-httpd-php",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 48,
+			"code": "phps",
+			"type_id": 4,
+			"mime": "application/x-httpd-php-source",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 53,
+			"code": "tgz",
+			"type_id": 4,
+			"mime": "application/x-tar",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 54,
+			"code": "z",
+			"type_id": 4,
+			"mime": "application/x-compress",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 70,
+			"code": "rpm",
+			"type_id": 4,
+			"mime": "audio/x-pn-realaudio-plugin",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 72,
+			"code": "rv",
+			"type_id": 4,
+			"mime": "video/vnd.rn-realvideo",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 86,
+			"code": "shtml",
+			"type_id": 4,
+			"mime": "text/html",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 94,
+			"code": "dmn",
+			"type_id": 4,
+			"mime": "application/octet-stream",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 95,
+			"code": "bpmn",
+			"type_id": 4,
+			"mime": "application/octet-stream",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 109,
+			"code": "word",
+			"type_id": 4,
+			"mime": "application/msword",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 110,
+			"code": "xl",
+			"type_id": 4,
+			"mime": "application/excel",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 113,
+			"code": "pem",
+			"type_id": 4,
+			"mime": "application/x-x509-user-cert",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 116,
+			"code": "p7a",
+			"type_id": 4,
+			"mime": "application/x-pkcs7-signature",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 124,
+			"code": "kdb",
+			"type_id": 4,
+			"mime": "application/octet-stream",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 126,
+			"code": "gpg",
+			"type_id": 4,
+			"mime": "application/gpg-keys",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 127,
+			"code": "sst",
+			"type_id": 4,
+			"mime": "application/octet-stream",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 128,
+			"code": "csr",
+			"type_id": 4,
+			"mime": "application/octet-stream",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		},
+		{
+			"id": 129,
+			"code": "rsa",
+			"type_id": 4,
+			"mime": "application/x-pkcs7",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"type": {
+				"id": 4,
+				"name": "Неизвестный",
+				"icon_file": "unknown.ico",
+				"handler_name": "unknown",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null
+			}
+		}
+	]
+}

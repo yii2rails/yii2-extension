@@ -1,0 +1,340 @@
+{
+	"pagination": {
+		"page": 0,
+		"pageCount": 1,
+		"pageSize": 20,
+		"totalCount": 2,
+		"limit": 20,
+		"offset": 0
+	},
+	"collection": [
+		{
+			"id": 1,
+			"file_id": 1,
+			"width": 128,
+			"height": 128,
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"file": {
+				"id": 1,
+				"service_id": 1,
+				"entity_id": 1,
+				"editor_id": 1,
+				"hash": "da3cea2b",
+				"extension": "png",
+				"name": "Скриншот 1",
+				"size": null,
+				"description": "Описание файла 2",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null,
+				"directory": "mail/attachment/1",
+				"file_name": "Скриншот 1.png",
+				"file_path": "storage/mail/attachment/1/da3cea2b",
+				"url": {
+					"constant": "http://storage.srv/storage/mail/attachment/1/da3cea2b",
+					"source": "http://storage.srv/storage/mail/attachment/1/source/da3cea2b",
+					"download": "http://storage.srv/storage/mail/attachment/1/source/da3cea2b?action=download"
+				},
+				"source_file_name": null,
+				"source_file_path": "storage/mail/attachment/1/source/da3cea2b",
+				"service": {
+					"id": 1,
+					"name": "Mail attachment",
+					"path": "mail/attachment",
+					"status": 1,
+					"created_at": "2019-02-22 16:53:05",
+					"updated_at": null,
+					"thumbs": [
+						{
+							"id": 1,
+							"service_id": 1,
+							"width": 128,
+							"height": 128,
+							"extension": "jpg",
+							"quality": 90,
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"service": null,
+							"ext": {
+								"id": 519,
+								"code": "jpg",
+								"type_id": 2,
+								"mime": "image/jpeg",
+								"status": 1,
+								"created_at": "2019-02-22 16:53:05",
+								"updated_at": null,
+								"type": null
+							}
+						},
+						{
+							"id": 2,
+							"service_id": 1,
+							"width": 256,
+							"height": 256,
+							"extension": "jpg",
+							"quality": 90,
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"service": null,
+							"ext": {
+								"id": 519,
+								"code": "jpg",
+								"type_id": 2,
+								"mime": "image/jpeg",
+								"status": 1,
+								"created_at": "2019-02-22 16:53:05",
+								"updated_at": null,
+								"type": null
+							}
+						},
+						{
+							"id": 3,
+							"service_id": 1,
+							"width": 512,
+							"height": 512,
+							"extension": "jpg",
+							"quality": 90,
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"service": null,
+							"ext": {
+								"id": 519,
+								"code": "jpg",
+								"type_id": 2,
+								"mime": "image/jpeg",
+								"status": 1,
+								"created_at": "2019-02-22 16:53:05",
+								"updated_at": null,
+								"type": null
+							}
+						}
+					]
+				},
+				"editor": {
+					"post_id": null,
+					"organization_name": null,
+					"industry_union_id": null,
+					"address": null,
+					"id": 1,
+					"first_name": "Admin 1",
+					"last_name": "Root",
+					"middle_name": null,
+					"email": "admin1@example.com",
+					"phone": "77771111111",
+					"birthday": "2018-01-07",
+					"code": null,
+					"sex_id": null,
+					"worker": null,
+					"user": {
+						"id": 1,
+						"login": "admin",
+						"status": 1,
+						"roles": null,
+						"token": null,
+						"created_at": null,
+						"person_id": 1,
+						"company_id": 1,
+						"security": null,
+						"person": null,
+						"company": null,
+						"contacts": null
+					},
+					"status": 1,
+					"avatar": null,
+					"sex": null,
+					"full_name": "Admin 1 Root",
+					"initial": "AR",
+					"avatar_url": null
+				},
+				"ext": {
+					"id": 765,
+					"code": "png",
+					"type_id": 2,
+					"mime": "image/png",
+					"status": 1,
+					"created_at": "2019-02-22 16:53:05",
+					"updated_at": null,
+					"type": {
+						"id": 2,
+						"code": null,
+						"name": "Изображение",
+						"icon_file": "image.ico",
+						"handler_name": "image",
+						"status": 1,
+						"created_at": "2019-02-22 16:53:05",
+						"updated_at": null
+					}
+				}
+			}
+		},
+		{
+			"id": 2,
+			"file_id": 1,
+			"width": 256,
+			"height": 256,
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"file": {
+				"id": 1,
+				"service_id": 1,
+				"entity_id": 1,
+				"editor_id": 1,
+				"hash": "da3cea2b",
+				"extension": "png",
+				"name": "Скриншот 1",
+				"size": null,
+				"description": "Описание файла 2",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null,
+				"directory": "mail/attachment/1",
+				"file_name": "Скриншот 1.png",
+				"file_path": "storage/mail/attachment/1/da3cea2b",
+				"url": {
+					"constant": "http://storage.srv/storage/mail/attachment/1/da3cea2b",
+					"source": "http://storage.srv/storage/mail/attachment/1/source/da3cea2b",
+					"download": "http://storage.srv/storage/mail/attachment/1/source/da3cea2b?action=download"
+				},
+				"source_file_name": null,
+				"source_file_path": "storage/mail/attachment/1/source/da3cea2b",
+				"service": {
+					"id": 1,
+					"name": "Mail attachment",
+					"path": "mail/attachment",
+					"status": 1,
+					"created_at": "2019-02-22 16:53:05",
+					"updated_at": null,
+					"thumbs": [
+						{
+							"id": 1,
+							"service_id": 1,
+							"width": 128,
+							"height": 128,
+							"extension": "jpg",
+							"quality": 90,
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"service": null,
+							"ext": {
+								"id": 519,
+								"code": "jpg",
+								"type_id": 2,
+								"mime": "image/jpeg",
+								"status": 1,
+								"created_at": "2019-02-22 16:53:05",
+								"updated_at": null,
+								"type": null
+							}
+						},
+						{
+							"id": 2,
+							"service_id": 1,
+							"width": 256,
+							"height": 256,
+							"extension": "jpg",
+							"quality": 90,
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"service": null,
+							"ext": {
+								"id": 519,
+								"code": "jpg",
+								"type_id": 2,
+								"mime": "image/jpeg",
+								"status": 1,
+								"created_at": "2019-02-22 16:53:05",
+								"updated_at": null,
+								"type": null
+							}
+						},
+						{
+							"id": 3,
+							"service_id": 1,
+							"width": 512,
+							"height": 512,
+							"extension": "jpg",
+							"quality": 90,
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"service": null,
+							"ext": {
+								"id": 519,
+								"code": "jpg",
+								"type_id": 2,
+								"mime": "image/jpeg",
+								"status": 1,
+								"created_at": "2019-02-22 16:53:05",
+								"updated_at": null,
+								"type": null
+							}
+						}
+					]
+				},
+				"editor": {
+					"post_id": null,
+					"organization_name": null,
+					"industry_union_id": null,
+					"address": null,
+					"id": 1,
+					"first_name": "Admin 1",
+					"last_name": "Root",
+					"middle_name": null,
+					"email": "admin1@example.com",
+					"phone": "77771111111",
+					"birthday": "2018-01-07",
+					"code": null,
+					"sex_id": null,
+					"worker": null,
+					"user": {
+						"id": 1,
+						"login": "admin",
+						"status": 1,
+						"roles": null,
+						"token": null,
+						"created_at": null,
+						"person_id": 1,
+						"company_id": 1,
+						"security": null,
+						"person": null,
+						"company": null,
+						"contacts": null
+					},
+					"status": 1,
+					"avatar": null,
+					"sex": null,
+					"full_name": "Admin 1 Root",
+					"initial": "AR",
+					"avatar_url": null
+				},
+				"ext": {
+					"id": 765,
+					"code": "png",
+					"type_id": 2,
+					"mime": "image/png",
+					"status": 1,
+					"created_at": "2019-02-22 16:53:05",
+					"updated_at": null,
+					"type": {
+						"id": 2,
+						"code": null,
+						"name": "Изображение",
+						"icon_file": "image.ico",
+						"handler_name": "image",
+						"status": 1,
+						"created_at": "2019-02-22 16:53:05",
+						"updated_at": null
+					}
+				}
+			}
+		}
+	]
+}

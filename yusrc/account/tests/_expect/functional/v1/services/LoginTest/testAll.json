@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"login": "admin",
+		"status": 1,
+		"roles": null,
+		"token": null,
+		"created_at": null,
+		"person_id": 1,
+		"company_id": 1,
+		"security": null,
+		"person": null,
+		"company": null,
+		"contacts": null
+	},
+	{
+		"id": 2,
+		"login": "tester1",
+		"status": 1,
+		"roles": null,
+		"token": null,
+		"created_at": null,
+		"person_id": 2,
+		"company_id": 1,
+		"security": null,
+		"person": null,
+		"company": null,
+		"contacts": null
+	},
+	{
+		"id": 3,
+		"login": "tester2",
+		"status": 1,
+		"roles": null,
+		"token": null,
+		"created_at": null,
+		"person_id": 3,
+		"company_id": 1,
+		"security": null,
+		"person": null,
+		"company": null,
+		"contacts": null
+	},
+	{
+		"id": 4,
+		"login": "reporter1",
+		"status": 1,
+		"roles": null,
+		"token": null,
+		"created_at": null,
+		"person_id": 4,
+		"company_id": 1,
+		"security": null,
+		"person": null,
+		"company": null,
+		"contacts": null
+	},
+	{
+		"id": 5,
+		"login": "reporter2",
+		"status": 1,
+		"roles": null,
+		"token": null,
+		"created_at": null,
+		"person_id": 5,
+		"company_id": 1,
+		"security": null,
+		"person": null,
+		"company": null,
+		"contacts": null
+	}
+]

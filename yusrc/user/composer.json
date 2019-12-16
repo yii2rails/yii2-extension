@@ -1,0 +1,22 @@
+{
+	"name": "yubundle/yii2-user",
+	"type": "yii2-extension",
+	"keywords": ["yii2","user"],
+	"authors": [
+		{
+			"name": "Yamshikov Vitaliy",
+			"email": "theyamshikov@yandex.ru"
+		}
+	],
+	"minimum-stability": "dev",
+	"autoload": {
+		"psr-4": {
+			"yubundle\\user\\": "src",
+			"yubundle\\user\\tests\\": "tests"
+		}
+	},
+	"require": {
+		"yiisoft/yii2": "*",
+		"php": ">=5.3.0"
+	}
+}

@@ -1,0 +1,41 @@
+description: "Должности"
+get:
+    description: "Получть список должностей"
+    is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/all.raml
+    responses:
+        200:
+            body:
+                application/json:
+                    example: !include example/all-response-body.json
+post:
+    securedBy: [Auth]
+    description: "Создать должность"
+    is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/create.raml
+    body:
+        application/json:
+            example: !include example/create-request-body.json
+
+/{id}:
+    uriParameters:
+        id:
+            description: "ID должности"
+            type: integer
+    get:
+        description: "Получить должность"
+        is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/one.raml
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include example/one-response-body.json
+    put:
+        securedBy: [Auth]
+        description: "Изменить должность"
+        is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/update.raml
+        body:
+            application/json:
+                example: !include example/update-request-body.json
+    delete:
+        securedBy: [Auth]
+        description: "Удалить должность"
+        is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/delete.raml

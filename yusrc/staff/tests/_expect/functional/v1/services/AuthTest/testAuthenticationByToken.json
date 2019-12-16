@@ -1,0 +1,14 @@
+{
+	"id": 1,
+	"login": "admin",
+	"status": 0,
+	"roles": [
+		"rAdministrator"
+	],
+	"token": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6IjVkNTBjMDgyLTlhMWMtNGE3ZS1jYmQwLTQwZmUwMmI4ZTZjNiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkueXVtYWlsLnByb2plY3RcL3YxXC9hdXRoIiwic3ViamVjdCI6eyJpZCI6Nn0sImF1ZCI6WyJodHRwOlwvXC9hcGkueXVtYWlsLnByb2plY3QiXSwiZXhwIjoxNTUxMjgyMjMzfQ.4izUBoQtguLpvuzg3YA-49ZR1u7qzShPrKMskBeGF7k",
+	"created_at": null,
+	"person_id": 1,
+	"company_id": 1,
+	"person": null,
+	"company": null
+}
