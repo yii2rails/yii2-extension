@@ -1,0 +1,17 @@
+description: "Персона"
+get:
+    securedBy: [Auth]
+    description: "Получить данные о своей персоне"
+    is: !include ../../../../../../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/one.raml
+    responses:
+        200:
+            body:
+                application/json:
+                    example: !include example/one-response-body.json
+put:
+    securedBy: [Auth]
+    description: "Изменить данные о своей персоне"
+    is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/update.raml
+    body:
+        application/json:
+            example: !include example/update-request-body.json

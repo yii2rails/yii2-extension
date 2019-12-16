@@ -1,0 +1,22 @@
+{
+	"name": "yubundle/yii2-reference",
+	"type": "yii2-extension",
+	"keywords": ["yii2","reference"],
+	"authors": [
+		{
+			"name": "Yamshikov Vitaliy",
+			"email": "theyamshikov@yandex.ru"
+		}
+	],
+	"minimum-stability": "dev",
+	"autoload": {
+		"psr-4": {
+			"yubundle\\reference\\": "src",
+			"yubundle\\reference\\tests\\": "tests"
+		}
+	},
+	"require": {
+		"yiisoft/yii2": "*",
+		"php": ">=5.3.0"
+	}
+}

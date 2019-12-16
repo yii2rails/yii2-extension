@@ -1,0 +1,448 @@
+{
+	"pagination": {
+		"page": 0,
+		"pageCount": 1,
+		"pageSize": 20,
+		"totalCount": 2,
+		"limit": 20,
+		"offset": 0
+	},
+	"collection": [
+		{
+			"id": 1,
+			"service_id": 1,
+			"editor_id": 1,
+			"hash": "da3cea2b",
+			"extension": "png",
+			"name": "Скриншот 1",
+			"description": "Описание файла 2",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"directory": "mail/attachment/1",
+			"file_name": "da3cea2b.png",
+			"source_file_name": "Скриншот 1.png",
+			"file_path": "mail/attachment/1/da3cea2b.png",
+			"url": "http://yumail.project/mail/attachment/1/da3cea2b.png",
+			"service": {
+				"id": 1,
+				"name": "Mail attachment",
+				"path": "mail/attachment",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null,
+				"thumbs": [
+					{
+						"id": 1,
+						"service_id": 1,
+						"width": 128,
+						"height": 128,
+						"extension": "jpg",
+						"quality": 90,
+						"status": 1,
+						"created_at": "2019-02-22 16:53:05",
+						"updated_at": null,
+						"service": null,
+						"ext": {
+							"id": 519,
+							"code": "jpg",
+							"type_id": 2,
+							"mime": "image/jpeg",
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"type": null
+						}
+					},
+					{
+						"id": 2,
+						"service_id": 1,
+						"width": 256,
+						"height": 256,
+						"extension": "jpg",
+						"quality": 90,
+						"status": 1,
+						"created_at": "2019-02-22 16:53:05",
+						"updated_at": null,
+						"service": null,
+						"ext": {
+							"id": 519,
+							"code": "jpg",
+							"type_id": 2,
+							"mime": "image/jpeg",
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"type": null
+						}
+					},
+					{
+						"id": 3,
+						"service_id": 1,
+						"width": 512,
+						"height": 512,
+						"extension": "jpg",
+						"quality": 90,
+						"status": 1,
+						"created_at": "2019-02-22 16:53:05",
+						"updated_at": null,
+						"service": null,
+						"ext": {
+							"id": 519,
+							"code": "jpg",
+							"type_id": 2,
+							"mime": "image/jpeg",
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"type": null
+						}
+					}
+				]
+			},
+			"editor": {
+				"id": 1,
+				"first_name": "Admin 1",
+				"last_name": "Root",
+				"middle_name": null,
+				"email": "admin@yuwert.kz",
+				"phone": "77771111111",
+				"birthday": "2018-01-07",
+				"worker": {
+					"id": 1,
+					"person_id": 1,
+					"company_id": 1,
+					"email": null,
+					"post_id": 69,
+					"division_id": 4,
+					"office": null,
+					"phone": null,
+					"status": 1,
+					"created_at": "2018-12-09 21:35:38",
+					"updated_at": null,
+					"person": {
+						"id": 1,
+						"first_name": "Admin 1",
+						"last_name": "Root",
+						"middle_name": null,
+						"email": "admin@yuwert.kz",
+						"phone": "77771111111",
+						"birthday": "2018-01-07",
+						"worker": null,
+						"user": {
+							"id": 1,
+							"login": "admin",
+							"status": null,
+							"roles": null,
+							"token": null,
+							"created_at": null,
+							"person_id": 1,
+							"company_id": 1,
+							"security": null,
+							"person": null,
+							"company": null,
+							"assignments": null
+						}
+					},
+					"division": null,
+					"post": null,
+					"corporate_email": "admin@yuwert.kz",
+					"full_name": "Admin 1 Root"
+				},
+				"user": {
+					"id": 1,
+					"login": "admin",
+					"status": null,
+					"roles": [
+						"rAdministrator"
+					],
+					"token": null,
+					"created_at": null,
+					"person_id": 1,
+					"company_id": 1,
+					"security": {
+						"id": 1,
+						"email": null,
+						"token": null,
+						"password_hash": "$2y$10$VeTx5VTpb4AGoLRO6FfVxuNM5Xqbf7SgbC1LMvuMAi28RB9v3lPj."
+					},
+					"person": {
+						"id": 1,
+						"first_name": "Admin 1",
+						"last_name": "Root",
+						"middle_name": null,
+						"email": "admin@yuwert.kz",
+						"phone": "77771111111",
+						"birthday": "2018-01-07",
+						"worker": null,
+						"user": null
+					},
+					"company": {
+						"id": 1,
+						"code": 111,
+						"name": "Yuwert IT",
+						"status": 1,
+						"created_at": "2019-02-22 16:53:05",
+						"updated_at": "2019-02-22 16:53:05",
+						"domains": [
+							{
+								"id": 1,
+								"company_id": 1,
+								"domain": "yuwert.kz",
+								"host": "127.0.0.1",
+								"port": 435,
+								"kind": "portal",
+								"status": 1,
+								"created_at": "2019-02-22 16:53:05",
+								"updated_at": "2019-02-22 16:53:05",
+								"company": null
+							}
+						]
+					},
+					"assignments": [
+						{
+							"user_id": 1,
+							"item_name": "rAdministrator"
+						}
+					]
+				}
+			},
+			"ext": {
+				"id": 765,
+				"code": "png",
+				"type_id": 2,
+				"mime": "image/png",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null,
+				"type": {
+					"id": 2,
+					"name": "Изображение",
+					"icon_file": "image.ico",
+					"handler_name": "image",
+					"status": 1,
+					"created_at": "2019-02-22 16:53:05",
+					"updated_at": null
+				}
+			}
+		},
+		{
+			"id": 2,
+			"service_id": 1,
+			"editor_id": 1,
+			"hash": "c43a9ce1",
+			"extension": "png",
+			"name": "Скриншот 2",
+			"description": "Описание файла 2",
+			"status": 1,
+			"created_at": "2019-02-22 16:53:05",
+			"updated_at": null,
+			"directory": "mail/attachment/1",
+			"file_name": "c43a9ce1.png",
+			"source_file_name": "Скриншот 2.png",
+			"file_path": "mail/attachment/1/c43a9ce1.png",
+			"url": "http://yumail.project/mail/attachment/1/c43a9ce1.png",
+			"service": {
+				"id": 1,
+				"name": "Mail attachment",
+				"path": "mail/attachment",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null,
+				"thumbs": [
+					{
+						"id": 1,
+						"service_id": 1,
+						"width": 128,
+						"height": 128,
+						"extension": "jpg",
+						"quality": 90,
+						"status": 1,
+						"created_at": "2019-02-22 16:53:05",
+						"updated_at": null,
+						"service": null,
+						"ext": {
+							"id": 519,
+							"code": "jpg",
+							"type_id": 2,
+							"mime": "image/jpeg",
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"type": null
+						}
+					},
+					{
+						"id": 2,
+						"service_id": 1,
+						"width": 256,
+						"height": 256,
+						"extension": "jpg",
+						"quality": 90,
+						"status": 1,
+						"created_at": "2019-02-22 16:53:05",
+						"updated_at": null,
+						"service": null,
+						"ext": {
+							"id": 519,
+							"code": "jpg",
+							"type_id": 2,
+							"mime": "image/jpeg",
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"type": null
+						}
+					},
+					{
+						"id": 3,
+						"service_id": 1,
+						"width": 512,
+						"height": 512,
+						"extension": "jpg",
+						"quality": 90,
+						"status": 1,
+						"created_at": "2019-02-22 16:53:05",
+						"updated_at": null,
+						"service": null,
+						"ext": {
+							"id": 519,
+							"code": "jpg",
+							"type_id": 2,
+							"mime": "image/jpeg",
+							"status": 1,
+							"created_at": "2019-02-22 16:53:05",
+							"updated_at": null,
+							"type": null
+						}
+					}
+				]
+			},
+			"editor": {
+				"id": 1,
+				"first_name": "Admin 1",
+				"last_name": "Root",
+				"middle_name": null,
+				"email": "admin@yuwert.kz",
+				"phone": "77771111111",
+				"birthday": "2018-01-07",
+				"worker": {
+					"id": 1,
+					"person_id": 1,
+					"company_id": 1,
+					"email": null,
+					"post_id": 69,
+					"division_id": 4,
+					"office": null,
+					"phone": null,
+					"status": 1,
+					"created_at": "2018-12-09 21:35:38",
+					"updated_at": null,
+					"person": {
+						"id": 1,
+						"first_name": "Admin 1",
+						"last_name": "Root",
+						"middle_name": null,
+						"email": "admin@yuwert.kz",
+						"phone": "77771111111",
+						"birthday": "2018-01-07",
+						"worker": null,
+						"user": {
+							"id": 1,
+							"login": "admin",
+							"status": null,
+							"roles": null,
+							"token": null,
+							"created_at": null,
+							"person_id": 1,
+							"company_id": 1,
+							"security": null,
+							"person": null,
+							"company": null,
+							"assignments": null
+						}
+					},
+					"division": null,
+					"post": null,
+					"corporate_email": "admin@yuwert.kz",
+					"full_name": "Admin 1 Root"
+				},
+				"user": {
+					"id": 1,
+					"login": "admin",
+					"status": null,
+					"roles": [
+						"rAdministrator"
+					],
+					"token": null,
+					"created_at": null,
+					"person_id": 1,
+					"company_id": 1,
+					"security": {
+						"id": 1,
+						"email": null,
+						"token": null,
+						"password_hash": "$2y$10$VeTx5VTpb4AGoLRO6FfVxuNM5Xqbf7SgbC1LMvuMAi28RB9v3lPj."
+					},
+					"person": {
+						"id": 1,
+						"first_name": "Admin 1",
+						"last_name": "Root",
+						"middle_name": null,
+						"email": "admin@yuwert.kz",
+						"phone": "77771111111",
+						"birthday": "2018-01-07",
+						"worker": null,
+						"user": null
+					},
+					"company": {
+						"id": 1,
+						"code": 111,
+						"name": "Yuwert IT",
+						"status": 1,
+						"created_at": "2019-02-22 16:53:05",
+						"updated_at": "2019-02-22 16:53:05",
+						"domains": [
+							{
+								"id": 1,
+								"company_id": 1,
+								"domain": "yuwert.kz",
+								"host": "127.0.0.1",
+								"port": 435,
+								"kind": "portal",
+								"status": 1,
+								"created_at": "2019-02-22 16:53:05",
+								"updated_at": "2019-02-22 16:53:05",
+								"company": null
+							}
+						]
+					},
+					"assignments": [
+						{
+							"user_id": 1,
+							"item_name": "rAdministrator"
+						}
+					]
+				}
+			},
+			"ext": {
+				"id": 765,
+				"code": "png",
+				"type_id": 2,
+				"mime": "image/png",
+				"status": 1,
+				"created_at": "2019-02-22 16:53:05",
+				"updated_at": null,
+				"type": {
+					"id": 2,
+					"name": "Изображение",
+					"icon_file": "image.ico",
+					"handler_name": "image",
+					"status": 1,
+					"created_at": "2019-02-22 16:53:05",
+					"updated_at": null
+				}
+			}
+		}
+	]
+}

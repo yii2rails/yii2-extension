@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+@include_once(__DIR__ . '/../../../../vendor/yii2rails/yii2-extension/src/console/helpers/binAppEndpoint.php');
+
+/* ------------------------------------------------------ */
+
+use yubundle\account\domain\v2\helpers\Socket;
+use yii2rails\app\domain\helpers\EnvService;
+
+$socketConfig = EnvService::getServer('socket');
+$socket = new Socket($socketConfig);
+$socket->start();

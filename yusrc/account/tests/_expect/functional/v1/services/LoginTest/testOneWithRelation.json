@@ -1,0 +1,19 @@
+{
+	"id": 1,
+	"login": "admin",
+	"status": 1,
+	"roles": null,
+	"token": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6IjVkNTBjMDgyLTlhMWMtNGE3ZS1jYmQwLTQwZmUwMmI4ZTZjNiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkueXVtYWlsLnByb2plY3RcL3YxXC9hdXRoIiwic3ViamVjdCI6eyJpZCI6Nn0sImF1ZCI6WyJodHRwOlwvXC9hcGkueXVtYWlsLnByb2plY3QiXSwiZXhwIjoxNTUxMjgyMjMzfQ.4izUBoQtguLpvuzg3YA-49ZR1u7qzShPrKMskBeGF7k",
+	"created_at": null,
+	"person_id": 1,
+	"company_id": 1,
+	"security": {
+		"id": 1,
+		"email": null,
+		"token": null,
+		"password_hash": "$2y$10$VeTx5VTpb4AGoLRO6FfVxuNM5Xqbf7SgbC1LMvuMAi28RB9v3lPj."
+	},
+	"person": null,
+	"company": null,
+	"contacts": null
+}
