@@ -13,7 +13,7 @@ use yubundle\account\domain\v2\helpers\TestAuthHelper;
 class TestAuthHelperTest extends BaseDomainTest
 {
 
-    public $package = 'vendor/yubundle/yii2-account';
+    public $package = 'vendor/yii2rails/yii2-extension/yusrc/account';
 
 	public function testAuthById()
 	{

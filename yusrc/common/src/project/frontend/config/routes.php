@@ -4,7 +4,7 @@ return [
 	'' => 'welcome',
 	
 	'@import' => [
-        'vendor/yubundle/yii2-storage/src/web',
+        'vendor/yii2rails/yii2-extension/yusrc/storage/src/web',
 	],
 	
 ];

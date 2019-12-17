@@ -29,7 +29,7 @@ class DomainHelper  {
                 'package' => [
                     'aliases' => [
                         '@root',
-                        //'@vendor/yubundle/yii2-common',
+                        //'@vendor/yii2rails/yii2-extension/yusrc/common',
                         //'@vendor/yii2bundle/yii2-application-template',
                     ],
                 ],

@@ -16,7 +16,7 @@ class TokenTest extends BaseDomainTest
 	const IP = '192.168.44.92';
 	const USER_ID = 3;
 
-    public $package = 'vendor/yubundle/yii2-account';
+    public $package = 'vendor/yii2rails/yii2-extension/yusrc/account';
 
 	/*public function testForgeNotFoundLogin() {
 		try {

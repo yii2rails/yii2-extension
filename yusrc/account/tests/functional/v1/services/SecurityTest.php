@@ -14,7 +14,7 @@ class SecurityTest extends BaseDomainTest
 
     const ID_ADMIN = 1;
 
-    public $package = 'vendor/yubundle/yii2-account';
+    public $package = 'vendor/yii2rails/yii2-extension/yusrc/account';
     
 	public function testOneById()
 	{

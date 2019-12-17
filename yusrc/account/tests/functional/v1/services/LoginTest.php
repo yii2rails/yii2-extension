@@ -19,7 +19,7 @@ class LoginTest extends BaseDomainTest
     const ID_NOT_EXISTS = 99999;
     const LOGIN_NOT_EXISTS = '77771111118';
 
-    public $package = 'vendor/yubundle/yii2-account';
+    public $package = 'vendor/yii2rails/yii2-extension/yusrc/account';
 	
 	public function testOneByLogin()
 	{

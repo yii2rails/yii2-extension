@@ -26,7 +26,7 @@ class AuthTest extends BaseDomainTest
     const PASSWORD = 'Wwwqqq111';
     const PASSWORD_INCORRECT = 'Wwwqqq222';
     
-    public $package = 'vendor/yubundle/yii2-account';
+    public $package = 'vendor/yii2rails/yii2-extension/yusrc/account';
     
 	public function testAuthentication()
 	{

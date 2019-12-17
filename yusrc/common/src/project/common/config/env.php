@@ -228,11 +228,11 @@ return [
 					'@vendor/yii2bundle/yii2-lang/src/domain/migrations',
                     '@vendor/yii2bundle/yii2-notify/src/domain/migrations',
 					//'@vendor/yii2bundle/yii2-geo/src/domain/migrations',
-                    '@vendor/yubundle/yii2-account/src/domain/v2/migrations',
-                    '@vendor/yubundle/yii2-reference/src/domain/migrations',
-                    '@vendor/yubundle/yii2-user/src/domain/v1/migrations',
-                    '@vendor/yubundle/yii2-storage/src/domain/v1/migrations',
-                    '@vendor/yubundle/yii2-staff/src/domain/v1/migrations',
+                    '@vendor/yii2rails/yii2-extension/yusrc/account/src/domain/v2/migrations',
+                    '@vendor/yii2rails/yii2-extension/yusrc/reference/src/domain/migrations',
+                    '@vendor/yii2rails/yii2-extension/yusrc/user/src/domain/v1/migrations',
+                    '@vendor/yii2rails/yii2-extension/yusrc/storage/src/domain/v1/migrations',
+                    '@vendor/yii2rails/yii2-extension/yusrc/staff/src/domain/v1/migrations',
                     '@vendor/yiisoft/yii2/log/migrations'
 				],
 				'scan' => [

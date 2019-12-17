@@ -7,7 +7,7 @@ use yii2tool\test\Test\BaseActiveDomainTest;
 class FileExtensionTest extends BaseActiveDomainTest
 {
 
-    public $package = 'vendor/yubundle/yii2-storage';
+    public $package = 'vendor/yii2rails/yii2-extension/yusrc/storage';
 
     public function relations() {
         return [

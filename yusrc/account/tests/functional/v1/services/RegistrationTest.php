@@ -28,7 +28,7 @@ class RegistrationTest extends BaseDomainTest
     const PHONE = '77772222221';
     const PASSWORD = 'Wwwqqq111';
 
-    public $package = 'vendor/yubundle/yii2-account';
+    public $package = 'vendor/yii2rails/yii2-extension/yusrc/account';
 
     /*public function testRegistration()
     {
