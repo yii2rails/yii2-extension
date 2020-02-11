@@ -16,7 +16,7 @@ return [
 			'parsers' => [
 				'application/json' => 'yii\web\JsonParser',
 			],
-			'cookieValidationKey' => EnvService::get('cookieValidationKey.backend'),
+			'cookieValidationKey' => $_ENV['COOKIE_VALIDATION_KEY_ADMIN'],
 		],
 		'session' => [
 			// this is the name of the session cookie used for login on the backend

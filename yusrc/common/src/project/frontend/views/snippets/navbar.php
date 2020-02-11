@@ -22,7 +22,7 @@ $fixedTopClass = $isFixedTop ? 'navbar-fixed-top' : '';
 
 NavBar::begin([
 	'brandLabel' => Yii::$app->name,
-	'brandUrl' => EnvService::getUrl(FRONTEND),
+	'brandUrl' => $_ENV['WEB_DOMAIN_URL'],
 	'options' => [
 		'class' => 'navbar-inverse ' . $fixedTopClass,
 	],
