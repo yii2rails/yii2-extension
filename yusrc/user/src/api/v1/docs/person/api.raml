@@ -1,17 +1,17 @@
 description: "Персона"
 get:
-    securedBy: [Auth]
+    securedBy: [bearerAuth]
     description: "Получить данные о своей персоне"
-    is: !include ../../../../../../../../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/one.raml
+    is: !include ../../../../../../../../../../vendor/zndoc/rest-api/src/is/one.raml
     responses:
         200:
             body:
                 application/json:
                     example: !include example/one-response-body.json
 put:
-    securedBy: [Auth]
+    securedBy: [bearerAuth]
     description: "Изменить данные о своей персоне"
-    is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/update.raml
+    is: !include /../../../vendor/zndoc/rest-api/src/is/update.raml
     body:
         application/json:
             example: !include example/update-request-body.json

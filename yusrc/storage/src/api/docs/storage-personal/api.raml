@@ -1,8 +1,8 @@
 description: "Временное хранилище файлов пользователя"
 post:
-    securedBy: [Auth]
+    securedBy: [bearerAuth]
     description: "Загрузить файл на сервер"
-    is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/create.raml
+    is: !include /../../../vendor/zndoc/rest-api/src/is/create.raml
     body:
         multipart/form-data:
             properties:
