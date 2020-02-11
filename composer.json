@@ -20,11 +20,17 @@
 			"yii2rails\\extension\\": "src",
 			"yii2rails\\extension\\tests\\": "tests",
 			"yubundle\\account\\": "yusrc\\account\\src",
+			"yubundle\\account\\tests\\": "yusrc\\account\\tests",
 			"yubundle\\common\\": "yusrc\\common\\src",
+			"yubundle\\common\\tests\\": "yusrc\\common\\tests",
 			"yubundle\\reference\\": "yusrc\\reference\\src",
+			"yubundle\\reference\\tests\\": "yusrc\\reference\\tests",
 			"yubundle\\staff\\": "yusrc\\staff\\src",
+			"yubundle\\staff\\tests\\": "yusrc\\staff\\tests",
 			"yubundle\\storage\\": "yusrc\\storage\\src",
-			"yubundle\\user\\": "yusrc\\user\\src"
+			"yubundle\\storage\\tests\\": "yusrc\\storage\\tests",
+			"yubundle\\user\\": "yusrc\\user\\src",
+			"yubundle\\user\\tests\\": "yusrc\\user\\tests"
 		}
 	},
 	"require": {
