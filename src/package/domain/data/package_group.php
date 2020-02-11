@@ -32,6 +32,17 @@ return [
             ],
         ],
     ],
+    [
+        'name' => 'php7lab',
+        'provider_name' => 'github',
+        'url' => 'https://github.com',
+        'authors' => [
+            [
+                'name' => 'Yamshikov Vitaliy',
+                'email' => 'theyamshikov@yandex.ru',
+            ],
+        ],
+    ],
 	[
 		'name' => 'yii2team',
 		'provider_name' => 'github',
