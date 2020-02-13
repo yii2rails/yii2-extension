@@ -100,12 +100,14 @@ class Behavior {
 	}
 	
 	static function cors() {
+        return CorsHelper::generate();
+
 		// todo: guide
-		$cors = param('cors.default', false);
+		/*$cors = param('cors.default', false);
 		if(!$cors) {
 			$cors = CorsHelper::generate();
 		}
-		return $cors;
+		return $cors;*/
 	}
 	
 }
