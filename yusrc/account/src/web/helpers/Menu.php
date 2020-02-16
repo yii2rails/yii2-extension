@@ -109,7 +109,7 @@ class Menu implements MenuInterface {
 	private static function getWallet() {
 		$walletHost = EnvService::get('wallet.host');
 		if(empty($walletHost)) {
-			$walletHost = $_ENV['WEB_DOMAIN_URL'];
+			$walletHost = $_ENV['WEB_URL'];
 		}
 		return $walletHost;
 	}
@@ -127,7 +127,7 @@ class Menu implements MenuInterface {
 		
 		if(\App::$domain->has('money')) {
 			$walletHost = self::getWallet();
-			$linkOptions = $walletHost == $_ENV['WEB_DOMAIN_URL'] ? [] : ['target' => '_blank'];
+			$linkOptions = $walletHost == $_ENV['WEB_URL'] ? [] : ['target' => '_blank'];
 			$items[] = [
 				'label' => 'Баланс: ' . self::getBalance(),
 				'encode' => false,
