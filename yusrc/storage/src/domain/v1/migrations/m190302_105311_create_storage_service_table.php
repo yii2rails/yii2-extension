@@ -10,6 +10,7 @@ use yii2lab\db\domain\db\MigrationCreateTable as Migration;
 class m190302_105311_create_storage_service_table extends Migration {
 
 	public $table = 'storage_service';
+	public $tableComment = 'Профиль хранилища';
 
 	/**
 	 * @inheritdoc

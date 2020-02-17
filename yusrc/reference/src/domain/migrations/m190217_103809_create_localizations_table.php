@@ -10,6 +10,7 @@ use yii2lab\db\domain\db\MigrationCreateTable as Migration;
 class m190217_103809_create_localizations_table extends Migration {
 
     public $table = 'reference_item_localization';
+    public $tableComment = 'Локализация элементов';
 
 	/**
 	 * @inheritdoc

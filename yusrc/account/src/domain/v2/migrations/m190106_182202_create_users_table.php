@@ -26,8 +26,8 @@ class m190106_182202_create_users_table extends Migration {
 			'roles' => $this->json()->comment('Роли'),
 			'status' => $this->integer()->comment('Статус'),
 			'remember_token' => $this->string(100)->comment('Токен для Laravel'),
-			'created_at' => $this->timestamp()->defaultValue(null),
-			'updated_at' => $this->timestamp()->defaultValue(null),
+			'created_at' => $this->timestamp()->defaultValue(null)->comment('Дата создания'),
+			'updated_at' => $this->timestamp()->defaultValue(null)->comment('Дата обновления'),
 		];
 	}
 

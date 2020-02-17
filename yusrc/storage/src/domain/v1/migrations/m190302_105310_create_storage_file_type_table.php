@@ -10,6 +10,7 @@ use yii2lab\db\domain\db\MigrationCreateTable as Migration;
 class m190302_105310_create_storage_file_type_table extends Migration {
 
 	public $table = 'storage_file_type';
+    public $tableComment = 'Тип файла';
 
 	/**
 	 * @inheritdoc

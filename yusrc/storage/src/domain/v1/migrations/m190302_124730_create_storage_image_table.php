@@ -10,6 +10,7 @@ use yii2lab\db\domain\db\MigrationCreateTable as Migration;
 class m190302_124730_create_storage_image_table extends Migration {
 
 	public $table = 'storage_image';
+    public $tableComment = 'Инфо об изображении';
 
 	/**
 	 * @inheritdoc

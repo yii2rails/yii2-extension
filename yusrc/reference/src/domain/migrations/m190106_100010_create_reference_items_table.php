@@ -5,6 +5,7 @@ use yii2lab\db\domain\db\MigrationCreateTable as Migration;
 class m190106_100010_create_reference_items_table extends Migration {
 
 	public $table = 'reference_item';
+    public $tableComment = 'Элемент справочника';
 
 	/**
 	 * @inheritdoc
@@ -22,8 +23,8 @@ class m190106_100010_create_reference_items_table extends Migration {
 			'props' => $this->json()->null()->comment('Индивидуальные параметры'),
 			'status' => $this->integer()->notNull()->defaultValue(1)->comment('Статус'),
 			'sort' => $this->integer(3)->comment('Порядок сортировки'),
-			'created_at' => $this->timestamp()->defaultValue(null),
-			'updated_at' => $this->timestamp()->defaultValue(null),
+			'created_at' => $this->timestamp()->defaultValue(null)->comment('Дата создания'),
+			'updated_at' => $this->timestamp()->defaultValue(null)->comment('Дата обновления'),
 		];
 	}
 

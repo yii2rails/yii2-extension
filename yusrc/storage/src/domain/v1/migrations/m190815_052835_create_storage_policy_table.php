@@ -10,6 +10,7 @@ use yii2lab\db\domain\db\MigrationCreateTable as Migration;
 class m190815_052835_create_storage_policy_table extends Migration {
 
     public $table = 'storage_policy';
+    public $tableComment = 'Ограничения';
 
     /**
      * @inheritdoc

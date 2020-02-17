@@ -5,6 +5,7 @@ use yii2lab\db\domain\db\MigrationCreateTable as Migration;
 class m190106_100001_create_reference_books_table extends Migration {
 
 	public $table = 'reference_book';
+    public $tableComment = 'Справочник';
 
 	/**
 	 * @inheritdoc
@@ -18,8 +19,8 @@ class m190106_100001_create_reference_books_table extends Migration {
 			'entity' => $this->string(64)->notNull()->comment('Сущность'),
 			'owner_id' => $this->integer()->notNull()->comment('Организация владелец'),
 			'props' => $this->json()->null()->comment('Индивидуальные параметры'),
-			'created_at' => $this->timestamp()->defaultValue(null),
-			'updated_at' => $this->timestamp()->defaultValue(null),
+			'created_at' => $this->timestamp()->defaultValue(null)->comment('Дата создания'),
+			'updated_at' => $this->timestamp()->defaultValue(null)->comment('Дата обновления'),
 			'status' => $this->integer()->notNull()->defaultValue(1)->comment('Статус справочника'),
 		];
 	}
